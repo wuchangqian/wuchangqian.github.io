@@ -4,7 +4,7 @@
   <title><![CDATA[WCQ - stand for wuchangqian]]></title>
   <link href="http://wuchangqian.github.io/atom.xml" rel="self"/>
   <link href="http://wuchangqian.github.io/"/>
-  <updated>2014-07-09T02:42:39+08:00</updated>
+  <updated>2014-07-09T02:46:12+08:00</updated>
   <id>http://wuchangqian.github.io/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Xixi]]></title>
+    <link href="http://wuchangqian.github.io/blog/2014/07/09/xixi/"/>
+    <updated>2014-07-09T02:45:49+08:00</updated>
+    <id>http://wuchangqian.github.io/blog/2014/07/09/xixi</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Caixixi]]></title>

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://wuchangqian.github.io/sitemap.xml 
+Sitemap: http://me.94313.net/sitemap.xml 

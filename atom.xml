@@ -2,71 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[WCQ - stand for wuchangqian]]></title>
-  <link href="http://wuchangqian.github.io/atom.xml" rel="self"/>
-  <link href="http://wuchangqian.github.io/"/>
-  <updated>2014-07-09T02:52:23+08:00</updated>
-  <id>http://wuchangqian.github.io/</id>
+  <link href="http://me.94313.net/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2014-07-09T03:22:27+08:00</updated>
+  <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
     <email><![CDATA[30889515@qq.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Xixi]]></title>
-    <link href="http://wuchangqian.github.io/blog/2014/07/09/xixi/"/>
-    <updated>2014-07-09T02:45:49+08:00</updated>
-    <id>http://wuchangqian.github.io/blog/2014/07/09/xixi</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Caixixi]]></title>
-    <link href="http://wuchangqian.github.io/blog/2014/07/09/caixixi/"/>
-    <updated>2014-07-09T02:10:13+08:00</updated>
-    <id>http://wuchangqian.github.io/blog/2014/07/09/caixixi</id>
-    <content type="html"><![CDATA[<h2>wuchangqian</h2>
-
-<p><a href="http://me.94313.net" title="qiangege">wuchangqian</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wcq]]></title>
-    <link href="http://wuchangqian.github.io/blog/2014/07/09/wcq/"/>
-    <updated>2014-07-09T01:15:49+08:00</updated>
-    <id>http://wuchangqian.github.io/blog/2014/07/09/wcq</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wcq2]]></title>
-    <link href="http://wuchangqian.github.io/blog/2014/07/08/wcq2/"/>
-    <updated>2014-07-08T01:43:35+08:00</updated>
-    <id>http://wuchangqian.github.io/blog/2014/07/08/wcq2</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wcq]]></title>
-    <link href="http://wuchangqian.github.io/blog/2014/07/08/wcq/"/>
-    <updated>2014-07-08T01:43:27+08:00</updated>
-    <id>http://wuchangqian.github.io/blog/2014/07/08/wcq</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wuchangqian-first-page]]></title>
-    <link href="http://wuchangqian.github.io/blog/2014/07/08/wuchangqian-first-page/"/>
-    <updated>2014-07-08T01:29:31+08:00</updated>
-    <id>http://wuchangqian.github.io/blog/2014/07/08/wuchangqian-first-page</id>
-    <content type="html"><![CDATA[<p>wuchangqin</p>
-]]></content>
-  </entry>
   
 </feed>

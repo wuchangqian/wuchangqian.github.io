@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: , | WCQ - stand for wuchangqian]]></title>
+  <title><![CDATA[Category: , | 懂得欣赏]]></title>
   <link href="http://me.94313.net/blog/categories//atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-07-20T13:14:02+08:00</updated>
+  <updated>2014-07-20T13:19:38+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
-    <email><![CDATA[30889515@qq.com]]></email>
+    
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 

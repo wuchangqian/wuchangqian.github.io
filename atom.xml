@@ -4,7 +4,7 @@
   <title><![CDATA[懂得欣赏]]></title>
   <link href="http://me.94313.net/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-07-20T17:05:51+08:00</updated>
+  <updated>2014-07-20T17:07:40+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[wcq]]></title>
+    <title type="html"><![CDATA[武陵春]]></title>
     <link href="http://me.94313.net/blog/2012/07/09/wuchan/"/>
     <updated>2012-07-09T08:23:45+08:00</updated>
     <id>http://me.94313.net/blog/2012/07/09/wuchan</id>
@@ -25,7 +25,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[wuc]]></title>
+    <title type="html"><![CDATA[一致性哈希算法以及其PHP实现]]></title>
     <link href="http://me.94313.net/blog/2012/07/09/abcd/"/>
     <updated>2012-07-09T08:23:45+08:00</updated>
     <id>http://me.94313.net/blog/2012/07/09/abcd</id>

@@ -1,24 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[{{ site.title }}]]></title>
-  <link href="{{ site.url }}/atom.xml" rel="self"/>
-  <link href="{{ site.url }}/"/>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ site.url }}/</id>
+  <title><![CDATA[懂得欣赏]]></title>
+  <link href="http://me.94313.net/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2014-08-18T15:04:42+08:00</updated>
+  <id>http://me.94313.net/</id>
   <author>
-    <name><![CDATA[{{ site.author | strip_html }}]]></name>
-    {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
+    <name><![CDATA[wuchangqian]]></name>
+    
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  {% for post in site.posts limit: 20 %}
+  
   <entry>
-    <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-    <link href="{{ site.url }}{{ post.url }}"/>
-    <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <id>{{ site.url }}{{ post.id }}</id>
-    <content type="html"><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]></content>
+    <title type="html"><![CDATA[Abc]]></title>
+    <link href="http://me.94313.net/blog/2014/08/18/abc/"/>
+    <updated>2014-08-18T15:04:33+08:00</updated>
+    <id>http://me.94313.net/blog/2014/08/18/abc</id>
+    <content type="html"><![CDATA[
+]]></content>
   </entry>
-  {% endfor %}
+  
+  <entry>
+    <title type="html"><![CDATA[Wu]]></title>
+    <link href="http://me.94313.net/blog/2014/08/18/wu/"/>
+    <updated>2014-08-18T14:52:32+08:00</updated>
+    <id>http://me.94313.net/blog/2014/08/18/wu</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wcq]]></title>
+    <link href="http://me.94313.net/blog/2014/07/21/wcq/"/>
+    <updated>2014-07-21T12:38:24+08:00</updated>
+    <id>http://me.94313.net/blog/2014/07/21/wcq</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
 </feed>

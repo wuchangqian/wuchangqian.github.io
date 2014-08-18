@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://me.94313.net/blog/2014/08/18/abc/</loc>
+    <lastmod>2014-08-18T15:04:33+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://me.94313.net/blog/2014/08/18/wu/</loc>
     <lastmod>2014-08-18T14:52:32+08:00</lastmod>
     <priority>0.8</priority>
@@ -16,22 +22,22 @@
   
   
   <url>
-    <loc>http://me.94313.net/blog/about/</loc>
-    <lastmod>2014-08-18T14:55:53+08:00</lastmod>
+    <loc>http://me.94313.net/blog/archives/</loc>
+    <lastmod>2014-08-18T15:04:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://me.94313.net/blog/archives/</loc>
-    <lastmod>2014-08-18T14:55:53+08:00</lastmod>
+    <loc>http://me.94313.net/blog/about/</loc>
+    <lastmod>2014-08-18T15:04:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://me.94313.net/</loc>
-    <lastmod>2014-08-18T14:55:53+08:00</lastmod>
+    <lastmod>2014-08-18T15:04:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

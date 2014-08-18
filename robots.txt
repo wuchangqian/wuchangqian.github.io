@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://me.94313.net/sitemap.xml 

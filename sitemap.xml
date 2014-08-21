@@ -20,61 +20,31 @@
     <priority>0.8</priority>
   </url>
   
-  <url>
-    <loc>http://me.94313.net/blog/2014/07/09/wcq5/</loc>
-    <lastmod>2014-07-09T04:00:31+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://me.94313.net/blog/2014/07/09/wcq4/</loc>
-    <lastmod>2014-07-09T04:00:28+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://me.94313.net/blog/2014/07/09/wcq3/</loc>
-    <lastmod>2014-07-09T04:00:24+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://me.94313.net/blog/2014/07/09/wcq2/</loc>
-    <lastmod>2014-07-09T04:00:20+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://me.94313.net/blog/2014/07/09/wcq1/</loc>
-    <lastmod>2014-07-09T04:00:16+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
   
   <url>
     <loc>http://me.94313.net/blog/archives/</loc>
-    <lastmod>2014-08-20T22:25:14+08:00</lastmod>
+    <lastmod>2014-08-21T12:05:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://me.94313.net/blog/about/</loc>
-    <lastmod>2014-08-20T22:25:14+08:00</lastmod>
+    <lastmod>2014-08-21T12:05:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://me.94313.net/</loc>
-    <lastmod>2014-08-20T22:25:14+08:00</lastmod>
+    <lastmod>2014-08-21T12:05:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://me.94313.net/about-me/</loc>
-    <lastmod>2014-08-20T22:25:14+08:00</lastmod>
+    <lastmod>2014-08-21T12:05:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

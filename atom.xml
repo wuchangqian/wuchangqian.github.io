@@ -4,7 +4,7 @@
   <title><![CDATA[学会欣赏]]></title>
   <link href="http://me.94313.net/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-08-30T14:16:18+08:00</updated>
+  <updated>2014-08-30T14:18:12+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -31,89 +31,88 @@
 <li>// undefined值不会被拷贝</li>
 <li>// 因为性能原因，JavaScript自带类型的属性不会合并</li>
 <li>// jQuery.extend( target, [ object1 ], [ objectN ] )</li>
-<li>// jQuery.extend( [ deep ], target, object1, [ objectN ] )</li>
-</ul>
+<li><p>// jQuery.extend( [ deep ], target, object1, [ objectN ] )</p>
 
+<p>  jQuery.extend = jQuery.fn.extend = function() {
+      var options, name, src, copy, copyIsArray, clone,
+         target = arguments[0] || {},
+         i = 1,
+         length = arguments.length,
+         deep = false;</p>
 
-<p>jQuery.extend = jQuery.fn.extend = function() {</p>
+<pre><code>  // Handle a deep copy situation
+  // 如果第一个参数是boolean型，可能是深度拷贝
+  if ( typeof target === "boolean" ) {
+     deep = target;
+     target = arguments[1] || {};
+     // skip the boolean and the target
+     // 跳过boolean和target，从第3个开始
+     i = 2;
+  }
 
-<pre><code>var options, name, src, copy, copyIsArray, clone,
-   target = arguments[0] || {},
-   i = 1,
-   length = arguments.length,
-   deep = false;
+  // Handle case when target is a string or something (possible in deep copy)
+  // target不是对象也不是函数，则强制设置为空对象
+  if ( typeof target !== "object" &amp;&amp; !jQuery.isFunction(target) ) {
+     target = {};
+  }
 
-// Handle a deep copy situation
-// 如果第一个参数是boolean型，可能是深度拷贝
-if ( typeof target === "boolean" ) {
-   deep = target;
-   target = arguments[1] || {};
-   // skip the boolean and the target
-   // 跳过boolean和target，从第3个开始
-   i = 2;
-}
+  // extend jQuery itself if only one argument is passed
+  // 如果只传入一个参数，则认为是对jQuery扩展
+  if ( length === i ) {
+     target = this;
+     --i;
+  }
 
-// Handle case when target is a string or something (possible in deep copy)
-// target不是对象也不是函数，则强制设置为空对象
-if ( typeof target !== "object" &amp;&amp; !jQuery.isFunction(target) ) {
-   target = {};
-}
+  for ( ; i &lt; length; i++ ) {
+     // Only deal with non-null/undefined values
+     // 只处理非空参数
+     if ( (options = arguments[ i ]) != null ) {
+         // Extend the base object
+         for ( name in options ) {
+            src = target[ name ];
+            copy = options[ name ];
 
-// extend jQuery itself if only one argument is passed
-// 如果只传入一个参数，则认为是对jQuery扩展
-if ( length === i ) {
-   target = this;
-   --i;
-}
+            // Prevent never-ending loop
+            // 避免循环引用
+            if ( target === copy ) {
+                continue;
+            }
 
-for ( ; i &lt; length; i++ ) {
-   // Only deal with non-null/undefined values
-   // 只处理非空参数
-   if ( (options = arguments[ i ]) != null ) {
-       // Extend the base object
-       for ( name in options ) {
-          src = target[ name ];
-          copy = options[ name ];
+            // Recurse if we're merging plain objects or arrays
+            // 深度拷贝且值是纯对象或数组，则递归
+            if ( deep &amp;&amp; copy &amp;&amp; ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
+                // 如果copy是数组
+                if ( copyIsArray ) {
+                   copyIsArray = false;
+                   // clone为src的修正值
+                   clone = src &amp;&amp; jQuery.isArray(src) ? src : [];
+                // 如果copy的是对象
+                } else {
+                   // clone为src的修正值
+                   clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
+                }
 
-          // Prevent never-ending loop
-          // 避免循环引用
-          if ( target === copy ) {
-              continue;
-          }
+                // Never move original objects, clone them
+                // 递归调用jQuery.extend
+                target[ name ] = jQuery.extend( deep, clone, copy );
 
-          // Recurse if we're merging plain objects or arrays
-          // 深度拷贝且值是纯对象或数组，则递归
-          if ( deep &amp;&amp; copy &amp;&amp; ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
-              // 如果copy是数组
-              if ( copyIsArray ) {
-                 copyIsArray = false;
-                 // clone为src的修正值
-                 clone = src &amp;&amp; jQuery.isArray(src) ? src : [];
-              // 如果copy的是对象
-              } else {
-                 // clone为src的修正值
-                 clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
-              }
+            // Don't bring in undefined values
+            // 不能拷贝空值
+            } else if ( copy !== undefined ) {
+                target[ name ] = copy;
+            }
+         }
+     }
+  }
 
-              // Never move original objects, clone them
-              // 递归调用jQuery.extend
-              target[ name ] = jQuery.extend( deep, clone, copy );
-
-          // Don't bring in undefined values
-          // 不能拷贝空值
-          } else if ( copy !== undefined ) {
-              target[ name ] = copy;
-          }
-       }
-   }
-}
-
-// Return the modified object
-// 返回更改后的对象
-return target;
+  // Return the modified object
+  // 返回更改后的对象
+  return target;
 </code></pre>
 
-<p>};</p>
+<p>  };</p></li>
+</ul>
+
 ]]></content>
   </entry>
   

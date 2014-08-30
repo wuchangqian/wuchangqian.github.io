@@ -4,7 +4,7 @@
   <title><![CDATA[学会欣赏]]></title>
   <link href="http://me.94313.net/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-08-30T14:13:34+08:00</updated>
+  <updated>2014-08-30T14:14:59+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -18,19 +18,19 @@
     <link href="http://me.94313.net/blog/2013/08/30/jquery-extend-method/"/>
     <updated>2013-08-30T14:11:50+08:00</updated>
     <id>http://me.94313.net/blog/2013/08/30/jquery-extend-method</id>
-    <content type="html"><![CDATA[<p>// 合并两个或更多对象的属性到第一个对象中，jQuery后续的大部分功能都通过该函数扩展
-// 通过jQuery.fn.extend扩展的函数，大部分都会调用通过jQuery.extend扩展的同名函数
-// 如果传入两个或多个对象，所有对象的属性会被添加到第一个对象target
-// 如果只传入一个对象，则将对象的属性添加到jQuery对象中。
-// 用这种方式，我们可以为jQuery命名空间增加新的方法。可以用于编写jQuery插件。
-// 如果不想改变传入的对象，可以传入一个空对象：$.extend({}, object1, object2);
-// 默认合并操作是不迭代的，即便target的某个属性是对象或属性，也会被完全覆盖而不是合并
-// 第一个参数是true，则会迭代合并
-// 从object原型继承的属性会被拷贝
-// undefined值不会被拷贝
-// 因为性能原因，JavaScript自带类型的属性不会合并
-// jQuery.extend( target, [ object1 ], [ objectN ] )
-// jQuery.extend( [ deep ], target, object1, [ objectN ] )
+    <content type="html"><![CDATA[<p>&ndash;// 第一个参数是true，则会迭代合并
+&ndash;// 合并两个或更多对象的属性到第一个对象中，jQuery后续的大部分功能都通过该函数扩展
+&ndash;// 通过jQuery.fn.extend扩展的函数，大部分都会调用通过jQuery.extend扩展的同名函数
+&ndash;// 如果传入两个或多个对象，所有对象的属性会被添加到第一个对象target
+&ndash;// 如果只传入一个对象，则将对象的属性添加到jQuery对象中。
+&ndash;// 用这种方式，我们可以为jQuery命名空间增加新的方法。可以用于编写jQuery插件。
+&ndash;// 如果不想改变传入的对象，可以传入一个空对象：$.extend({}, object1, object2);
+&ndash;// 默认合并操作是不迭代的，即便target的某个属性是对象或属性，也会被完全覆盖而不是合并
+&ndash;// 从object原型继承的属性会被拷贝
+&ndash;// undefined值不会被拷贝
+&ndash;// 因为性能原因，JavaScript自带类型的属性不会合并
+&ndash;// jQuery.extend( target, [ object1 ], [ objectN ] )
+&ndash;// jQuery.extend( [ deep ], target, object1, [ objectN ] )
 jQuery.extend = jQuery.fn.extend = function() {</p>
 
 <pre><code>var options, name, src, copy, copyIsArray, clone,

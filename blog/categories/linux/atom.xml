@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | 学会欣赏]]></title>
+  <link href="http://me.94313.net/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2014-08-31T13:23:21+08:00</updated>
+  <id>http://me.94313.net/</id>
+  <author>
+    <name><![CDATA[wuchangqian]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>

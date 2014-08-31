@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Http | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/http/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-08-31T13:23:21+08:00</updated>
+  <updated>2014-08-31T19:33:04+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -20,9 +20,6 @@
     <id>http://me.94313.net/blog/2014/08/31/apache-http-request-process</id>
     <content type="html"><![CDATA[<p>Apache请求处理循环的11个阶段都做了哪些事情呢？</p>
 
-
-
-
 <ol>
 <li>Post-Read-Request阶段: 在正常请求处理流程中，这是模块可以插入钩子的第一个阶段。对于那些想很早进入处理请求的模块来说，这个阶段可以被利用。</li>
 <li>URI Translation阶段 :  Apache在本阶段的主要工作：将请求的URL映射到本地文件系统。模块可以在这阶段插入钩子，执行自己的映射逻辑。mod_alias就是利用这个阶段工作的。</li>
@@ -36,8 +33,6 @@
 <li>Logging阶段 :  Apache在本阶段的主要工作：在回复已经发送给客户端之后记录事务。模块可能修改或者替换Apache的标准日志记录。</li>
 <li>CleanUp阶段 : Apache在本阶段的主要工作：清理本次请求事务处理完成之后遗留的环境，比如文件、目录的处理或者Socket的关闭等等，这是Apache一次请求处理的最后一个阶段。</li>
 </ol>
-
-
 
 ]]></content>
   </entry>

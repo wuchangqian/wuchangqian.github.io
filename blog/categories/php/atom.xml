@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Php | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-08-31T19:11:52+08:00</updated>
+  <updated>2014-08-31T13:23:21+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>php的break关键字可以接受一个可选的数字参数来决定跳出几重循环
 break 结束当前 for，foreach，while，do-while 或者 switch 结构的执行。
 break可以接受一个可选的数字参数来决定跳出几重循环。</p>
+
+
+
 
 <pre><code>&lt;?php
     $arr = array('one', 'two', 'three', 'four', 'stop', 'five');
@@ -47,6 +50,7 @@ break可以接受一个可选的数字参数来决定跳出几重循环。</p>
         }
     }
 </code></pre>
+
 ]]></content>
   </entry>
   

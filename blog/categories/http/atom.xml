@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Http | 学会欣赏]]></title>
+  <link href="http://me.94313.net/blog/categories/http/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2014-08-31T11:56:47+08:00</updated>
+  <id>http://me.94313.net/</id>
+  <author>
+    <name><![CDATA[wuchangqian]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Apache处理http请求的生命周期]]></title>
+    <link href="http://me.94313.net/blog/2014/08/31/apache-http-request-process/"/>
+    <updated>2014-08-31T09:49:40+08:00</updated>
+    <id>http://me.94313.net/blog/2014/08/31/apache-http-request-process</id>
+    <content type="html"><![CDATA[<p>Apache请求处理循环的11个阶段都做了哪些事情呢？</p>
+
+<ol>
+<li>Post-Read-Request阶段: 在正常请求处理流程中，这是模块可以插入钩子的第一个阶段。对于那些想很早进入处理请求的模块来说，这个阶段可以被利用。</li>
+<li>URI Translation阶段 :  Apache在本阶段的主要工作：将请求的URL映射到本地文件系统。模块可以在这阶段插入钩子，执行自己的映射逻辑。mod_alias就是利用这个阶段工作的。</li>
+<li>Header Parsing阶段 : Apache在本阶段的主要工作：检查请求的头部。由于模块可以在请求处理流程的任何一个点上执行检查请求头部的任务，因此这个钩子很少被使用。mod_setenvif就是利用这个阶段工作的。</li>
+<li>Access Control阶段 :  Apache在本阶段的主要工作：根据配置文件检查是否允许访问请求的资源。Apache的标准逻辑实现了允许和拒绝指令。mod_authz_host就是利用这个阶段工作的。</li>
+<li>Authentication阶段 :  Apache在本阶段的主要工作：按照配置文件设定的策略对用户进行认证，并设定用户名区域。模块可以在这阶段插入钩子，实现一个认证方法。</li>
+<li>Authorization阶段 :  Apache在本阶段的主要工作：根据配置文件检查是否允许认证过的用户执行请求的操作。模块可以在这阶段插入钩子，实现一个用户权限管理的方法。</li>
+<li>MIME Type Checking阶段 :  Apache在本阶段的主要工作：根据请求资源的MIME类型的相关规则，判定将要使用的内容处理函数。标准模块mod_negotiation和mod_mime实现了这个钩子。</li>
+<li>FixUp阶段 :  这是一个通用的阶段，允许模块在内容生成器之前，运行任何必要的处理流程。和Post_Read_Request类似，这是一个能够捕获任何信息的钩子，也是最常使用的钩子。</li>
+<li>Response阶段 : Apache在本阶段的主要工作：生成返回客户端的内容，负责给客户端发送一个恰当的回复。这个阶段是整个处理流程的核心部分。</li>
+<li>Logging阶段 :  Apache在本阶段的主要工作：在回复已经发送给客户端之后记录事务。模块可能修改或者替换Apache的标准日志记录。</li>
+<li>CleanUp阶段 : Apache在本阶段的主要工作：清理本次请求事务处理完成之后遗留的环境，比如文件、目录的处理或者Socket的关闭等等，这是Apache一次请求处理的最后一个阶段。</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

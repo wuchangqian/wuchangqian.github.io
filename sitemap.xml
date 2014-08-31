@@ -41,21 +41,33 @@
   
   <url>
     <loc>http://me.94313.net/blog/archives/</loc>
+<<<<<<< HEAD
     <lastmod>2014-08-31T19:34:45+08:00</lastmod>
+=======
+    <lastmod>2014-08-31T19:33:04+08:00</lastmod>
+>>>>>>> 66dc4933dc99895a6e124e8f605caa7184359cda
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://me.94313.net/</loc>
+<<<<<<< HEAD
     <lastmod>2014-08-31T19:34:45+08:00</lastmod>
+=======
+    <lastmod>2014-08-31T19:33:04+08:00</lastmod>
+>>>>>>> 66dc4933dc99895a6e124e8f605caa7184359cda
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://me.94313.net/about-me/</loc>
+<<<<<<< HEAD
     <lastmod>2014-08-31T19:34:45+08:00</lastmod>
+=======
+    <lastmod>2014-08-31T19:33:04+08:00</lastmod>
+>>>>>>> 66dc4933dc99895a6e124e8f605caa7184359cda
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

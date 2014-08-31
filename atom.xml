@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[学会欣赏]]></title>
+  <link href="http://me.94313.net/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2014-08-31T18:50:20+08:00</updated>
+  <id>http://me.94313.net/</id>
+  <author>
+    <name><![CDATA[wuchangqian]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Apache处理http请求的生命周期]]></title>
+    <link href="http://me.94313.net/blog/2014/08/31/apache-http-request-process/"/>
+    <updated>2014-08-31T09:49:40+08:00</updated>
+    <id>http://me.94313.net/blog/2014/08/31/apache-http-request-process</id>
+    <content type="html"><![CDATA[<p>Apache请求处理循环的11个阶段都做了哪些事情呢？</p>
+
+<ol>
+<li>Post-Read-Request阶段: 在正常请求处理流程中，这是模块可以插入钩子的第一个阶段。对于那些想很早进入处理请求的模块来说，这个阶段可以被利用。</li>
+<li>URI Translation阶段 :  Apache在本阶段的主要工作：将请求的URL映射到本地文件系统。模块可以在这阶段插入钩子，执行自己的映射逻辑。mod_alias就是利用这个阶段工作的。</li>
+<li>Header Parsing阶段 : Apache在本阶段的主要工作：检查请求的头部。由于模块可以在请求处理流程的任何一个点上执行检查请求头部的任务，因此这个钩子很少被使用。mod_setenvif就是利用这个阶段工作的。</li>
+<li>Access Control阶段 :  Apache在本阶段的主要工作：根据配置文件检查是否允许访问请求的资源。Apache的标准逻辑实现了允许和拒绝指令。mod_authz_host就是利用这个阶段工作的。</li>
+<li>Authentication阶段 :  Apache在本阶段的主要工作：按照配置文件设定的策略对用户进行认证，并设定用户名区域。模块可以在这阶段插入钩子，实现一个认证方法。</li>
+<li>Authorization阶段 :  Apache在本阶段的主要工作：根据配置文件检查是否允许认证过的用户执行请求的操作。模块可以在这阶段插入钩子，实现一个用户权限管理的方法。</li>
+<li>MIME Type Checking阶段 :  Apache在本阶段的主要工作：根据请求资源的MIME类型的相关规则，判定将要使用的内容处理函数。标准模块mod_negotiation和mod_mime实现了这个钩子。</li>
+<li>FixUp阶段 :  这是一个通用的阶段，允许模块在内容生成器之前，运行任何必要的处理流程。和Post_Read_Request类似，这是一个能够捕获任何信息的钩子，也是最常使用的钩子。</li>
+<li>Response阶段 : Apache在本阶段的主要工作：生成返回客户端的内容，负责给客户端发送一个恰当的回复。这个阶段是整个处理流程的核心部分。</li>
+<li>Logging阶段 :  Apache在本阶段的主要工作：在回复已经发送给客户端之后记录事务。模块可能修改或者替换Apache的标准日志记录。</li>
+<li>CleanUp阶段 : Apache在本阶段的主要工作：清理本次请求事务处理完成之后遗留的环境，比如文件、目录的处理或者Socket的关闭等等，这是Apache一次请求处理的最后一个阶段。</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PHP Break 关键字]]></title>
+    <link href="http://me.94313.net/blog/2014/08/31/php-break-keywork/"/>
+    <updated>2014-08-31T09:26:19+08:00</updated>
+    <id>http://me.94313.net/blog/2014/08/31/php-break-keywork</id>
+    <content type="html"><![CDATA[<p>php的break关键字可以接受一个可选的数字参数来决定跳出几重循环
+break 结束当前 for，foreach，while，do-while 或者 switch 结构的执行。
+break可以接受一个可选的数字参数来决定跳出几重循环。</p>
+
+<pre><code>&lt;?php
+    $arr = array('one', 'two', 'three', 'four', 'stop', 'five');
+    while (list (, $val) = each($arr)) {
+        if ($val == 'stop') {
+            break;    /* You could also write 'break 1;' here. */
+        }
+        echo "$val&lt;br /&gt;\n";
+    }
+
+    /* Using the optional argument. */
+
+    $i = 0;
+    while (++$i) {
+        switch ($i) {
+        case 5:
+            echo "At 5&lt;br /&gt;\n";
+            break 1;  /* Exit only the switch. */
+        case 10:
+            echo "At 10; quitting&lt;br /&gt;\n";
+            break2;  /* Exit the switch and the while. */
+        default:
+            break;
+        }
+    }
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery.extend()函数注释说明]]></title>
+    <link href="http://me.94313.net/blog/2013/08/30/jquery-extend-method/"/>
+    <updated>2013-08-30T14:11:50+08:00</updated>
+    <id>http://me.94313.net/blog/2013/08/30/jquery-extend-method</id>
+    <content type="html"><![CDATA[<ul>
+<li>// 第一个参数是true，则会迭代合并</li>
+<li>// 合并两个或更多对象的属性到第一个对象中，jQuery后续的大部分功能都通过该函数扩展</li>
+<li>// 通过jQuery.fn.extend扩展的函数，大部分都会调用通过jQuery.extend扩展的同名函数</li>
+<li>// 如果传入两个或多个对象，所有对象的属性会被添加到第一个对象target</li>
+<li>// 如果只传入一个对象，则将对象的属性添加到jQuery对象中。</li>
+<li>// 用这种方式，我们可以为jQuery命名空间增加新的方法。可以用于编写jQuery插件。</li>
+<li>// 如果不想改变传入的对象，可以传入一个空对象：$.extend({}, object1, object2);</li>
+<li>// 默认合并操作是不迭代的，即便target的某个属性是对象或属性，也会被完全覆盖而不是合并</li>
+<li>// 从object原型继承的属性会被拷贝</li>
+<li>// undefined值不会被拷贝</li>
+<li>// 因为性能原因，JavaScript自带类型的属性不会合并</li>
+<li>// jQuery.extend( target, [ object1 ], [ objectN ] )</li>
+<li>// jQuery.extend( [ deep ], target, object1, [ objectN ] )</li>
+</ul>
+
+
+<pre>
+    jQuery.extend = jQuery.fn.extend = function() {
+        var options, name, src, copy, copyIsArray, clone,
+           target = arguments[0] || {},
+           i = 1,
+           length = arguments.length,
+           deep = false;
+
+        // Handle a deep copy situation
+        // 如果第一个参数是boolean型，可能是深度拷贝
+        if ( typeof target === "boolean" ) {
+           deep = target;
+           target = arguments[1] || {};
+           // skip the boolean and the target
+           // 跳过boolean和target，从第3个开始
+           i = 2;
+        }
+
+        // Handle case when target is a string or something (possible in deep copy)
+        // target不是对象也不是函数，则强制设置为空对象
+        if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
+           target = {};
+        }
+
+        // extend jQuery itself if only one argument is passed
+        // 如果只传入一个参数，则认为是对jQuery扩展
+        if ( length === i ) {
+           target = this;
+           --i;
+        }
+
+        for ( ; i < length; i++ ) {
+           // Only deal with non-null/undefined values
+           // 只处理非空参数
+           if ( (options = arguments[ i ]) != null ) {
+               // Extend the base object
+               for ( name in options ) {
+                  src = target[ name ];
+                  copy = options[ name ];
+
+                  // Prevent never-ending loop
+                  // 避免循环引用
+                  if ( target === copy ) {
+                      continue;
+                  }
+
+                  // Recurse if we're merging plain objects or arrays
+                  // 深度拷贝且值是纯对象或数组，则递归
+                  if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
+                      // 如果copy是数组
+                      if ( copyIsArray ) {
+                         copyIsArray = false;
+                         // clone为src的修正值
+                         clone = src && jQuery.isArray(src) ? src : [];
+                      // 如果copy的是对象
+                      } else {
+                         // clone为src的修正值
+                         clone = src && jQuery.isPlainObject(src) ? src : {};
+                      }
+
+                      // Never move original objects, clone them
+                      // 递归调用jQuery.extend
+                      target[ name ] = jQuery.extend( deep, clone, copy );
+
+                  // Don't bring in undefined values
+                  // 不能拷贝空值
+                  } else if ( copy !== undefined ) {
+                      target[ name ] = copy;
+                  }
+               }
+           }
+        }
+
+        // Return the modified object
+        // 返回更改后的对象
+        return target;
+    };
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RSA加密算法简单介绍]]></title>
+    <link href="http://me.94313.net/blog/2012/05/30/intr-rsa/"/>
+    <updated>2012-05-30T20:40:02+08:00</updated>
+    <id>http://me.94313.net/blog/2012/05/30/intr-rsa</id>
+    <content type="html"><![CDATA[<p>这种算法1978年就出现了，它是第一个既能用于数据加密也能用于数字签名的算法。它易于理解和操作，也很流行。
+   算法的名字以发明者的名字命名：Ron Rivest, AdiShamir 和Leonard Adleman。
+   　　RSA算法是一种非对称密码算法，所谓非对称，就是指该算法需要一对密钥，使用其中一个加密，则需要用另一个
+   才能解密。
+   　　RSA的算法涉及三个参数，n、e、d。
+   　　其中，n是两个大质数p、q的积。n的二进制表示时所占用的位数，就是所谓的密钥长度。
+   　　e和d是一对相关的值，e可以任意取，但要求满足e&lt;(p-1)<em>(q-1)并具 e与(p-1)</em>(q-1)互质（就是最大公约数为1）；
+   再选择d，要求(d<em>e)mod((p-1)</em>(q-1))=1。
+   　　(n及e),(n及d)就是密钥对。
+   　　RSA加解密的算法完全相同,设M为明文，c为密文，则：</p>
+
+<pre><code>   加密：C=M^e mod n; 
+   解密：m=c^d mod n;
+</code></pre>
+
+<p>   　　注：上面两式中的e和d可以互换。</p>
+
+<pre><code>   n d两个数构成公钥，可以告诉别人；
+   n e两个数构成私钥，e自己保留，不让任何人知道。
+   给别人发送的信息使用私钥e加密,只要别人能用公钥d解开就证明信息是由你发送的,构成了签名机制,起验证身份的作用。
+</code></pre>
+
+<p>   别人给你发送信息时使用d加密，这样只有拥有e的你能够对其解密,起到数据保密的作用。<br/>
+   整理一下：</p>
+
+<pre><code>为实现RSA的加解密
+最终目标：找三个参数 n,e,d
+1、n = p*q (p,q 是两个质数)
+2、 
+    1)、φ(N)=(p-1)*(q-1)
+    2)、取任何一个数e,要求满足e&lt;φ(N)并且e与φ(N)互质
+3、(d*e) modφ(N)=1
+</code></pre>
+
+<p>//================================================================
+加密的明文长度不能超过RSA密钥的长度-11，比如1024位的，明文长度不能超过117。 <br/>
+密文的长度总是密钥的长度的一半，比如1024位的，密文长度是64，如果是1032位，密文长度是65位。</p>
+]]></content>
+  </entry>
+  
+</feed>

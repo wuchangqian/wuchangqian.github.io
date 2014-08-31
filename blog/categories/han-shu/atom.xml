@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 函数 | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/han-shu/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-08-31T19:16:45+08:00</updated>
+  <updated>2014-08-31T13:23:21+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -33,6 +33,8 @@
 <li>// jQuery.extend( target, [ object1 ], [ objectN ] )</li>
 <li>// jQuery.extend( [ deep ], target, object1, [ objectN ] )</li>
 </ul>
+
+
 
 
 <pre>
@@ -113,6 +115,8 @@
         return target;
     };
 </pre>
+
+
 
 ]]></content>
   </entry>

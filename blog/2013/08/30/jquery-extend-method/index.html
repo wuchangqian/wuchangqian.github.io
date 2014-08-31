@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script async="true" src="/javascripts/libs/jquery.min.js"></script>
+  <title>jQuery.extend()函数注释说明 - 学会欣赏</title>
+  <meta name="author" content="wuchangqian">
+  
+  <meta name="description" content="// 第一个参数是true，则会迭代合并
+// 合并两个或更多对象的属性到第一个对象中，jQuery后续的大部分功能都通过该函数扩展
+// 通过jQuery.fn.extend扩展的函数，大部分都会调用通过jQuery.extend扩展的同名函数
+// 如果传入两个或多个对象， &hellip;">
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="canonical" href="http://me.94313.net/blog/2013/08/30/jquery-extend-method">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="学会欣赏" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  
+
+</head>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">学会欣赏</a></h1>
+  
+    <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:me.94313.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog[首页]</a></li>
+  <li><a href="/blog/archives">Archives[归档]</a></li>
+  <li><a href="/about-me">About-Me[关于]</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">jQuery.extend()函数注释说明</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-08-30T14:11:50+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:11 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul>
+<li>// 第一个参数是true，则会迭代合并</li>
+<li>// 合并两个或更多对象的属性到第一个对象中，jQuery后续的大部分功能都通过该函数扩展</li>
+<li>// 通过jQuery.fn.extend扩展的函数，大部分都会调用通过jQuery.extend扩展的同名函数</li>
+<li>// 如果传入两个或多个对象，所有对象的属性会被添加到第一个对象target</li>
+<li>// 如果只传入一个对象，则将对象的属性添加到jQuery对象中。</li>
+<li>// 用这种方式，我们可以为jQuery命名空间增加新的方法。可以用于编写jQuery插件。</li>
+<li>// 如果不想改变传入的对象，可以传入一个空对象：$.extend({}, object1, object2);</li>
+<li>// 默认合并操作是不迭代的，即便target的某个属性是对象或属性，也会被完全覆盖而不是合并</li>
+<li>// 从object原型继承的属性会被拷贝</li>
+<li>// undefined值不会被拷贝</li>
+<li>// 因为性能原因，JavaScript自带类型的属性不会合并</li>
+<li>// jQuery.extend( target, [ object1 ], [ objectN ] )</li>
+<li>// jQuery.extend( [ deep ], target, object1, [ objectN ] )</li>
+</ul>
+
+
+<pre>
+    jQuery.extend = jQuery.fn.extend = function() {
+        var options, name, src, copy, copyIsArray, clone,
+           target = arguments[0] || {},
+           i = 1,
+           length = arguments.length,
+           deep = false;
+
+        // Handle a deep copy situation
+        // 如果第一个参数是boolean型，可能是深度拷贝
+        if ( typeof target === "boolean" ) {
+           deep = target;
+           target = arguments[1] || {};
+           // skip the boolean and the target
+           // 跳过boolean和target，从第3个开始
+           i = 2;
+        }
+
+        // Handle case when target is a string or something (possible in deep copy)
+        // target不是对象也不是函数，则强制设置为空对象
+        if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
+           target = {};
+        }
+
+        // extend jQuery itself if only one argument is passed
+        // 如果只传入一个参数，则认为是对jQuery扩展
+        if ( length === i ) {
+           target = this;
+           --i;
+        }
+
+        for ( ; i < length; i++ ) {
+           // Only deal with non-null/undefined values
+           // 只处理非空参数
+           if ( (options = arguments[ i ]) != null ) {
+               // Extend the base object
+               for ( name in options ) {
+                  src = target[ name ];
+                  copy = options[ name ];
+
+                  // Prevent never-ending loop
+                  // 避免循环引用
+                  if ( target === copy ) {
+                      continue;
+                  }
+
+                  // Recurse if we're merging plain objects or arrays
+                  // 深度拷贝且值是纯对象或数组，则递归
+                  if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
+                      // 如果copy是数组
+                      if ( copyIsArray ) {
+                         copyIsArray = false;
+                         // clone为src的修正值
+                         clone = src && jQuery.isArray(src) ? src : [];
+                      // 如果copy的是对象
+                      } else {
+                         // clone为src的修正值
+                         clone = src && jQuery.isPlainObject(src) ? src : {};
+                      }
+
+                      // Never move original objects, clone them
+                      // 递归调用jQuery.extend
+                      target[ name ] = jQuery.extend( deep, clone, copy );
+
+                  // Don't bring in undefined values
+                  // 不能拷贝空值
+                  } else if ( copy !== undefined ) {
+                      target[ name ] = copy;
+                  }
+               }
+           }
+        }
+
+        // Return the modified object
+        // 返回更改后的对象
+        return target;
+    };
+</pre>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-08-30T14:11:50+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:11 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/jquery/'>jquery</a>, <a class='category' href='/blog/categories/han-shu/'>函数</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/30/intr-rsa/" title="Previous Post: RSA加密算法简单介绍">&laquo; RSA加密算法简单介绍</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/31/php-break-keywork/" title="Next Post: PHP break 关键字">PHP break 关键字 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/31/apache-http-request-process/">Apache处理http请求的生命周期</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/31/php-break-keywork/">PHP Break 关键字</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/30/jquery-extend-method/">jQuery.extend()函数注释说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/30/intr-rsa/">RSA加密算法简单介绍</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/wuchangqian">@wuchangqian</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'wuchangqian',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - wuchangqian -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

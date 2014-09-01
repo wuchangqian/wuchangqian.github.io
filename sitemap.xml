@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://me.94313.net/blog/2014/09/01/sed-man-page/</loc>
+    <lastmod>2014-09-01T18:30:03+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://me.94313.net/blog/2014/08/31/html-doctype/</loc>
     <lastmod>2014-08-31T19:29:52+08:00</lastmod>
     <priority>0.8</priority>
@@ -47,21 +53,21 @@
   
   <url>
     <loc>http://me.94313.net/blog/archives/</loc>
-    <lastmod>2014-08-31T23:18:12+08:00</lastmod>
+    <lastmod>2014-09-01T18:50:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://me.94313.net/</loc>
-    <lastmod>2014-08-31T23:18:12+08:00</lastmod>
+    <lastmod>2014-09-01T18:50:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://me.94313.net/about-me/</loc>
-    <lastmod>2014-08-31T23:18:12+08:00</lastmod>
+    <lastmod>2014-09-01T18:50:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

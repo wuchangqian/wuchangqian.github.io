@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Php | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-09-01T18:50:25+08:00</updated>
+  <updated>2014-09-02T23:58:48+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -31,6 +31,9 @@ bash作业管理基础知识：如使用&amp;、Ctrl-C、fg、bg、Ctrl-Z、jobs
 学习使用apt-get和yum管理软件包。
 提升日常工作效率</p>
 
+
+
+
 <p>在bash中，可以使用Ctrl+R命令搜索命令行历史记录。
 在bash中，可以使用Ctrl+W删除最后一个单词，使用Ctrl+U删除整行。
 使用cd -命令返回之前的工作目录，使用cd ..命令返回上层目录。
@@ -43,11 +46,23 @@ $ cat hosts | xargs -I{} ssh root@{} hostnameX
 使用netstat -lntp命令查看侦听进程，并参考lsof命令。
 在bash脚本中使用subshells对命令进行分组：</p>
 
+
+
+
 <h1>do something in current dir</h1>
+
+
+
 
 <p>(cd /some/other/dir; other-command)</p>
 
+
+
+
 <h1>continue in original dir</h1>
+
+
+
 
 <p>字符串修剪（Trimming Strings）：${var%suffix}和${var#prefix}。例如if var=foo.pdf then echo ${var%.pdf}.txt prints &ldquo;foo.txt&#8221;。
 命令的输出可以当做文件使用。例如，比较本地和远程的/etc/hosts文件：
@@ -64,6 +79,9 @@ lynx -dump -stdin
 使用Alt+shift+3快捷键可以在行前添加注释“#”。
 数据处理</p>
 
+
+
+
 <p>了解sort和uniq命令。
 了解cut、paste和join命令。
 了解如何对文本文件做交集、并集和差集：
@@ -76,6 +94,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
 文件分割：了解split（按大小分割）和csplit（按匹配分割）命令。
 系统诊断</p>
 
+
+
+
 <p>使用iostat、netstat、top和dstat命令查看磁盘、处理器和网络的状态。
 使用free、vmstat等命令了解系统内存状态。
 使用mtr网络诊断工具。
@@ -87,6 +108,7 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
 了解如何使用gdb连接到运行中的进程，并进行堆栈跟踪。
 有关/proc的知识非常重要。
 如何诊断已发生的错误？Sar命令是一种很好的选择，它可以收集、保存并报告系统信息。</p>
+
 ]]></content>
   </entry>
   
@@ -98,6 +120,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
     <content type="html"><![CDATA[<p>php的break关键字可以接受一个可选的数字参数来决定跳出几重循环
 break 结束当前 for，foreach，while，do-while 或者 switch 结构的执行。
 break可以接受一个可选的数字参数来决定跳出几重循环。</p>
+
+
+
 
 <pre><code>&lt;?php
     $arr = array('one', 'two', 'three', 'four', 'stop', 'five');
@@ -124,6 +149,7 @@ break可以接受一个可选的数字参数来决定跳出几重循环。</p>
         }
     }
 </code></pre>
+
 ]]></content>
   </entry>
   

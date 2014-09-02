@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-09-01T18:50:25+08:00</updated>
+  <updated>2014-09-02T23:58:48+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -20,15 +20,30 @@
     <id>http://me.94313.net/blog/2014/09/01/sed-man-page</id>
     <content type="html"><![CDATA[<p>NAME</p>
 
+
+
+
 <pre><code>   sed - stream editor for filtering and transforming text
 </code></pre>
 
+
+
+
 <p>SYNOPSIS</p>
+
+
+
 
 <pre><code>   sed [OPTION]... {script-only-if-no-other-script} [input-file]...
 </code></pre>
 
+
+
+
 <p>DESCRIPTION</p>
+
+
+
 
 <pre><code>   Sed  is  a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file
    or input from a pipeline).  While in some ways similar to an editor which permits scripted edits (such as ed),  sed
@@ -98,13 +113,25 @@
    ject:'' field.
 </code></pre>
 
+
+
+
 <p>COMMAND SYNOPSIS</p>
+
+
+
 
 <pre><code>   This is just a brief synopsis of sed commands to serve as a reminder to those who already know sed; other  documen‐
    tation (such as the texinfo document) must be consulted for fuller descriptions.
 </code></pre>
 
+
+
+
 <p>   Zero-address &ldquo;commands&rdquo;</p>
+
+
+
 
 <pre><code>   : label
           Label for b and t commands.
@@ -115,7 +142,13 @@
    }      The closing bracket of a { } block.
 </code></pre>
 
+
+
+
 <p>   Zero- or One- address commands</p>
+
+
+
 
 <pre><code>   =      Print the current line number.
 
@@ -142,7 +175,13 @@
           extension.
 </code></pre>
 
+
+
+
 <p>   Commands which accept address ranges</p>
+
+
+
 
 <pre><code>   {      Begin a block of commands (end with a }).
 
@@ -202,7 +241,13 @@
           dest.
 </code></pre>
 
+
+
+
 <p>Addresses</p>
+
+
+
 
 <pre><code>   Sed commands can be given with no addresses, in which case the command will be executed for all input  lines;  with
    one  address, in which case the command will only be executed for input lines which match that address; or with two
@@ -249,26 +294,50 @@
           N.
 </code></pre>
 
+
+
+
 <p>REGULAR EXPRESSIONS</p>
+
+
+
 
 <pre><code>   POSIX.2 BREs should be supported, but they aren't completely because of performance problems.  The \n sequence in a
    regular expression matches the newline character, and similarly for \a, \t, and other sequences.
 </code></pre>
 
+
+
+
 <p>BUGS</p>
+
+
+
 
 <pre><code>   E-mail  bug  reports  to bug-sed@gnu.org.  Also, please include the output of ``sed --version'' in the body of your
    report if at all possible.
 </code></pre>
 
+
+
+
 <p>AUTHOR</p>
+
+
+
 
 <pre><code>   Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU sed  home  page:  &lt;http://www.gnu.org/soft‐
    ware/sed/&gt;.   General  help  using  GNU  software:  &lt;http://www.gnu.org/gethelp/&gt;.   E-mail  bug  reports to: &lt;bug-
    sed@gnu.org&gt;.  Be sure to include the word ``sed'' somewhere in the ``Subject:'' field.
 </code></pre>
 
+
+
+
 <p>COPYRIGHT</p>
+
+
+
 
 <pre><code>   Copyright  ©  2012  Free  Software   Foundation,   Inc.    License   GPLv3+:   GNU   GPL   version   3   or   later
    &lt;http://gnu.org/licenses/gpl.html&gt;.
@@ -276,7 +345,13 @@
    by law.
 </code></pre>
 
+
+
+
 <p>SEE ALSO</p>
+
+
+
 
 <pre><code>   awk(1), ed(1), grep(1), tr(1), perlre(1), sed.info, any of various books on sed, the sed FAQ
    (http://sed.sf.net/grabbag/tutorials/sedfaq.txt), http://sed.sf.net/grabbag/.
@@ -289,7 +364,11 @@
    should give you access to the complete manual.
 </code></pre>
 
+
+
+
 <p>sed 4.2.2                                                June 2013                                                  SED(1)</p>
+
 ]]></content>
   </entry>
   
@@ -311,6 +390,9 @@ bash作业管理基础知识：如使用&amp;、Ctrl-C、fg、bg、Ctrl-Z、jobs
 学习使用apt-get和yum管理软件包。
 提升日常工作效率</p>
 
+
+
+
 <p>在bash中，可以使用Ctrl+R命令搜索命令行历史记录。
 在bash中，可以使用Ctrl+W删除最后一个单词，使用Ctrl+U删除整行。
 使用cd -命令返回之前的工作目录，使用cd ..命令返回上层目录。
@@ -323,11 +405,23 @@ $ cat hosts | xargs -I{} ssh root@{} hostnameX
 使用netstat -lntp命令查看侦听进程，并参考lsof命令。
 在bash脚本中使用subshells对命令进行分组：</p>
 
+
+
+
 <h1>do something in current dir</h1>
+
+
+
 
 <p>(cd /some/other/dir; other-command)</p>
 
+
+
+
 <h1>continue in original dir</h1>
+
+
+
 
 <p>字符串修剪（Trimming Strings）：${var%suffix}和${var#prefix}。例如if var=foo.pdf then echo ${var%.pdf}.txt prints &ldquo;foo.txt&#8221;。
 命令的输出可以当做文件使用。例如，比较本地和远程的/etc/hosts文件：
@@ -344,6 +438,9 @@ lynx -dump -stdin
 使用Alt+shift+3快捷键可以在行前添加注释“#”。
 数据处理</p>
 
+
+
+
 <p>了解sort和uniq命令。
 了解cut、paste和join命令。
 了解如何对文本文件做交集、并集和差集：
@@ -356,6 +453,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
 文件分割：了解split（按大小分割）和csplit（按匹配分割）命令。
 系统诊断</p>
 
+
+
+
 <p>使用iostat、netstat、top和dstat命令查看磁盘、处理器和网络的状态。
 使用free、vmstat等命令了解系统内存状态。
 使用mtr网络诊断工具。
@@ -367,6 +467,7 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
 了解如何使用gdb连接到运行中的进程，并进行堆栈跟踪。
 有关/proc的知识非常重要。
 如何诊断已发生的错误？Sar命令是一种很好的选择，它可以收集、保存并报告系统信息。</p>
+
 ]]></content>
   </entry>
   

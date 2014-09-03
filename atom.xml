@@ -4,7 +4,7 @@
   <title><![CDATA[学会欣赏]]></title>
   <link href="http://me.94313.net/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2014-09-02T23:58:48+08:00</updated>
+  <updated>2014-09-03T10:11:48+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -699,131 +699,6 @@ end
 <p>//================================================================
 加密的明文长度不能超过RSA密钥的长度-11，比如1024位的，明文长度不能超过117。 <br/>
 密文的长度总是密钥的长度的一半，比如1024位的，密文长度是64，如果是1032位，密文长度是65位。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[HTML5-HTML4.01-XHTML元素以及它们会出现在什么文档类型(DTD)中]]></title>
-    <link href="http://me.94313.net/blog/2012/03/02/html-xhtml-tag-table/"/>
-    <updated>2012-03-02T23:54:35+08:00</updated>
-    <id>http://me.94313.net/blog/2012/03/02/html-xhtml-tag-table</id>
-    <content type="html"><![CDATA[<p>标签<strong><strong><strong><strong><strong><strong>HTML5</strong></strong></strong>HTML4.01/XHTML1.0</strong></strong></strong><strong><strong><em>XHTML 1.1
-</em></strong></strong><em><em><em><em><em><em><em><em><em><em><em><strong><strong><strong>Transitional</strong>Strict</strong>Frameset
-<a></strong></em></em></em></em></em></em></em></em></em></em></em>Yes<em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<abbr></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><em><strong><strong><strong><em>Yes
-<acronym></em></strong></strong></strong>No</em><em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes</em><strong><strong>Yes</strong></strong>______Yes</p>
-
-<p><address><em><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong></em><strong><strong>Yes</strong></strong><em>Yes</em><em><strong><strong><strong><strong>Yes
-<applet></strong></strong></strong></strong>No</em><em><strong><strong><strong><em>Yes</em></strong></strong></strong>No</em><strong><strong><em>Yes</em></strong></strong><strong><strong><em>No
-<area></em></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><strong><strong><strong><strong><em>No
-<article></em></strong></strong></strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<aside></em></strong></strong></strong><strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<audio></em></strong></strong></strong><strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<b></em></strong></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><strong><strong><em>Yes</em></strong></strong>Yes<strong><strong><strong><strong><strong>Yes
-<base></strong></strong></strong></strong></strong>Yes<em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<basefont></strong></strong></strong>No<strong><strong><strong><strong><em>Yes</em></strong></strong></strong>No</strong><strong><strong>Yes</strong></strong><strong><strong><strong>No
-<bdi></strong></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>No</em></strong><em><strong><strong>No</strong></strong><strong>No</strong></em><strong><strong><strong><strong>No
-<bdo></strong></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>No
-<big></em></strong></strong></strong><strong><strong>No</strong></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><em><strong><strong>Yes
-<blockquote></strong></strong>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<body></em></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<br></em></strong></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><em><strong><strong><strong><strong>Yes
-<button></strong></strong></strong></strong>Yes</em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes<strong><strong><em>Yes</em></strong></strong><strong><strong><em>Yes
-<canvas></em></strong></strong><strong><em>Yes</em></strong><strong><strong><em>No</em></strong></strong><strong><em>No</em></strong><strong><em>No</em></strong><em><strong><strong><strong><em>No
-<caption></em></strong></strong></strong>Yes</em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes<strong><strong><em>Yes</em></strong></strong><strong><strong><em>Yes
-<center></em></strong></strong><strong><em>No</em></strong><strong><strong><strong>Yes</strong></strong></strong><em>No</em><strong><strong><em>Yes</em></strong></strong><strong><strong><em>No
-<cite></em></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><em><strong><strong><strong><strong>Yes
-<code></strong></strong></strong></strong><strong>Yes</strong></em><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<col></em></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>No
-<colgroup></strong></strong></strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>No
-<command></strong></strong></strong><em>Yes</em><em><strong><strong><strong>No</strong></strong></strong><strong>No</strong></em><strong><em>No</em></strong><strong><strong><strong><strong>No
-<datalist></strong></strong></strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<dd></em></strong></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><strong><strong><strong><strong><em>Yes
-<del></em></strong></strong></strong></strong><strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>No
-<details></strong></strong></strong><em>Yes</em><em><strong><strong><strong>No</strong></strong></strong><strong>No</strong></em><strong><em>No</em></strong><strong><strong><strong><strong>No
-<dfn></strong></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<dir></em></strong></strong></strong><strong><strong>No</strong></strong><strong><strong><em>Yes</em></strong></strong><strong>No</strong><strong><strong>Yes</strong></strong><strong><strong><strong>No
-<div></strong></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><strong><strong><strong><strong><em>Yes
-<dl></em></strong></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<dt></em></strong></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><strong><strong><strong><strong><em>Yes
-<em></em></strong></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<embed></em></strong></strong></strong><strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><em><strong><strong><strong>No
-<fieldset></strong></strong></strong>Yes</em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes<strong><strong><em>Yes</em></strong></strong><em><strong><strong>Yes
-<figcaption></strong></strong>Yes</em><em><strong><strong><strong>No</strong></strong></strong><strong>No</strong></em><strong><em>No</em></strong><strong><strong><strong><strong>No
-<figure></strong></strong></strong></strong>Yes<strong><strong><strong><strong>No</strong></strong></strong></strong>No<strong><strong><strong>No</strong></strong></strong><strong><strong><em>No
-<font></em></strong></strong><strong><strong><em>No</em></strong></strong><strong><strong>Yes</strong></strong><strong><em>No</em></strong><strong><em>Yes</em></strong><em><strong><strong><strong>No
-<footer></strong></strong></strong><strong>Yes</strong></em><strong><strong><em>No</em></strong></strong><strong><em>No</em></strong><strong><em>No</em></strong><strong><strong><strong><strong>No
-<form></strong></strong></strong></strong><strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<frame></strong></strong></strong><strong><em>No</em></strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>Yes</strong></strong><strong><strong><strong>No
-<frameset></strong></strong></strong>No<em><strong><strong><strong><strong>No</strong></strong></strong></strong>No</em><strong><strong><em>Yes</em></strong></strong><strong><strong><em>No
-<head></em></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><em><strong><strong><strong><strong>Yes
-<header></strong></strong></strong></strong>Yes</em><em><strong><strong><strong>No</strong></strong></strong><strong>No</strong></em><strong><em>No</em></strong><em><strong><strong><strong><em>No
-<h1>&ndash;<h6></em></strong></strong></strong>Yes</em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes<strong><strong><em>Yes</em></strong></strong><strong><strong><em>Yes
-<hr></em></strong></strong><em><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong></em><strong><strong>Yes</strong></strong><em>Yes</em><em><strong><strong><strong><strong>Yes
-<html></strong></strong></strong></strong><strong>Yes</strong></em><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<i></em></strong></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><strong><strong><em>Yes</em></strong></strong>Yes<strong><strong><strong><strong><strong>Yes
-<iframe></strong></strong></strong></strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>No</em><strong><strong><em>Yes</em></strong></strong><strong><strong><em>No
-<img></em></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><strong><strong><em>Yes</em></strong></strong>Yes<em><strong><strong><strong><strong><em>Yes
-<input></em></strong></strong></strong></strong>Yes</em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes<strong><strong><em>Yes</em></strong></strong><strong><strong><em>Yes
-<ins></em></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><strong><strong><em>Yes</em></strong></strong>Yes<strong><strong><strong><strong><strong>No
-<keygen></strong></strong></strong></strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<kbd></em></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>Yes
-<label></strong></strong></strong></strong><em>Yes</em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes<strong><strong><em>Yes</em></strong></strong><strong><strong><em>Yes
-<legend></em></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<li></em></strong></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><em><strong><strong><strong><strong>Yes
-<link></strong></strong></strong></strong><strong>Yes</strong></em><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<map></em></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>No
-<mark></strong></strong></strong></strong><strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<menu></em></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>No</strong><strong><strong>Yes</strong></strong><strong><strong><strong>No
-<meta></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>Yes
-<meter></strong></strong></strong></strong><em>Yes</em><em><strong><strong><strong>No</strong></strong></strong><strong>No</strong></em><strong><em>No</em></strong><strong><strong><strong><strong>No
-<nav></strong></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>No</em></strong></strong><strong><em>No</em></strong><strong><em>No</em></strong><strong><strong><strong><strong>No
-<noframes></strong></strong></strong>No</strong><strong><strong><strong><em>Yes</em></strong></strong></strong>No<strong><strong><strong>Yes</strong></strong></strong><strong><strong>No
-<noscript></strong></strong><strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<object></strong></strong></strong><strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<ol></strong></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><strong><strong><em>Yes</em></strong></strong>Yes<strong><strong><strong><strong><strong>Yes
-<optgroup></strong></strong></strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>Yes
-<option></strong></strong></strong></strong>Yes<em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<output></strong></strong></strong><strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<p></em></strong></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><strong><strong><em>Yes</em></strong></strong>Yes<em><strong><strong><strong><strong><em>Yes
-<param></em></strong></strong></strong></strong>Yes</em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes<strong><strong><em>Yes</em></strong></strong><strong><strong><em>Yes
-<pre></em></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><strong><strong><em>Yes</em></strong></strong>Yes<strong><strong><strong><strong><strong>Yes
-<progress></strong></strong></strong>Yes</strong></strong><strong><strong>No</strong></strong><strong><strong>No</strong></strong><strong>No</strong><strong><strong><strong><strong><em>No
-<q></em></strong></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>Yes
-<rp></strong></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>No</strong></strong><strong><strong>No</strong></strong><strong>No</strong><strong><strong><strong><strong><em>No
-<rt></em></strong></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>No</em></strong></strong><strong><em>No</em></strong><strong><em>No</em></strong><strong><strong><strong><strong>No
-<ruby></strong></strong></strong></strong><strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<s></em></strong></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><em><strong><strong>No</strong></strong><strong>Yes</strong></em><strong><strong><strong><em>No
-<samp></em></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><em><strong><strong><strong>Yes
-<script></strong></strong></strong><strong>Yes</strong></em><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<section></em></strong></strong></strong>Yes<strong><strong><strong><strong>No</strong></strong></strong></strong>No<strong><strong><strong>No</strong></strong></strong><strong><strong><em>No
-<select></em></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<small></em></strong></strong></strong><strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<source></strong></strong></strong><strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<span></em></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><em><strong><strong><strong>Yes
-<strike></strong></strong></strong><strong>No</strong></em><strong><strong><strong>Yes</strong></strong></strong><em>No</em><strong><strong><em>Yes</em></strong></strong><strong><strong><em>No
-<strong></em></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<style></em></strong></strong></strong><strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<sub></strong></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><strong><strong><strong><strong><em>Yes
-<summary></em></strong></strong></strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<sup></em></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>Yes
-<table></strong></strong></strong></strong><em>Yes</em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes<strong><strong><em>Yes</em></strong></strong><strong><strong><em>Yes
-<tbody></em></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>No
-<td></strong></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>Yes
-<textarea></strong></strong></strong>Yes</strong><strong><strong><strong>Yes</strong></strong></strong><em>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<tfoot></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>No
-<th></em></strong></strong></strong><strong><strong><em>Yes</em></strong></strong><strong><em>Yes</em></strong><strong><strong>Yes</strong></strong><em>Yes</em><strong><strong><strong><strong><em>Yes
-<thead></em></strong></strong></strong></strong>Yes<em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>No
-<time></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>No</strong></strong><strong><strong>No</strong></strong><strong>No</strong><strong><strong><strong><strong><em>No
-<title></em></strong></strong></strong></strong>Yes<em><strong><strong><strong><em>Yes</em></strong></strong></strong>Yes</em><strong><strong>Yes</strong></strong><strong><strong><strong>Yes
-<tr></strong></strong></strong><strong><strong><strong>Yes</strong></strong></strong><strong>Yes</strong><strong><strong><em>Yes</em></strong></strong>Yes<em><strong><strong><strong><strong><em>Yes
-<track></em></strong></strong></strong></strong>Yes</em><em><strong><strong><strong>No</strong></strong></strong><strong>No</strong></em><strong><em>No</em></strong><strong><strong><strong><strong>No
-<tt></strong></strong></strong></strong><strong><strong>No</strong></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<u></em></strong></strong></strong><strong><strong><strong>No</strong></strong></strong><strong><em>Yes</em></strong><strong><strong>No</strong></strong><strong>Yes</strong><strong><strong><strong><strong>No
-<ul></strong></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>Yes</strong></strong><strong><em>Yes</em></strong><strong>Yes</strong><strong><strong><strong><strong>Yes
-<var></strong></strong></strong></strong><strong><em>Yes</em></strong><strong><strong><em>Yes</em></strong></strong><strong>Yes</strong><strong><em>Yes</em></strong><strong><strong><strong><em>Yes
-<video></em></strong></strong></strong><strong>Yes</strong><strong><strong><strong>No</strong></strong></strong><strong>No</strong><strong><strong>No</strong></strong><strong><strong><strong><em>No
-<wbr></em></strong></strong></strong><strong><strong>Yes</strong></strong><strong><strong>No</strong></strong><strong><strong>No</strong></strong><strong>No</strong>_________No</p>
 ]]></content>
   </entry>
   

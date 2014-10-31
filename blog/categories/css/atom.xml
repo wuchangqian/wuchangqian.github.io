@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Css | 学会欣赏]]></title>
+  <link href="http://me.94313.net/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2014-10-31T19:09:36+08:00</updated>
+  <id>http://me.94313.net/</id>
+  <author>
+    <name><![CDATA[wuchangqian]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Css-clearfix]]></title>
+    <link href="http://me.94313.net/blog/2014/10/19/css-clearfix/"/>
+    <updated>2014-10-19T11:20:41+08:00</updated>
+    <id>http://me.94313.net/blog/2014/10/19/css-clearfix</id>
+    <content type="html"><![CDATA[<pre><code>&lt;style&gt;
+.clearfix:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ".";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix{zoom: 1;}
+*:first-child + html .clearfix{zoom: 1;}
+&lt;/style&gt;
+&lt;div class="clearfix" style="border: 2px solid red;"&gt;
+    &lt;div style="float: left; width: 80px; height: 80px; border: 1px solid blue;"&gt;TEST DIV&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>说明：</h3>
+
+<ol>
+<li>首先是利用:after这个伪类来兼容FF、Chrome等支持标准的浏览器。:after伪类IE不支持，它用来和content属性一起使用设置在对象后的内容，例如：a:after{content:&ldquo;(link)&rdquo;;}这个CSS将会让a标签内的文本后边加上link文本文字。</li>
+<li>利用“* html”这个只有IE6认识的选择符，设置缩放属性“zoom: 1;”实现兼容IE6。</li>
+<li>利用“*:first-child + html”这个只有IE7认识的选择符，设置缩放属性“zoom: 1;”实现兼容IE7。</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -9,7 +9,9 @@
   <title>学会欣赏</title>
   <meta name="author" content="wuchangqian">
   
-  <meta name="description" content="NAME sed - stream editor for filtering and transforming text SYNOPSIS sed [OPTION]... {script-only-if-no-other-script} [input-file]... DESCRIPTION &hellip;">
+  <meta name="description" content="&lt;style&gt;
+.clearfix:after{ visibility: hidden; display: block; font-size: 0; content: "."; clear: both; height: 0;
+} * html .clearfix{zoom: 1 &hellip;">
   
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -57,6 +59,160 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-19T11:20:41+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:20 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre><code>&lt;style&gt;
+.clearfix:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ".";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix{zoom: 1;}
+*:first-child + html .clearfix{zoom: 1;}
+&lt;/style&gt;
+&lt;div class="clearfix" style="border: 2px solid red;"&gt;
+    &lt;div style="float: left; width: 80px; height: 80px; border: 1px solid blue;"&gt;TEST DIV&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>说明：</h3>
+
+<ol>
+<li>首先是利用:after这个伪类来兼容FF、Chrome等支持标准的浏览器。:after伪类IE不支持，它用来和content属性一起使用设置在对象后的内容，例如：a:after{content:&ldquo;(link)&rdquo;;}这个CSS将会让a标签内的文本后边加上link文本文字。</li>
+<li>利用“* html”这个只有IE6认识的选择符，设置缩放属性“zoom: 1;”实现兼容IE6。</li>
+<li>利用“*:first-child + html”这个只有IE7认识的选择符，设置缩放属性“zoom: 1;”实现兼容IE7。</li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-19T10:58:37+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:58 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>信息产业部ICP备案,主要是针对非经营性网站，任何一个在国内的网站都要备案。审批机构：工业与信息化部</li>
+<li>电信与信息服务业务经营许可证(ICP)主要是针对经营性互联网信息服务网站，注册资金要求100万以上，北京的证叫这个名字，全国其它地方的证的名称为“增值电信业务经营许可证”，经营范围为 互联网信息服务业务。审批机构：各地通信管理局</li>
+<li>电子公告服务:电信业务审批主要是针对设有电子公告服务(bbs)论坛网站。审批机构：各 地通信管理局</li>
+<li>经营性网站备案,经营性网站备案，是指经营性网站向工商行政管理机关申请备案，工商行政管 理机关在网站的首页上加贴经营性网站备案电子标识，并将备案信息向社会公开。审批机构：北京市工商行政管理局</li>
+<li>增值电信业务经营许可证(移动网信息服务业务SP)主要是针对提供移动网无线增值信息服 务业务需要办理的。审批机构：各地通信管理局</li>
+<li>互联网新闻信息服务许可证主要针对从事登载新闻业务的网站。审批机构：国务院新闻办</li>
+<li>网络文化经营许可证主要针对经营互联网文化产品和提供互联网文化产品及其服务的网站。审批机构：省级文化行政部门（2010.08.01日开始下放到省级）</li>
+<li>互联网药品信息服务资格证书主要针对经营互联网药品信息服务的网站。审批机构：北京 市药品监督管理局</li>
+<li>互联网出版许可证主要针对经营互联网出版类电子商务业务的网站。审批机构：新闻出版总署</li>
+<li>网络视听节目传播许可证（有新旧之分，新的目前据传只有5家）信息网络视听节目许可证》由广电总局按照信息网络传播视听节目的业务类别、接收终端、传输网络等项目分类核发。 审批机构：广电总局</li>
+<li>互联网卫生信息服务管理主要针对经营互联网卫生信息服务业务的网站。审批机构：北京市卫生局</li>
+<li>电子支付牌照（即将推出）主要是对电子支付企业实行牌照制度，传闻在今年第一季度发放，大概包括支付宝在内的10家公司可获得牌照。 审批机构：中国人民银行</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-19T10:53:38+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:53 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre><code>\c    ：A counter that increments for each statement you issue
+\D    ：The full current date
+\d    ：The default database
+\h    ：The server host
+\l    ：The current delimiter (new in 5.1.12)
+\m    ：Minutes of the current time
+\n    ：A newline character
+\O    ：The current month in three-letter format (Jan, Feb, …)
+\o    ：The current month in numeric format
+\P    ：am/pm
+\p    ：The current TCP/IP port or socket file
+\R    ：The current time, in 24-hour military time (0–23)
+\r    ：The current time, standard 12-hour time (1–12)
+\S    ：Semicolon
+\s    ：Seconds of the current time
+\t    ：A tab character
+\U    ：Your full user_name@host_name account name
+\u    ：Your user name
+\v    ：The server version
+\w    ：The current day of the week in three-letter format (Mon, Tue, …)
+\Y    ：The current year, four digits
+\y    ：The current year, two digits
+\_    ：A space
+\A    ：space (a space follows the backslash)
+\'    ：Single quote
+\"    ：Double quote
+\\    ：A literal “\” backslash character
+\x    ：x, for any “x” not listed above
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -723,7 +879,7 @@ end
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/08/30/jquery-extend-method/">jQuery.extend()函数注释说明</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/01/31/consistent-hashing/">一致性哈希算法浅析</a></h1>
     
     
       <p class="meta">
@@ -732,174 +888,64 @@ end
 
 
 
-<time class='entry-date' datetime='2013-08-30T14:11:50+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:11 pm</span></time>
+<time class='entry-date' datetime='2014-01-31T10:27:40+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>10:27 am</span></time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><ul>
-<li>// 第一个参数是true，则会迭代合并</li>
-<li>// 合并两个或更多对象的属性到第一个对象中，jQuery后续的大部分功能都通过该函数扩展</li>
-<li>// 通过jQuery.fn.extend扩展的函数，大部分都会调用通过jQuery.extend扩展的同名函数</li>
-<li>// 如果传入两个或多个对象，所有对象的属性会被添加到第一个对象target</li>
-<li>// 如果只传入一个对象，则将对象的属性添加到jQuery对象中。</li>
-<li>// 用这种方式，我们可以为jQuery命名空间增加新的方法。可以用于编写jQuery插件。</li>
-<li>// 如果不想改变传入的对象，可以传入一个空对象：$.extend({}, object1, object2);</li>
-<li>// 默认合并操作是不迭代的，即便target的某个属性是对象或属性，也会被完全覆盖而不是合并</li>
-<li>// 从object原型继承的属性会被拷贝</li>
-<li>// undefined值不会被拷贝</li>
-<li>// 因为性能原因，JavaScript自带类型的属性不会合并</li>
-<li>// jQuery.extend( target, [ object1 ], [ objectN ] )</li>
-<li>// jQuery.extend( [ deep ], target, object1, [ objectN ] )</li>
+  <div class="entry-content"><p>在做服务器负载均衡时候可供选择的负载均衡的算法有很多，包括：</p>
+
+<ul>
+<li>轮循算法（Round Robin）</li>
+<li>哈希算法（HASH）</li>
+<li>最少连接算法（Least Connection）</li>
+<li>响应速度算法（Response Time）</li>
+<li>加权法（Weighted ）等</li>
 </ul>
 
 
-<pre>
-    jQuery.extend = jQuery.fn.extend = function() {
-        var options, name, src, copy, copyIsArray, clone,
-           target = arguments[0] || {},
-           i = 1,
-           length = arguments.length,
-           deep = false;
+<p> 其中哈希算法是最为常用的算法.
+典型的应用场景是： 有N台服务器提供缓存服务，需要对服务器进行负载均衡，将请求平均分发到每台服务器上，每台机器负责1/N的服务。
+常用的算法是对hash结果取余数 (hash() mod N)：对机器编号从0到N-1，按照自定义的hash()算法，对每个请求的hash()值按N取模，得到余数i，然后将请求分发到编号为i的机器。但这样的算法方法存在致命问题，如果某一台机器宕机，那么应该落在该机器的请求就无法得到正确的处理，这时需要将当掉的服务器从算法从去除，此时候会有(N-1)/N的服务器的缓存数据需要重新进行计算；如果新增一台机器，会有N /(N+1)的服务器的缓存数据需要进行重新计算。对于系统而言，这通常是不可接受的颠簸（因为这意味着大量缓存的失效或者数据需要转移）。那么，如何设计一个负载均衡策略，使得受到影响的请求尽可能的少呢？
+在Memcached、Key-Value Store、Bittorrent DHT、LVS中都采用了Consistent Hashing算法，可以说Consistent Hashing 是分布式系统负载均衡的首选算法。
+1、Consistent Hashing算法描述
+下面以Memcached中的Consisten Hashing算法为例说明。
+由于hash算法结果一般为unsigned int型，因此对于hash函数的结果应该均匀分布在[0,232-1]间，如果我们把一个圆环用232 个点来进行均匀切割，首先按照hash(key)函数算出服务器（节点）的哈希值， 并将其分布到0～232的圆上。
+用同样的hash(key)函数求出需要存储数据的键的哈希值，并映射到圆上。然后从数据映射到的位置开始顺时针查找，将数据保存到找到的第一个服务器（节点）上。</p>
 
-        // Handle a deep copy situation
-        // 如果第一个参数是boolean型，可能是深度拷贝
-        if ( typeof target === "boolean" ) {
-           deep = target;
-           target = arguments[1] || {};
-           // skip the boolean and the target
-           // 跳过boolean和target，从第3个开始
-           i = 2;
-        }
+<p><img src="/images/consistent-hashing-01.png" alt="consistent hashing" /></p>
 
-        // Handle case when target is a string or something (possible in deep copy)
-        // target不是对象也不是函数，则强制设置为空对象
-        if ( typeof target !== "object" && !jQuery.isFunction(target) ) {
-           target = {};
-        }
+<p>Consistent Hashing原理示意图
+新增一个节点的时候，只有在圆环上新增节点逆时针方向的第一个节点的数据会受到影响。删除一个节点的时候，只有在圆环上原来删除节点顺时针方向的第一个节点的数据会受到影响，因此通过Consistent Hashing很好地解决了负载均衡中由于新增节点、删除节点引起的hash值颠簸问题。</p>
 
-        // extend jQuery itself if only one argument is passed
-        // 如果只传入一个参数，则认为是对jQuery扩展
-        if ( length === i ) {
-           target = this;
-           --i;
-        }
+<p><img src="/images/consistent-hashing-02.png" alt="consistent hashing" /></p>
 
-        for ( ; i < length; i++ ) {
-           // Only deal with non-null/undefined values
-           // 只处理非空参数
-           if ( (options = arguments[ i ]) != null ) {
-               // Extend the base object
-               for ( name in options ) {
-                  src = target[ name ];
-                  copy = options[ name ];
+<p>Consistent Hashing添加服务器示意图
+虚拟节点（virtual nodes）：之所以要引进虚拟节点是因为在服务器（节点）数较少的情况下（例如只有3台服务器），通过hash(key)算出节点的哈希值在圆环上并不是均匀分布的（稀疏的），仍然会出现各节点负载不均衡的问题。虚拟节点可以认为是实际节点的复制品（replicas），本质上与实际节点实际上是一样的（key并不相同）。引入虚拟节点后，通过将每个实际的服务器（节点）数按照一定的比例(例如200倍)扩大后并计算其hash(key)值以均匀分布到圆环上。在进行负载均衡时候，落到虚拟节点的哈希值实际就落到了实际的节点上。由于所有的实际节点是按照相同的比例复制成虚拟节点的，因此解决了节点数较少的情况下哈希值在圆环上均匀分布的问题。</p>
 
-                  // Prevent never-ending loop
-                  // 避免循环引用
-                  if ( target === copy ) {
-                      continue;
-                  }
+<p><img src="/images/consistent-hashing-03.png" alt="consistent hashing" /></p>
 
-                  // Recurse if we're merging plain objects or arrays
-                  // 深度拷贝且值是纯对象或数组，则递归
-                  if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
-                      // 如果copy是数组
-                      if ( copyIsArray ) {
-                         copyIsArray = false;
-                         // clone为src的修正值
-                         clone = src && jQuery.isArray(src) ? src : [];
-                      // 如果copy的是对象
-                      } else {
-                         // clone为src的修正值
-                         clone = src && jQuery.isPlainObject(src) ? src : {};
-                      }
+<p>虚拟节点对Consistent Hashing结果的影响
+从上图可以看出，在节点数为10个的情况下，每个实际节点的虚拟节点数为实际节点的100-200倍的时候，结果还是很均衡的。</p>
 
-                      // Never move original objects, clone them
-                      // 递归调用jQuery.extend
-                      target[ name ] = jQuery.extend( deep, clone, copy );
+<p>第3段中有这些文字：“但这样的算法方法存在致命问题，如果某一台机器宕机，那么应该落在该机器的请求就无法得到正确的处理，这时需要将当掉的服务器从算法从去除，此时候会有(N-1)/N的服务器的缓存数据需要重新进行计算；”
+为何是 (N-1)/N 呢？解释如下：
+  比如有 3 台机器，hash值 1-6 在这3台上的分布就是：
+  host 1: 1 4
+  host 2: 2 5
+  host 3: 3 6
+  如果挂掉一台，只剩两台，模数取 2 ，那么分布情况就变成：
+  host 1: 1 3 5
+  host 2: 2 4 6
+可以看到，还在数据位置不变的只有2个： 1，2，位置发生改变的有4个，占共6个数据的比率是 4/6 = 2/3
+这样的话，受影响的数据太多了，势必太多的数据需要重新从 DB 加载到 cache 中，严重影响性能</p>
 
-                  // Don't bring in undefined values
-                  // 不能拷贝空值
-                  } else if ( copy !== undefined ) {
-                      target[ name ] = copy;
-                  }
-               }
-           }
-        }
-
-        // Return the modified object
-        // 返回更改后的对象
-        return target;
-    };
-</pre>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/30/intr-rsa/">RSA加密算法简单介绍</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-05-30T20:40:02+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>8:40 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>这种算法1978年就出现了，它是第一个既能用于数据加密也能用于数字签名的算法。它易于理解和操作，也很流行。
-   算法的名字以发明者的名字命名：Ron Rivest, AdiShamir 和Leonard Adleman。
-   　　RSA算法是一种非对称密码算法，所谓非对称，就是指该算法需要一对密钥，使用其中一个加密，则需要用另一个
-   才能解密。
-   　　RSA的算法涉及三个参数，n、e、d。
-   　　其中，n是两个大质数p、q的积。n的二进制表示时所占用的位数，就是所谓的密钥长度。
-   　　e和d是一对相关的值，e可以任意取，但要求满足e&lt;(p-1)<em>(q-1)并具 e与(p-1)</em>(q-1)互质（就是最大公约数为1）；
-   再选择d，要求(d<em>e)mod((p-1)</em>(q-1))=1。
-   　　(n及e),(n及d)就是密钥对。
-   　　RSA加解密的算法完全相同,设M为明文，c为密文，则：</p>
-
-<pre><code>   加密：C=M^e mod n; 
-   解密：m=c^d mod n;
-</code></pre>
-
-<p>   　　注：上面两式中的e和d可以互换。</p>
-
-<pre><code>   n d两个数构成公钥，可以告诉别人；
-   n e两个数构成私钥，e自己保留，不让任何人知道。
-   给别人发送的信息使用私钥e加密,只要别人能用公钥d解开就证明信息是由你发送的,构成了签名机制,起验证身份的作用。
-</code></pre>
-
-<p>   别人给你发送信息时使用d加密，这样只有拥有e的你能够对其解密,起到数据保密的作用。<br/>
-   整理一下：</p>
-
-<pre><code>为实现RSA的加解密
-最终目标：找三个参数 n,e,d
-1、n = p*q (p,q 是两个质数)
-2、 
-    1)、φ(N)=(p-1)*(q-1)
-    2)、取任何一个数e,要求满足e&lt;φ(N)并且e与φ(N)互质
-3、(d*e) modφ(N)=1
-</code></pre>
-
-<p>//================================================================
-加密的明文长度不能超过RSA密钥的长度-11，比如1024位的，明文长度不能超过117。 <br/>
-密文的长度总是密钥的长度的一半，比如1024位的，密文长度是64，如果是1032位，密文长度是65位。</p>
+<p>【consistent hashing 的办法】
+上面提到的 hash 取模，模数取的比较小，一般是负载的数量，而 consistent hashing 的本质是将模数取的比较大，为 2的32次方减1，即一个最大的 32 位整数。然后，就可以从容的安排数据导向了，那个图还是挺直观的
+以下部分为一致性哈希算法的一种PHP实现。
+下载地址 ：<a href="http://zwzweb.googlecode.com/files/Consistent%20Hashing.php">http://zwzweb.googlecode.com/files/Consistent%20Hashing.php</a></p>
 </div>
   
   
@@ -908,6 +954,8 @@ end
     </article>
   
   <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -920,23 +968,23 @@ end
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
       </li>
     
       <li class="post">
         <a href="/blog/2014/08/31/html-doctype/">html-DocType</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/31/linux-useful-command/">Linux-有用的命令</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/31/apache-http-request-process/">Apache处理http请求的生命周期</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/31/php-break-keywork/">PHP Break 关键字</a>
       </li>
     
   </ul>
@@ -945,20 +993,25 @@ end
   <h1>Categories[分类目录]</h1>
   <ul id="categories">
     <li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
+<li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
 <li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
 <li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
 <li class='category'><a href='/blog/categories/http/'>http (1)</a></li>
+<li class='category'><a href='/blog/categories/it/'>it (1)</a></li>
 <li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
 <li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (4)</a></li>
+<li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
-<li class='category'><a href='/blog/categories/php/'>php (2)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
 <li class='category'><a href='/blog/categories/rsa/'>rsa (1)</a></li>
 <li class='category'><a href='/blog/categories/sed/'>sed (1)</a></li>
-<li class='category'><a href='/blog/categories/shell/'>shell (1)</a></li>
+<li class='category'><a href='/blog/categories/shell/'>shell (4)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
 <li class='category'><a href='/blog/categories/函数/'>函数 (1)</a></li>
-<li class='category'><a href='/blog/categories/算法/'>算法 (1)</a></li>
+<li class='category'><a href='/blog/categories/算法/'>算法 (3)</a></li>
+<li class='category'><a href='/blog/categories/计算机/'>计算机 (4)</a></li>
 
   </ul>
 </section>

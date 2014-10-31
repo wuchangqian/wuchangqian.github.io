@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script async="true" src="/javascripts/libs/jquery.min.js"></script>
+  <title>Linux命令行技巧 - 学会欣赏</title>
+  <meta name="author" content="wuchangqian">
+  
+  <meta name="description" content="编辑命令 * Ctrl + a ：移到命令行首
+* Ctrl + e ：移到命令行尾
+* Ctrl + f ：按字符前移（右向）
+* Ctrl + b ：按字符后移（左向）
+* Alt + f ：按单词前移（右向）
+* Alt + b ：按单词后移（左向）
+* Ctrl + xx： &hellip;">
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="canonical" href="http://me.94313.net/blog/2012/03/23/command-line-skill-of-linux">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="学会欣赏" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  
+
+</head>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">学会欣赏</a></h1>
+  
+    <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:me.94313.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog[首页]</a></li>
+  <li><a href="/blog/archives">Archives[归档]</a></li>
+  <li><a href="/about-me">About-Me[关于]</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Linux命令行技巧</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-03-23T13:18:37+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2012</span></span> <span class='time'>1:18 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>编辑命令</h2>
+
+<pre><code>* Ctrl + a ：移到命令行首
+* Ctrl + e ：移到命令行尾
+* Ctrl + f ：按字符前移（右向）
+* Ctrl + b ：按字符后移（左向）
+* Alt + f ：按单词前移（右向）
+* Alt + b ：按单词后移（左向）
+* Ctrl + xx：在命令行首和光标之间移动
+* Ctrl + u ：从光标处删除至命令行首
+* Ctrl + k ：从光标处删除至命令行尾
+* Ctrl + w ：从光标处删除至字首
+* Alt + d ：从光标处删除至字尾
+* Ctrl + d ：删除光标处的字符
+* Ctrl + h ：删除光标前的字符
+* Ctrl + y ：粘贴至光标后
+* Alt + c ：从光标处更改为首字母大写的单词
+* Alt + u ：从光标处更改为全部大写的单词
+* Alt + l ：从光标处更改为全部小写的单词
+* Ctrl + t ：交换光标处和之前的字符
+* Alt + t ：交换光标处和之前的单词
+* Alt + Backspace：与 Ctrl + w 相同类似
+</code></pre>
+
+<h2>重新执行命令</h2>
+
+<pre><code>* Ctrl + r：逆向搜索命令历史
+* Ctrl + g：从历史搜索模式退出
+* Ctrl + p：历史中的上一条命令
+* Ctrl + n：历史中的下一条命令
+* Alt + .：使用上一条命令的最后一个参数
+</code></pre>
+
+<h2>控制命令</h2>
+
+<pre><code>* Ctrl + l：清屏
+* Ctrl + o：执行当前命令，并选择上一条命令
+* Ctrl + s：阻止屏幕输出
+* Ctrl + q：允许屏幕输出
+* Ctrl + c：终止命令
+* Ctrl + z：挂起命令
+</code></pre>
+
+<h2>Bang (!) 命令</h2>
+
+<pre><code>* !!：执行上一条命令
+* !blah：执行最近的以 blah 开头的命令，如 !ls
+* !blah:p：仅打印输出，而不执行
+* !$：上一条命令的最后一个参数，与 Alt + . 相同
+* !$:p：打印输出 !$ 的内容
+* !*：上一条命令的所有参数
+* !*:p：打印输出 !* 的内容
+* ^blah：删除上一条命令中的 blah
+* ^blah^foo：将上一条命令中的 blah 替换为 foo
+* ^blah^foo^：将上一条命令中所有的 blah 都替换为 foo
+</code></pre>
+
+<h2>注意：</h2>
+
+<pre><code>1. 以上介绍的大多数 Bash 快捷键仅当在 emacs 编辑模式时有效，若你将 Bash 配置为 vi 编辑模式，那将遵循 vi 的按键绑定。Bash 默认为 emacs 编辑模式。如果你的 Bash 不在 emacs 编辑模式，可通过 set -o emacs 设置。
+2. ^S、^Q、^C、^Z 是由终端设备处理的，可用 stty 命令设置。
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-03-23T13:18:37+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2012</span></span> <span class='time'>1:18 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/02/note-of-yum/" title="Previous Post: yum配置笔记">&laquo; yum配置笔记</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/30/intr-rsa/" title="Next Post: RSA加密算法简单介绍">RSA加密算法简单介绍 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/31/html-doctype/">html-DocType</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories[分类目录]</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
+<li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
+<li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
+<li class='category'><a href='/blog/categories/http/'>http (1)</a></li>
+<li class='category'><a href='/blog/categories/it/'>it (1)</a></li>
+<li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (4)</a></li>
+<li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
+<li class='category'><a href='/blog/categories/rsa/'>rsa (1)</a></li>
+<li class='category'><a href='/blog/categories/sed/'>sed (1)</a></li>
+<li class='category'><a href='/blog/categories/shell/'>shell (4)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+<li class='category'><a href='/blog/categories/函数/'>函数 (1)</a></li>
+<li class='category'><a href='/blog/categories/算法/'>算法 (3)</a></li>
+<li class='category'><a href='/blog/categories/计算机/'>计算机 (4)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/wuchangqian">@wuchangqian</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'wuchangqian',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - wuchangqian -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2b97bd9d37a4d1a5e2c81905d6d6d75b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

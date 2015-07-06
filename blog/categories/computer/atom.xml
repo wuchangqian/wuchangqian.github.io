@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Computer | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/computer/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T22:06:50+08:00</updated>
+  <updated>2015-07-06T22:12:35+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -24,7 +24,7 @@
 <p>用户一般可以在top无法提供详尽系统信息的情况下选择安装并使用htop。比如，在查找应用程序的内存泄漏问题时。与top相比，htop提供更方便、光标控制的界面来杀死进程。
 htop用C语言编写，采用了ncurses库。htop的名称源于其作者的名字。</p>
 
-<h2>安装htop</h2>
+<h2>安装-htop</h2>
 
 <pre><code>yum -y install ncurses-devel #htop依赖ncurses
 cd /opt

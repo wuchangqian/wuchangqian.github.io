@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Computer | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/computer/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T14:23:39+08:00</updated>
+  <updated>2015-07-06T14:40:23+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -38,6 +38,462 @@ make &amp;&amp; make install
 <h2>示例图片</h2>
 
 <p><img src="../images/2015/htop.gif" title="示例图片" alt="示例图片" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[经营一个网站需要哪些牌照资质]]></title>
+    <link href="http://me.94313.net/blog/2014/10/19/wangzhan-paizhao/"/>
+    <updated>2014-10-19T10:58:37+08:00</updated>
+    <id>http://me.94313.net/blog/2014/10/19/wangzhan-paizhao</id>
+    <content type="html"><![CDATA[<ul>
+<li>信息产业部ICP备案,主要是针对非经营性网站，任何一个在国内的网站都要备案。审批机构：工业与信息化部</li>
+<li>电信与信息服务业务经营许可证(ICP)主要是针对经营性互联网信息服务网站，注册资金要求100万以上，北京的证叫这个名字，全国其它地方的证的名称为“增值电信业务经营许可证”，经营范围为 互联网信息服务业务。审批机构：各地通信管理局</li>
+<li>电子公告服务:电信业务审批主要是针对设有电子公告服务(bbs)论坛网站。审批机构：各 地通信管理局</li>
+<li>经营性网站备案,经营性网站备案，是指经营性网站向工商行政管理机关申请备案，工商行政管 理机关在网站的首页上加贴经营性网站备案电子标识，并将备案信息向社会公开。审批机构：北京市工商行政管理局</li>
+<li>增值电信业务经营许可证(移动网信息服务业务SP)主要是针对提供移动网无线增值信息服 务业务需要办理的。审批机构：各地通信管理局</li>
+<li>互联网新闻信息服务许可证主要针对从事登载新闻业务的网站。审批机构：国务院新闻办</li>
+<li>网络文化经营许可证主要针对经营互联网文化产品和提供互联网文化产品及其服务的网站。审批机构：省级文化行政部门（2010.08.01日开始下放到省级）</li>
+<li>互联网药品信息服务资格证书主要针对经营互联网药品信息服务的网站。审批机构：北京 市药品监督管理局</li>
+<li>互联网出版许可证主要针对经营互联网出版类电子商务业务的网站。审批机构：新闻出版总署</li>
+<li>网络视听节目传播许可证（有新旧之分，新的目前据传只有5家）信息网络视听节目许可证》由广电总局按照信息网络传播视听节目的业务类别、接收终端、传输网络等项目分类核发。 审批机构：广电总局</li>
+<li>互联网卫生信息服务管理主要针对经营互联网卫生信息服务业务的网站。审批机构：北京市卫生局</li>
+<li>电子支付牌照（即将推出）主要是对电子支付企业实行牌照制度，传闻在今年第一季度发放，大概包括支付宝在内的10家公司可获得牌照。 审批机构：中国人民银行</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[一致性哈希算法浅析]]></title>
+    <link href="http://me.94313.net/blog/2014/01/31/consistent-hashing/"/>
+    <updated>2014-01-31T10:27:40+08:00</updated>
+    <id>http://me.94313.net/blog/2014/01/31/consistent-hashing</id>
+    <content type="html"><![CDATA[<p>在做服务器负载均衡时候可供选择的负载均衡的算法有很多，包括：</p>
+
+<ul>
+<li>轮循算法（Round Robin）</li>
+<li>哈希算法（HASH）</li>
+<li>最少连接算法（Least Connection）</li>
+<li>响应速度算法（Response Time）</li>
+<li>加权法（Weighted ）等</li>
+</ul>
+
+
+<p> 其中哈希算法是最为常用的算法.
+典型的应用场景是： 有N台服务器提供缓存服务，需要对服务器进行负载均衡，将请求平均分发到每台服务器上，每台机器负责1/N的服务。
+常用的算法是对hash结果取余数 (hash() mod N)：对机器编号从0到N-1，按照自定义的hash()算法，对每个请求的hash()值按N取模，得到余数i，然后将请求分发到编号为i的机器。但这样的算法方法存在致命问题，如果某一台机器宕机，那么应该落在该机器的请求就无法得到正确的处理，这时需要将当掉的服务器从算法从去除，此时候会有(N-1)/N的服务器的缓存数据需要重新进行计算；如果新增一台机器，会有N /(N+1)的服务器的缓存数据需要进行重新计算。对于系统而言，这通常是不可接受的颠簸（因为这意味着大量缓存的失效或者数据需要转移）。那么，如何设计一个负载均衡策略，使得受到影响的请求尽可能的少呢？
+在Memcached、Key-Value Store、Bittorrent DHT、LVS中都采用了Consistent Hashing算法，可以说Consistent Hashing 是分布式系统负载均衡的首选算法。
+1、Consistent Hashing算法描述
+下面以Memcached中的Consisten Hashing算法为例说明。
+由于hash算法结果一般为unsigned int型，因此对于hash函数的结果应该均匀分布在[0,232-1]间，如果我们把一个圆环用232 个点来进行均匀切割，首先按照hash(key)函数算出服务器（节点）的哈希值， 并将其分布到0～232的圆上。
+用同样的hash(key)函数求出需要存储数据的键的哈希值，并映射到圆上。然后从数据映射到的位置开始顺时针查找，将数据保存到找到的第一个服务器（节点）上。</p>
+
+<p><img src="/images/consistent-hashing-01.png" alt="consistent hashing" /></p>
+
+<p>Consistent Hashing原理示意图
+新增一个节点的时候，只有在圆环上新增节点逆时针方向的第一个节点的数据会受到影响。删除一个节点的时候，只有在圆环上原来删除节点顺时针方向的第一个节点的数据会受到影响，因此通过Consistent Hashing很好地解决了负载均衡中由于新增节点、删除节点引起的hash值颠簸问题。</p>
+
+<p><img src="/images/consistent-hashing-02.png" alt="consistent hashing" /></p>
+
+<p>Consistent Hashing添加服务器示意图
+虚拟节点（virtual nodes）：之所以要引进虚拟节点是因为在服务器（节点）数较少的情况下（例如只有3台服务器），通过hash(key)算出节点的哈希值在圆环上并不是均匀分布的（稀疏的），仍然会出现各节点负载不均衡的问题。虚拟节点可以认为是实际节点的复制品（replicas），本质上与实际节点实际上是一样的（key并不相同）。引入虚拟节点后，通过将每个实际的服务器（节点）数按照一定的比例(例如200倍)扩大后并计算其hash(key)值以均匀分布到圆环上。在进行负载均衡时候，落到虚拟节点的哈希值实际就落到了实际的节点上。由于所有的实际节点是按照相同的比例复制成虚拟节点的，因此解决了节点数较少的情况下哈希值在圆环上均匀分布的问题。</p>
+
+<p><img src="/images/consistent-hashing-03.png" alt="consistent hashing" /></p>
+
+<p>虚拟节点对Consistent Hashing结果的影响
+从上图可以看出，在节点数为10个的情况下，每个实际节点的虚拟节点数为实际节点的100-200倍的时候，结果还是很均衡的。</p>
+
+<p>第3段中有这些文字：“但这样的算法方法存在致命问题，如果某一台机器宕机，那么应该落在该机器的请求就无法得到正确的处理，这时需要将当掉的服务器从算法从去除，此时候会有(N-1)/N的服务器的缓存数据需要重新进行计算；”
+为何是 (N-1)/N 呢？解释如下：
+  比如有 3 台机器，hash值 1-6 在这3台上的分布就是：
+  host 1: 1 4
+  host 2: 2 5
+  host 3: 3 6
+  如果挂掉一台，只剩两台，模数取 2 ，那么分布情况就变成：
+  host 1: 1 3 5
+  host 2: 2 4 6
+可以看到，还在数据位置不变的只有2个： 1，2，位置发生改变的有4个，占共6个数据的比率是 4/6 = 2/3
+这样的话，受影响的数据太多了，势必太多的数据需要重新从 DB 加载到 cache 中，严重影响性能</p>
+
+<p>【consistent hashing 的办法】
+上面提到的 hash 取模，模数取的比较小，一般是负载的数量，而 consistent hashing 的本质是将模数取的比较大，为 2的32次方减1，即一个最大的 32 位整数。然后，就可以从容的安排数据导向了，那个图还是挺直观的
+以下部分为一致性哈希算法的一种PHP实现。
+下载地址 ：<a href="http://zwzweb.googlecode.com/files/Consistent%20Hashing.php">http://zwzweb.googlecode.com/files/Consistent%20Hashing.php</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用栈来找路径]]></title>
+    <link href="http://me.94313.net/blog/2012/12/06/use-of-stack/"/>
+    <updated>2012-12-06T09:46:51+08:00</updated>
+    <id>http://me.94313.net/blog/2012/12/06/use-of-stack</id>
+    <content type="html"><![CDATA[<p><img src="/images/use-of-stack-01.png" alt="示例图片-01" /></p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; 数据结构-栈的应用 &lt;/title&gt;
+&lt;meta http-equiv="Content-type" content="text/html;charset=utf-8;" &gt;
+&lt;style&gt;
+*{margin:0;padding:0;}
+#container .line{display:block;float:left;}
+.block{width:15px;height:15px;float:left;font-size:8px;border-right:1px solid #111;border-bottom:1px solid #111;}
+.bld{background:black;color:#fff;}
+.start{background:red;color:#fff;}
+.end{background:red;color:#f00;}
+.route{background:red;}
+&lt;/style&gt;
+&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;使用栈来找路径&lt;/h1&gt;
+    &lt;p&gt;
+    查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通）
+    &lt;/p&gt;
+&lt;button text='clear' id="btn-clear"&gt;清除路径&lt;/button&gt;
+&lt;button text='clear' id="btn-find"&gt;查找路径&lt;/button&gt;
+  &lt;div id='container'&gt;&lt;/div&gt;
+  &lt;script type="text/javascript"&gt;
+&lt;!--
+/***** 入口函数 ****/
+$(function(){
+    init();
+    addEvents();
+});
+
+function init(){
+
+    window.M_x = 70;  //矩阵的宽和高
+    window.M_y = 45;
+    window.Matrix = createMatrix(M_x , M_y);
+
+    showMatrixAsDivBlock(M_x , M_y);
+    setDisableBlocks(M_x , M_y , 1100);
+
+    var n1 = [2  , 2];
+    var n2 = [M_y-2 ,M_x-2];
+    window.startNode = n1;
+    window.endNode = n2;
+
+    $(getid(n1)).addClass('start').addClass('route').text('from');
+    $(getid(n2)).addClass('end').addClass('route').text('end');
+}
+
+/****创建界面****/
+function showMatrixAsDivBlock(x , y){
+    var div =[]
+    var line=[];
+    var i , j;
+    for(i = 1 ; i &lt; y ; i++){
+        for(j = 1 ; j &lt; x ; j++){
+            line[j] = "&lt;div id='b-"+i+'-'+j+"' class='block'&gt;&lt;/div&gt;";
+        }
+        div[i] = '&lt;div class="line"&gt;' + line.join('') + '&lt;/div&gt;';
+    }
+    $('#container').html(div.join('')+'&lt;div style="clear:both;"&gt;&lt;/div&gt;');
+}
+
+/*****创建矩阵****/
+function createMatrix(M_x , M_y){
+    var Matrix = [];
+    for(i = 1; i &lt; M_y; i++){
+        Matrix[i] = [];
+        for(j = 1; j &lt; M_x; j++){
+            if(i==1 || i==M_y-1 || j==1 || j==M_x-1){
+                var s = true;
+            }else{
+                var s = false;
+            }
+            Matrix[i][j] = {
+                disable :s    /// 标示当前的节点是否为阻断 1 ：阻断 ，0 ：联通
+                ,x      :i   /// 标示当前节点的x坐标
+                ,y      :j   /// 标示当前节点的y坐标
+                ,inRoute:false ///标示当前节点是否在路径中
+                ,direction:{    /// 标示当前节点四个方向是否被遍历过
+                    left:0 , bottom:0 , right:0 , top:0
+                }
+            };
+        }
+    }
+    return Matrix;
+}
+
+/*将所有的障碍设置起来*/
+function setDisableBlocks(M_x , M_y , count){
+
+    var i ; var j;
+    for(i=1 ; i&lt; M_y ; i++){
+        for(j=1 ; j &lt; M_x ; j++){
+            if(i==1 || j == 1 || i == M_y-1 || j == M_x-1){
+                Matrix[i][j].disable = true;
+                $('#b-'+i+'-'+j).addClass('bld');    
+            }
+        }
+    }
+    while(count){
+        i = parseInt((Math.random() * 10000))% M_y;
+        j = parseInt((Math.random() * 10000))% M_x;
+        if((i==2 &amp;&amp; j==2) || (i==M_y-2 &amp;&amp; j ==M_x-2)){
+            continue;
+        }
+        if(i &gt; 1 &amp;&amp; i &lt; M_y &amp;&amp; j &gt; 1 &amp;&amp; j &lt; M_x){
+
+            Matrix[i][j].disable = true;
+            $('#b-'+i+'-'+j).addClass('bld');
+            count--;
+        }                
+    }
+}
+
+/***设置所有“方块”以及两个按钮的单击事件***/
+function addEvents(){
+
+    /**清除路径按钮**/
+    $('#btn-clear').click(function(){
+        for(i = 1 ; i &lt; M_y ; i++){
+            for(j = 1 ; j &lt; M_x ; j++){
+               var o = window.Matrix[i][j];
+               o.inRoute = false;
+               o.direction={left:0 , bottom:0 , right:0 , top:0};
+            }
+        }
+        if(window.Stack){
+            for(i=0 ; i &lt; Stack.length ; i++){
+                var o = Stack[i];
+                $(getid([o.x , o.y])).removeClass('route').html('');
+            }
+        }
+    });
+
+    /**查找路径按钮**/
+    $('#btn-find').click(function(){
+        $('#btn-clear').click();
+        find(window.Matrix ,window.startNode , window.endNode);
+    });
+
+    /** 方块单击事件**/
+    $('.block').click(function(){
+        var id = $(this).attr('id');
+        var ary = id.split('-');
+        var i = ary[1];
+        var j = ary[2];
+        if(i == 1 || j == 1 || i == M_y || j == M_x){;}else{// 不能改变四个边的状态   
+            Matrix[i][j].disable = !Matrix[i][j].disable;
+            $('#'+id).toggleClass('bld');
+        }
+    });
+}
+
+// 查找路径
+function find(Matrix , n1 , n2){
+    // 先标示 起点和终点
+    $(getid(n1)).addClass('start').addClass('route').text('from');
+    $(getid(n2)).addClass('end').addClass('route').text('end');
+
+    var start = getObject(Matrix , n1);
+    var end   = getObject(Matrix , n2)
+    var cur = start;
+
+    window.Stack = Stack = [];
+    start.inRoute = true;
+
+    while(true){
+        if(cur.direction.left == 0 &amp;&amp; (o = getObject(Matrix , [cur.x , cur.y+1])) &amp;&amp; !o.disable ){// &amp;&amp; !o.inRoute){
+
+            cur.direction.left=1;
+            o.direction.right=1;
+            o.inRoute = true;
+            Stack.push(cur);
+            Stack.push(o);
+            cur = o;
+
+        }else if(cur.direction.bottom == 0 &amp;&amp; (o = getObject(Matrix , [cur.x+1 , cur.y])) &amp;&amp; !o.disable ){// &amp;&amp; !o.inRoute){
+
+            cur.direction.bottom=1;
+            o.direction.top=1;
+            o.inRoute = true;
+            Stack.push(cur);
+            Stack.push(o);  
+            cur = o;
+
+        }else if(cur.direction.right == 0 &amp;&amp; (o = getObject(Matrix , [cur.x , cur.y-1])) &amp;&amp; !o.disable){// &amp;&amp; !o.inRoute){
+
+            cur.direction.right=1;
+            o.direction.left=1;
+            o.inRoute = true;
+            Stack.push(cur);
+            Stack.push(o);  
+            cur = o;
+
+        }else if(cur.direction.top == 0 &amp;&amp; (o = getObject(Matrix , [cur.x-1 , cur.y])) &amp;&amp; !o.disable ){// &amp;&amp; !o.inRoute){
+            cur.direction.top=1;
+            o.direction.bottom=1;
+            o.inRoute = true;
+            Stack.push(cur);
+            Stack.push(o);  
+            cur = o;
+
+        }else{
+            cur = Stack.pop();
+            if(cur){
+                cur.inRoute = false;
+            }else{
+                showMsg('没有路径连接两个点！');
+                break;
+            }
+        }
+
+        if( cur.x == start.x &amp;&amp; cur.y == start.y &amp;&amp; start.direction.left &amp;&amp; start.direction.bottom &amp;&amp; start.direction.right &amp;&amp; start.direction.top){
+            showMsg('没有路径连接两个点！');
+            break;
+        }
+
+        if( cur.x == end.x &amp;&amp; cur.y == end.y){
+            break;
+        }
+    }
+
+    for(i=0 ; i &lt; Stack.length ; i++){
+        var tmp = Stack[i];
+        $(getid([tmp.x , tmp.y])).addClass('route').html(i/2);
+    }
+}
+
+// 显示信息
+function showMsg(msg){
+    alert(msg);
+}
+
+function getObject(Matrix , arg){
+
+    if(Matrix[arg[0]] &amp;&amp; Matrix[arg[0]][arg[1]]){
+        return Matrix[arg[0]][arg[1]];
+    }else{
+        return null
+    }
+}
+
+/**
+* 将基于javascript 数组形式的 arg 转换为 jquery id形式
+* 用来查找页面中的方块
+* 如 : [3,4] =&gt; “#b-3-4” 
+**/
+function getid(arg){
+    return '#b-'+arg[0]+'-'+arg[1];
+}
+//--&gt;
+&lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[理解Mysql字符集设置]]></title>
+    <link href="http://me.94313.net/blog/2012/01/17/understand-mysql-charset/"/>
+    <updated>2012-01-17T10:39:27+08:00</updated>
+    <id>http://me.94313.net/blog/2012/01/17/understand-mysql-charset</id>
+    <content type="html"><![CDATA[<h3>基本概念</h3>
+
+<ul>
+<li>字符(Character)是指人类语言中最小的表义符号。例如’A’、’B’等；</li>
+<li>给定一系列字符，对每个字符赋予一个数值，用数值来代表对应的字符，这一数值就是字符的编码(Encoding)例如，我们给字符’A’赋予数值0，给字符’B’赋予数值1，则0就是字符’A’的编码；</li>
+<li>给定一系列字符并赋予对应的编码后，所有这些字符和编码对组成的集合就是字符集(Character Set)。例如，给定字符列表为{’A’,’B’}时，{’A’=>0, ‘B’=>1}就是一个字符集；</li>
+<li>字符序(Collation)是指在同一字符集内字符之间的比较规则；</li>
+<li>确定字符序后，才能在一个字符集上定义什么是等价的字符，以及字符之间的大小关系；</li>
+<li>每个字符序唯一对应一种字符集，但一个字符集可以对应多种字符序，其中有一个是默认字符序(Default Collation)；</li>
+<li>MySQL中的字符序名称遵从命名惯例：以字符序对应的字符集名称开头；以<em>ci(表示大小写不敏感)、</em>cs(表示大小写敏感)或_bin(表示按编码值比较)结尾。例如：在字符序“utf8_general_ci”下，字符“a”和“A”是等价的；</li>
+</ul>
+
+
+<h3>MySQL字符集设置</h3>
+
+<p>• 系统变量：</p>
+
+<pre><code>– character_set_server：默认的内部操作字符集
+– character_set_client：客户端来源数据使用的字符集
+– character_set_connection：连接层字符集
+– character_set_results：查询结果字符集
+– character_set_database：当前选中数据库的默认字符集
+– character_set_system：系统元数据(字段名等)字符集
+– 还有以collation_开头的同上面对应的变量，用来描述字符序。
+</code></pre>
+
+<p>• 用introducer指定文本字符串的字符集：</p>
+
+<pre><code>– 格式为：[_charset] ’string’ [COLLATE collation]
+– 例如：
+    • SELECT _latin1 ’string’;
+    • SELECT _utf8 ‘你好’ COLLATE utf8_general_ci;
+– 由introducer修饰的文本字符串在请求过程中不经过多余的转码，直接转换为内部字符集处理。
+</code></pre>
+
+<h3>MySQL中的字符集转换过程</h3>
+
+<pre><code>1. MySQL Server收到请求时将请求数据从character_set_client转换为character_set_connection；
+2. 进行内部操作前将请求数据从character_set_connection转换为内部操作字符集，其确定方法如下：
+    • 使用每个数据字段的CHARACTER SET设定值；
+    • 若上述值不存在，则使用对应数据表的DEFAULT CHARACTER SET设定值(MySQL扩展，非SQL标准)；
+    • 若上述值不存在，则使用对应数据库的DEFAULT CHARACTER SET设定值；
+    • 若上述值不存在，则使用character_set_server设定值。
+3. 将操作结果从内部操作字符集转换为character_set_results。
+</code></pre>
+
+<p><img src="/images/understand-mysql-charset-01.jpg" alt="understand-mysql-charset" /></p>
+
+<h3>常见问题解析</h3>
+
+<ul>
+<li>向默认字符集为utf8的数据表插入utf8编码的数据前没有设置连接字符集，查询时设置连接字符集为utf8</li>
+<li>插入时根据MySQL服务器的默认设置，character_set_client、character_set_connection和character_set_results均为latin1；</li>
+<li>插入操作的数据将经过latin1=>latin1=>utf8的字符集转换过程，这一过程中每个插入的汉字都会从原始的3个字节变成6个字节保存；</li>
+<li>查询时的结果将经过utf8=>utf8的字符集转换过程，将保存的6个字节原封不动返回，产生乱码……</li>
+</ul>
+
+
+<p><img src="/images/understand-mysql-charset-02.jpg" alt="understand-mysql-charset" /></p>
+
+<ul>
+<li>向默认字符集为latin1的数据表插入utf8编码的数据前设置了连接字符集为utf8</li>
+<li>插入时根据连接字符集设置，character_set_client、character_set_connection和character_set_results均为utf8；</li>
+<li>插入数据将经过utf8=>utf8=>latin1的字符集转换，若原始数据中含有\u0000~\u00ff范围以外的Unicode字 符，会因为无法在latin1字符集中表示而被转换为“?”(0×3F)符号，以后查询时不管连接字符集设置如何都无法恢复其内容了。</li>
+</ul>
+
+
+<p><img src="/images/understand-mysql-charset-02.jpg" alt="understand-mysql-charset" /></p>
+
+<h3>检测字符集问题的一些手段</h3>
+
+<ul>
+<li>SHOW CHARACTER SET;</li>
+<li>SHOW COLLATION;</li>
+<li>SHOW VARIABLES LIKE ‘character%’;</li>
+<li>SHOW VARIABLES LIKE ‘collation%’;</li>
+<li>SQL函数HEX、LENGTH、CHAR_LENGTH</li>
+<li>SQL函数CHARSET、COLLATION</li>
+</ul>
+
+
+<h3>使用MySQL字符集时的建议</h3>
+
+<ul>
+<li>建立数据库/表和进行数据库操作时尽量显式指出使用的字符集，而不是依赖于MySQL的默认设置，否则MySQL升级时可能带来很大困扰；</li>
+<li>数据库和连接字符集都使用latin1时虽然大部分情况下都可以解决乱码问题，但缺点是无法以字符为单位来进行SQL操作，一般情况下将数据库和连接字符集都置为utf8是较好的选择；</li>
+<li>使用mysql C API时，初始化数据库句柄后马上用mysql_options设定MYSQL_SET_CHARSET_NAME属性为utf8，这样就不用显式地用 SET NAMES语句指定连接字符集，且用mysql_ping重连断开的长连接时也会把连接字符集重置为utf8；</li>
+<li>对于mysql PHP API，一般页面级的PHP程序总运行时间较短，在连接到数据库以后显式用SET NAMES语句设置一次连接字符集即可；但当使用长连接时，请注意保持连接通畅并在断开重连后用SET NAMES语句显式重置连接字符集。</li>
+</ul>
+
+
+<h3>其他注意事项</h3>
+
+<ul>
+<li>my.cnf中的default_character_set设置只影响mysql命令连接服务器时的连接字符集，不会对使用libmysqlclient库的应用程序产生任何作用！</li>
+<li>对字段进行的SQL函数操作通常都是以内部操作字符集进行的，不受连接字符集设置的影响。</li>
+<li>SQL语句中的裸字符串会受到连接字符集或introducer设置的影响，对于比较之类的操作可能产生完全不同的结果，需要小心！</li>
+</ul>
+
 ]]></content>
   </entry>
   

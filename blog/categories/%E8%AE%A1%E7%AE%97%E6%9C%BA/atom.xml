@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 计算机 | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T14:16:49+08:00</updated>
+  <updated>2015-07-06T14:23:39+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -12,30 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Htop是个好东西]]></title>
-    <link href="http://me.94313.net/blog/2015/07/06/htop/"/>
-    <updated>2015-07-06T13:49:16+08:00</updated>
-    <id>http://me.94313.net/blog/2015/07/06/htop</id>
-    <content type="html"><![CDATA[<pre><code>Htop是一款运行于Linux系统监控与进程管理软件，用于取代Unix下传统的top。与top只提供最消耗资源的进程列表不同，htop提供所有进程的列表，并且使用彩色标识出处理器、swap和内存状态。
-</code></pre>
-
-<p>用户一般可以在top无法提供详尽系统信息的情况下选择安装并使用htop。比如，在查找应用程序的内存泄漏问题时。与top相比，htop提供更方便、光标控制的界面来杀死进程。
-htop用C语言编写，采用了ncurses库。htop的名称源于其作者的名字。</p>
-
-<h2>2. htop安装</h2>
-
-<pre><code>yum -y install ncurses-devel #htop依赖ncurses
-cd /opt
-wget -c http://ncu.dl.sourceforge.net/project/htop/htop/1.0.2/htop-1.0.2.tar.gz
-tar xzf htop-1.0.2.tar.gz
-cd htop-1.0.2
-./configure
-make &amp;&amp; make install
-</code></pre>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[经营一个网站需要哪些牌照资质]]></title>

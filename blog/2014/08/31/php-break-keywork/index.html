@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script async="true" src="/javascripts/libs/jquery.min.js"></script>
+  <title>PHP Break 关键字 - 学会欣赏</title>
+  <meta name="author" content="wuchangqian">
+  
+  <meta name="description" content="php的break关键字可以接受一个可选的数字参数来决定跳出几重循环
+break 结束当前 for，foreach，while，do-while 或者 switch 结构的执行。
+break可以接受一个可选的数字参数来决定跳出几重循环。 &lt;?php $arr = array('one', ' &hellip;">
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="canonical" href="http://me.94313.net/blog/2014/08/31/php-break-keywork">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="学会欣赏" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  
+
+</head>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">学会欣赏</a></h1>
+  
+    <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:me.94313.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog[首页]</a></li>
+  <li><a href="/blog/archives">Archives[归档]</a></li>
+  <li><a href="/about-me">About-Me[关于]</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">PHP Break 关键字</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-31T09:26:19+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:26 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>php的break关键字可以接受一个可选的数字参数来决定跳出几重循环
+break 结束当前 for，foreach，while，do-while 或者 switch 结构的执行。
+break可以接受一个可选的数字参数来决定跳出几重循环。</p>
+
+<pre><code>&lt;?php
+    $arr = array('one', 'two', 'three', 'four', 'stop', 'five');
+    while (list (, $val) = each($arr)) {
+        if ($val == 'stop') {
+            break;    /* You could also write 'break 1;' here. */
+        }
+        echo "$val&lt;br /&gt;\n";
+    }
+
+    /* Using the optional argument. */
+
+    $i = 0;
+    while (++$i) {
+        switch ($i) {
+        case 5:
+            echo "At 5&lt;br /&gt;\n";
+            break 1;  /* Exit only the switch. */
+        case 10:
+            echo "At 10; quitting&lt;br /&gt;\n";
+            break2;  /* Exit the switch and the while. */
+        default:
+            break;
+        }
+    }
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-08-31T09:26:19+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:26 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/php/'>php</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/20/octopress-add-category2rightaside/" title="Previous Post: octopress添加分类到侧边栏">&laquo; octopress添加分类到侧边栏</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/31/apache-http-request-process/" title="Next Post: Apache处理http请求的生命周期">Apache处理http请求的生命周期 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/07/06/htop/">Htop是个好东西</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories[分类目录]</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
+<li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
+<li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
+<li class='category'><a href='/blog/categories/http/'>http (1)</a></li>
+<li class='category'><a href='/blog/categories/it/'>it (1)</a></li>
+<li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
+<li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
+<li class='category'><a href='/blog/categories/rsa/'>rsa (1)</a></li>
+<li class='category'><a href='/blog/categories/sed/'>sed (1)</a></li>
+<li class='category'><a href='/blog/categories/shell/'>shell (4)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+<li class='category'><a href='/blog/categories/函数/'>函数 (1)</a></li>
+<li class='category'><a href='/blog/categories/算法/'>算法 (3)</a></li>
+<li class='category'><a href='/blog/categories/计算机/'>计算机 (5)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/wuchangqian">@wuchangqian</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'wuchangqian',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - wuchangqian -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2b97bd9d37a4d1a5e2c81905d6d6d75b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jekyll | 学会欣赏]]></title>
+  <link href="http://me.94313.net/blog/categories/jekyll/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2015-07-06T13:53:57+08:00</updated>
+  <id>http://me.94313.net/</id>
+  <author>
+    <name><![CDATA[wuchangqian]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress添加分类到侧边栏]]></title>
+    <link href="http://me.94313.net/blog/2014/05/20/octopress-add-category2rightaside/"/>
+    <updated>2014-05-20T23:02:11+08:00</updated>
+    <id>http://me.94313.net/blog/2014/05/20/octopress-add-category2rightaside</id>
+    <content type="html"><![CDATA[<h2>增加category_list插件</h2>
+
+<p>保存以下代码到plugins/category_list_tag.rb：</p>
+
+<pre><code>module Jekyll
+  class CategoryListTag &lt; Liquid::Tag
+    def render(context)
+      html = ""
+      categories = context.registers[:site].categories.keys
+      categories.sort.each do |category|
+        posts_in_category = context.registers[:site].categories[category].size
+        category_dir = context.registers[:site].config['category_dir']
+        category_url = File.join(category_dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase)
+        html &lt;&lt; "&lt;li class='category'&gt;&lt;a href='http://me.94313.net/#{category_url}/'&gt;#{category} (#{posts_in_category})&lt;/a&gt;&lt;/li&gt;\n"
+      end
+      html
+    end
+  end
+end
+</code></pre>
+
+<p>Liquid::Template.register_tag(&lsquo;category_list&rsquo;, Jekyll::CategoryListTag)<br/>
+这个插件会向liquid注册一个名为category_list的tag，该tag就是以li的形式将站点所有的category组织起来。如果要将category加入到侧边导航栏，需要增加一个aside。</p>
+
+<h2>增加aside</h2>
+
+<p>复制以下代码到source/_includes/asides/category_list.html。</p>
+
+<pre><code>&lt;section&gt;
+  &lt;h1&gt;Categories&lt;/h1&gt;
+  &lt;ul id="categories"&gt;
+    { % category_list % }
+  &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+
+<h2>配置侧边栏需要修改_config.yml文件，修改其default_asides项：</h2>
+
+<p>default_asides: [asides/category_list.html, asides/recent_posts.html]<br/>
+以上asides根据自己的需求调整。</p>
+]]></content>
+  </entry>
+  
+</feed>

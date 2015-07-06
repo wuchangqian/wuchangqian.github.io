@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script async="true" src="/javascripts/libs/jquery.min.js"></script>
+  <title>Linux-有用的命令 - 学会欣赏</title>
+  <meta name="author" content="wuchangqian">
+  
+  <meta name="description" content="下面我将和大家分享一些学习Linux命令行的技巧，希望能对大家有所助益。如果在本文中遇到不太熟悉的命令，可以在终端中键入以下命令寻求帮助。
+Man Linux入门必备
+了解bash：没有必要钻研长篇累牍的bash使用手册，通过man bash学习即可。
+了解vi： &hellip;">
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="canonical" href="http://me.94313.net/blog/2014/08/31/linux-useful-command">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="学会欣赏" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  
+
+</head>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">学会欣赏</a></h1>
+  
+    <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:me.94313.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog[首页]</a></li>
+  <li><a href="/blog/archives">Archives[归档]</a></li>
+  <li><a href="/about-me">About-Me[关于]</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Linux-有用的命令</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-31T18:57:18+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>6:57 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>下面我将和大家分享一些学习Linux命令行的技巧，希望能对大家有所助益。如果在本文中遇到不太熟悉的命令，可以在终端中键入以下命令寻求帮助。
+Man <command>
+ Linux入门必备
+了解bash：没有必要钻研长篇累牍的bash使用手册，通过man bash学习即可。
+了解vi：你在工作中也许会使用Emacs或Eclipse，但vi不可替代。
+了解ssh：学习无密码验证的基础知识。
+bash作业管理基础知识：如使用&amp;、Ctrl-C、fg、bg、Ctrl-Z、jobs和kill等。
+文件管理命令：如硬链接和软链接，权限等。
+网络管理命令：如ifconfig等。
+如何使用正则表达式，如何使用grep、sed等。
+学习使用apt-get和yum管理软件包。
+提升日常工作效率</p>
+
+<p>在bash中，可以使用Ctrl+R命令搜索命令行历史记录。
+在bash中，可以使用Ctrl+W删除最后一个单词，使用Ctrl+U删除整行。
+使用cd -命令返回之前的工作目录，使用cd ..命令返回上层目录。
+学习如何使用xargs：
+$ find . -name *.py | xargs grep some_function<br/>
+$ cat hosts | xargs -I{} ssh root@{} hostnameX
+使用pstree -p命令查看进程树。
+了解不同的信号。例如，使用kill -STOP [PID]终止进程。详细的信号列表可以在man 7 signal中查看。
+如果你想让进程永远在后台运行，可以使用nohup和disown命令。
+使用netstat -lntp命令查看侦听进程，并参考lsof命令。
+在bash脚本中使用subshells对命令进行分组：</p>
+
+<h1>do something in current dir</h1>
+
+<p>(cd /some/other/dir; other-command)</p>
+
+<h1>continue in original dir</h1>
+
+<p>字符串修剪（Trimming Strings）：${var%suffix}和${var#prefix}。例如if var=foo.pdf then echo ${var%.pdf}.txt prints &ldquo;foo.txt&#8221;。
+命令的输出可以当做文件使用。例如，比较本地和远程的/etc/hosts文件：
+diff /etc/hosts &lt;(ssh somehost cat /etc/hosts)
+了解bash中的“here documents”。
+了解标准输出和标准错误重定向。
+了解ASCII代码表。可以在终端中运行man ascii命令作为参考。
+当通过ssh远程工作时，可以使用screen 或 dtach保存回话。
+对Web开发者而言，curl、wget等命令非常实用。
+将HTML页面转化文本文件：
+lynx -dump -stdin
+如果要掌握XML，xmlstarlet命令是非常好的工具。
+了解ssh端口映射。
+使用Alt+shift+3快捷键可以在行前添加注释“#”。
+数据处理</p>
+
+<p>了解sort和uniq命令。
+了解cut、paste和join命令。
+了解如何对文本文件做交集、并集和差集：
+cat a b | sort | uniq > c # c is a union b<br/>
+cat a b | sort | uniq -d > c # c is a intersect b<br/>
+cat a b b | sort | uniq -u > c # c is set difference a – b
+对文本文件的第二列做摘要，下面的代码要比同样的Python代码更精炼、快速（3倍）：
+awk &lsquo;{ x += $2 } END { print x }&rsquo;
+了解字符串和grep命令。
+文件分割：了解split（按大小分割）和csplit（按匹配分割）命令。
+系统诊断</p>
+
+<p>使用iostat、netstat、top和dstat命令查看磁盘、处理器和网络的状态。
+使用free、vmstat等命令了解系统内存状态。
+使用mtr网络诊断工具。
+使用iftop、nethogs等工具查看占用带宽的进程和带宽。
+使用ab工具快速洞悉Web服务器的性能。
+以wireshark和tshark命令应对复杂网络诊断。
+学习如何使用strace，并用于诊断运行的进程。这对分析程序运行错误的原因，非常有帮助。
+使用ldd命令查看共享库文件。
+了解如何使用gdb连接到运行中的进程，并进行堆栈跟踪。
+有关/proc的知识非常重要。
+如何诊断已发生的错误？Sar命令是一种很好的选择，它可以收集、保存并报告系统信息。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-08-31T18:57:18+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>6:57 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/31/apache-http-request-process/" title="Previous Post: Apache处理http请求的生命周期">&laquo; Apache处理http请求的生命周期</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/31/html-doctype/" title="Next Post: html-DocType">html-DocType &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories[分类目录]</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/algorithm/'>algorithm (3)</a></li>
+<li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
+<li class='category'><a href='/blog/categories/computer/'>computer (5)</a></li>
+<li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
+<li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
+<li class='category'><a href='/blog/categories/function/'>function (1)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
+<li class='category'><a href='/blog/categories/http/'>http (1)</a></li>
+<li class='category'><a href='/blog/categories/it/'>it (1)</a></li>
+<li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
+<li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
+<li class='category'><a href='/blog/categories/rsa/'>rsa (1)</a></li>
+<li class='category'><a href='/blog/categories/sed/'>sed (1)</a></li>
+<li class='category'><a href='/blog/categories/shell/'>shell (4)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/wuchangqian">@wuchangqian</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'wuchangqian',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - wuchangqian -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2b97bd9d37a4d1a5e2c81905d6d6d75b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

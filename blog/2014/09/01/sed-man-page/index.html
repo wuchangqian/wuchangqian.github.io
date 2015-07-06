@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script async="true" src="/javascripts/libs/jquery.min.js"></script>
+  <title>Sed-man-page - 学会欣赏</title>
+  <meta name="author" content="wuchangqian">
+  
+  <meta name="description" content="NAME sed - stream editor for filtering and transforming text SYNOPSIS sed [OPTION]... {script-only-if-no-other-script} [input-file]... DESCRIPTION &hellip;">
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="canonical" href="http://me.94313.net/blog/2014/09/01/sed-man-page">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="学会欣赏" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  
+
+</head>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">学会欣赏</a></h1>
+  
+    <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:me.94313.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog[首页]</a></li>
+  <li><a href="/blog/archives">Archives[归档]</a></li>
+  <li><a href="/about-me">About-Me[关于]</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Sed-man-page</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-01T18:30:03+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>6:30 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>NAME</p>
+
+<pre><code>   sed - stream editor for filtering and transforming text
+</code></pre>
+
+<p>SYNOPSIS</p>
+
+<pre><code>   sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+</code></pre>
+
+<p>DESCRIPTION</p>
+
+<pre><code>   Sed  is  a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file
+   or input from a pipeline).  While in some ways similar to an editor which permits scripted edits (such as ed),  sed
+   works  by  making  only one pass over the input(s), and is consequently more efficient.  But it is sed's ability to
+   filter text in a pipeline which particularly distinguishes it from other types of editors.
+
+   -n, --quiet, --silent
+
+          suppress automatic printing of pattern space
+
+   -e script, --expression=script
+
+          add the script to the commands to be executed
+
+   -f script-file, --file=script-file
+
+          add the contents of script-file to the commands to be executed
+
+   --follow-symlinks
+
+          follow symlinks when processing in place
+
+   -i[SUFFIX], --in-place[=SUFFIX]
+
+          edit files in place (makes backup if SUFFIX supplied)
+
+   -b, --binary
+
+          open files in binary mode (CR+LFs are not processed specially)
+
+   -l N, --line-length=N
+
+          specify the desired line-wrap length for the `l' command
+
+   --posix
+
+          disable all GNU extensions.
+
+   -r, --regexp-extended
+
+          use extended regular expressions in the script.
+
+   -s, --separate
+
+          consider files as separate rather than as a single continuous long stream.
+
+   -u, --unbuffered
+
+          load minimal amounts of data from the input files and flush the output buffers more often
+
+   -z, --null-data
+
+          separate lines by NUL characters
+
+   --help
+          display this help and exit
+
+   --version
+          output version information and exit
+
+   If no -e, --expression, -f, or --file option is given, then the first non-option  argument  is  taken  as  the  sed
+   script  to  interpret.  All remaining arguments are names of input files; if no input files are specified, then the
+   standard input is read.
+
+   GNU sed home page: &lt;http://www.gnu.org/software/sed/&gt;.  General help using GNU software:  &lt;http://www.gnu.org/geth‐
+   elp/&gt;.   E-mail  bug  reports  to:  &lt;bug-sed@gnu.org&gt;.  Be sure to include the word ``sed'' somewhere in the ``Sub‐
+   ject:'' field.
+</code></pre>
+
+<p>COMMAND SYNOPSIS</p>
+
+<pre><code>   This is just a brief synopsis of sed commands to serve as a reminder to those who already know sed; other  documen‐
+   tation (such as the texinfo document) must be consulted for fuller descriptions.
+</code></pre>
+
+<p>   Zero-address &ldquo;commands&rdquo;</p>
+
+<pre><code>   : label
+          Label for b and t commands.
+
+   #comment
+          The comment extends until the next newline (or the end of a -e script fragment).
+
+   }      The closing bracket of a { } block.
+</code></pre>
+
+<p>   Zero- or One- address commands</p>
+
+<pre><code>   =      Print the current line number.
+
+   a \
+
+   text   Append text, which has each embedded newline preceded by a backslash.
+
+   i \
+
+   text   Insert text, which has each embedded newline preceded by a backslash.
+
+   q [exit-code]
+          Immediately quit the sed script without processing any more input, except that if auto-print is not disabled
+          the current pattern space will be printed.  The exit code argument is a GNU extension.
+
+   Q [exit-code]
+          Immediately quit the sed script without processing any more input.  This is a GNU extension.
+
+   r filename
+          Append text read from filename.
+
+   R filename
+          Append a line read from filename.  Each invocation of the command reads a line from the file.  This is a GNU
+          extension.
+</code></pre>
+
+<p>   Commands which accept address ranges</p>
+
+<pre><code>   {      Begin a block of commands (end with a }).
+
+   b label
+          Branch to label; if label is omitted, branch to end of script.
+
+   c \
+
+   text   Replace the selected lines with text, which has each embedded newline preceded by a backslash.
+
+   d      Delete pattern space.  Start next cycle.
+
+   D      If  pattern  space contains no newline, start a normal new cycle as if the d command was issued.  Otherwise,
+          delete text in the pattern space up to the first newline, and  restart  cycle  with  the  resultant  pattern
+          space, without reading a new line of input.
+
+   h H    Copy/append pattern space to hold space.
+
+   g G    Copy/append hold space to pattern space.
+
+   l      List out the current line in a ``visually unambiguous'' form.
+
+   l width
+          List  out  the  current line in a ``visually unambiguous'' form, breaking it at width characters.  This is a
+          GNU extension.
+
+   n N    Read/append the next line of input into the pattern space.
+
+   p      Print the current pattern space.
+
+   P      Print up to the first embedded newline of the current pattern space.
+
+   s/regexp/replacement/
+          Attempt to match regexp against the pattern  space.   If  successful,  replace  that  portion  matched  with
+          replacement.   The  replacement  may contain the special character &amp; to refer to that portion of the pattern
+          space which matched, and the special escapes \1 through \9 to  refer  to  the  corresponding  matching  sub-
+          expressions in the regexp.
+
+   t label
+          If  a  s///  has done a successful substitution since the last input line was read and since the last t or T
+          command, then branch to label; if label is omitted, branch to end of script.
+
+   T label
+          If no s/// has done a successful substitution since the last input line was read and since the last t  or  T
+          command, then branch to label; if label is omitted, branch to end of script.  This is a GNU extension.
+
+   w filename
+          Write the current pattern space to filename.
+
+   W filename
+          Write the first line of the current pattern space to filename.  This is a GNU extension.
+
+   x      Exchange the contents of the hold and pattern spaces.
+
+   y/source/dest/
+          Transliterate  the  characters in the pattern space which appear in source to the corresponding character in
+          dest.
+</code></pre>
+
+<p>Addresses</p>
+
+<pre><code>   Sed commands can be given with no addresses, in which case the command will be executed for all input  lines;  with
+   one  address, in which case the command will only be executed for input lines which match that address; or with two
+   addresses, in which case the command will be executed for all input lines which match the inclusive range of  lines
+   starting  from  the first address and continuing to the second address.  Three things to note about address ranges:
+   the syntax is addr1,addr2 (i.e., the addresses are separated by a comma); the line which addr1 matched will  always
+   be  accepted,  even  if  addr2 selects an earlier line; and if addr2 is a regexp, it will not be tested against the
+   line that addr1 matched.
+
+   After the address (or address-range), and before the command, a !  may be inserted, which specifies that  the  com‐
+   mand shall only be executed if the address (or address-range) does not match.
+
+   The following address types are supported:
+
+   number Match  only  the  specified line number (which increments cumulatively across files, unless the -s option is
+          specified on the command line).
+
+   first~step
+          Match every step'th line starting with line first.  For example, ``sed -n 1~2p'' will print all the odd-num‐
+          bered  lines in the input stream, and the address 2~5 will match every fifth line, starting with the second.
+          first can be zero; in this case, sed operates as if it were equal to step.  (This is an extension.)
+
+   $      Match the last line.
+
+   /regexp/
+          Match lines matching the regular expression regexp.
+
+   \cregexpc
+          Match lines matching the regular expression regexp.  The c may be any character.
+
+   GNU sed also supports some special 2-address forms:
+
+   0,addr2
+          Start out in "matched first address" state, until addr2 is found.  This is similar to 1,addr2,  except  that
+          if  addr2 matches the very first line of input the 0,addr2 form will be at the end of its range, whereas the
+          1,addr2 form will still be at the beginning of its range.  This works only when addr2 is a  regular  expres‐
+          sion.
+
+   addr1,+N
+          Will match addr1 and the N lines following addr1.
+
+   addr1,~N
+          Will  match addr1 and the lines following addr1 until the next line whose input line number is a multiple of
+          N.
+</code></pre>
+
+<p>REGULAR EXPRESSIONS</p>
+
+<pre><code>   POSIX.2 BREs should be supported, but they aren't completely because of performance problems.  The \n sequence in a
+   regular expression matches the newline character, and similarly for \a, \t, and other sequences.
+</code></pre>
+
+<p>BUGS</p>
+
+<pre><code>   E-mail  bug  reports  to bug-sed@gnu.org.  Also, please include the output of ``sed --version'' in the body of your
+   report if at all possible.
+</code></pre>
+
+<p>AUTHOR</p>
+
+<pre><code>   Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU sed  home  page:  &lt;http://www.gnu.org/soft‐
+   ware/sed/&gt;.   General  help  using  GNU  software:  &lt;http://www.gnu.org/gethelp/&gt;.   E-mail  bug  reports to: &lt;bug-
+   sed@gnu.org&gt;.  Be sure to include the word ``sed'' somewhere in the ``Subject:'' field.
+</code></pre>
+
+<p>COPYRIGHT</p>
+
+<pre><code>   Copyright  ©  2012  Free  Software   Foundation,   Inc.    License   GPLv3+:   GNU   GPL   version   3   or   later
+   &lt;http://gnu.org/licenses/gpl.html&gt;.
+   This  is  free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted
+   by law.
+</code></pre>
+
+<p>SEE ALSO</p>
+
+<pre><code>   awk(1), ed(1), grep(1), tr(1), perlre(1), sed.info, any of various books on sed, the sed FAQ
+   (http://sed.sf.net/grabbag/tutorials/sedfaq.txt), http://sed.sf.net/grabbag/.
+
+   The full documentation for sed is maintained as a Texinfo manual.  If the info and sed programs are properly
+   installed at your site, the command
+
+          info sed
+
+   should give you access to the complete manual.
+</code></pre>
+
+<p>sed 4.2.2                                                June 2013                                                  SED(1)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-09-01T18:30:03+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>6:30 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/sed/'>sed</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/31/html-doctype/" title="Previous Post: html-DocType">&laquo; html-DocType</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/10/19/mysql-shell-prompt-metachar/" title="Next Post: MySQL 的 prompt 转义字符">MySQL 的 prompt 转义字符 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories[分类目录]</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/algorithm/'>algorithm (3)</a></li>
+<li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
+<li class='category'><a href='/blog/categories/computer/'>computer (5)</a></li>
+<li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
+<li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
+<li class='category'><a href='/blog/categories/function/'>function (1)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
+<li class='category'><a href='/blog/categories/http/'>http (1)</a></li>
+<li class='category'><a href='/blog/categories/it/'>it (1)</a></li>
+<li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
+<li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
+<li class='category'><a href='/blog/categories/rsa/'>rsa (1)</a></li>
+<li class='category'><a href='/blog/categories/sed/'>sed (1)</a></li>
+<li class='category'><a href='/blog/categories/shell/'>shell (4)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/wuchangqian">@wuchangqian</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'wuchangqian',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - wuchangqian -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2b97bd9d37a4d1a5e2c81905d6d6d75b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

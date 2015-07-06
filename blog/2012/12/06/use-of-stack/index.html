@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script async="true" src="/javascripts/libs/jquery.min.js"></script>
+  <title>使用栈来找路径 - 学会欣赏</title>
+  <meta name="author" content="wuchangqian">
+  
+  <meta name="description" content="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; 数据结构-栈的应用 &lt;/title&gt;
+&lt;meta http-equiv="Content-type" content="text/html;charset &hellip;">
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="canonical" href="http://me.94313.net/blog/2012/12/06/use-of-stack">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="学会欣赏" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  
+
+</head>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">学会欣赏</a></h1>
+  
+    <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:me.94313.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog[首页]</a></li>
+  <li><a href="/blog/archives">Archives[归档]</a></li>
+  <li><a href="/about-me">About-Me[关于]</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">使用栈来找路径</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-12-06T09:46:51+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>9:46 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="/images/use-of-stack-01.png" alt="示例图片-01" /></p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; 数据结构-栈的应用 &lt;/title&gt;
+&lt;meta http-equiv="Content-type" content="text/html;charset=utf-8;" &gt;
+&lt;style&gt;
+*{margin:0;padding:0;}
+#container .line{display:block;float:left;}
+.block{width:15px;height:15px;float:left;font-size:8px;border-right:1px solid #111;border-bottom:1px solid #111;}
+.bld{background:black;color:#fff;}
+.start{background:red;color:#fff;}
+.end{background:red;color:#f00;}
+.route{background:red;}
+&lt;/style&gt;
+&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;使用栈来找路径&lt;/h1&gt;
+    &lt;p&gt;
+    查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通）
+    &lt;/p&gt;
+&lt;button text='clear' id="btn-clear"&gt;清除路径&lt;/button&gt;
+&lt;button text='clear' id="btn-find"&gt;查找路径&lt;/button&gt;
+  &lt;div id='container'&gt;&lt;/div&gt;
+  &lt;script type="text/javascript"&gt;
+&lt;!--
+/***** 入口函数 ****/
+$(function(){
+    init();
+    addEvents();
+});
+
+function init(){
+
+    window.M_x = 70;  //矩阵的宽和高
+    window.M_y = 45;
+    window.Matrix = createMatrix(M_x , M_y);
+
+    showMatrixAsDivBlock(M_x , M_y);
+    setDisableBlocks(M_x , M_y , 1100);
+
+    var n1 = [2  , 2];
+    var n2 = [M_y-2 ,M_x-2];
+    window.startNode = n1;
+    window.endNode = n2;
+
+    $(getid(n1)).addClass('start').addClass('route').text('from');
+    $(getid(n2)).addClass('end').addClass('route').text('end');
+}
+
+/****创建界面****/
+function showMatrixAsDivBlock(x , y){
+    var div =[]
+    var line=[];
+    var i , j;
+    for(i = 1 ; i &lt; y ; i++){
+        for(j = 1 ; j &lt; x ; j++){
+            line[j] = "&lt;div id='b-"+i+'-'+j+"' class='block'&gt;&lt;/div&gt;";
+        }
+        div[i] = '&lt;div class="line"&gt;' + line.join('') + '&lt;/div&gt;';
+    }
+    $('#container').html(div.join('')+'&lt;div style="clear:both;"&gt;&lt;/div&gt;');
+}
+
+/*****创建矩阵****/
+function createMatrix(M_x , M_y){
+    var Matrix = [];
+    for(i = 1; i &lt; M_y; i++){
+        Matrix[i] = [];
+        for(j = 1; j &lt; M_x; j++){
+            if(i==1 || i==M_y-1 || j==1 || j==M_x-1){
+                var s = true;
+            }else{
+                var s = false;
+            }
+            Matrix[i][j] = {
+                disable :s    /// 标示当前的节点是否为阻断 1 ：阻断 ，0 ：联通
+                ,x      :i   /// 标示当前节点的x坐标
+                ,y      :j   /// 标示当前节点的y坐标
+                ,inRoute:false ///标示当前节点是否在路径中
+                ,direction:{    /// 标示当前节点四个方向是否被遍历过
+                    left:0 , bottom:0 , right:0 , top:0
+                }
+            };
+        }
+    }
+    return Matrix;
+}
+
+/*将所有的障碍设置起来*/
+function setDisableBlocks(M_x , M_y , count){
+
+    var i ; var j;
+    for(i=1 ; i&lt; M_y ; i++){
+        for(j=1 ; j &lt; M_x ; j++){
+            if(i==1 || j == 1 || i == M_y-1 || j == M_x-1){
+                Matrix[i][j].disable = true;
+                $('#b-'+i+'-'+j).addClass('bld');    
+            }
+        }
+    }
+    while(count){
+        i = parseInt((Math.random() * 10000))% M_y;
+        j = parseInt((Math.random() * 10000))% M_x;
+        if((i==2 &amp;&amp; j==2) || (i==M_y-2 &amp;&amp; j ==M_x-2)){
+            continue;
+        }
+        if(i &gt; 1 &amp;&amp; i &lt; M_y &amp;&amp; j &gt; 1 &amp;&amp; j &lt; M_x){
+
+            Matrix[i][j].disable = true;
+            $('#b-'+i+'-'+j).addClass('bld');
+            count--;
+        }                
+    }
+}
+
+/***设置所有“方块”以及两个按钮的单击事件***/
+function addEvents(){
+
+    /**清除路径按钮**/
+    $('#btn-clear').click(function(){
+        for(i = 1 ; i &lt; M_y ; i++){
+            for(j = 1 ; j &lt; M_x ; j++){
+               var o = window.Matrix[i][j];
+               o.inRoute = false;
+               o.direction={left:0 , bottom:0 , right:0 , top:0};
+            }
+        }
+        if(window.Stack){
+            for(i=0 ; i &lt; Stack.length ; i++){
+                var o = Stack[i];
+                $(getid([o.x , o.y])).removeClass('route').html('');
+            }
+        }
+    });
+
+    /**查找路径按钮**/
+    $('#btn-find').click(function(){
+        $('#btn-clear').click();
+        find(window.Matrix ,window.startNode , window.endNode);
+    });
+
+    /** 方块单击事件**/
+    $('.block').click(function(){
+        var id = $(this).attr('id');
+        var ary = id.split('-');
+        var i = ary[1];
+        var j = ary[2];
+        if(i == 1 || j == 1 || i == M_y || j == M_x){;}else{// 不能改变四个边的状态   
+            Matrix[i][j].disable = !Matrix[i][j].disable;
+            $('#'+id).toggleClass('bld');
+        }
+    });
+}
+
+// 查找路径
+function find(Matrix , n1 , n2){
+    // 先标示 起点和终点
+    $(getid(n1)).addClass('start').addClass('route').text('from');
+    $(getid(n2)).addClass('end').addClass('route').text('end');
+
+    var start = getObject(Matrix , n1);
+    var end   = getObject(Matrix , n2)
+    var cur = start;
+
+    window.Stack = Stack = [];
+    start.inRoute = true;
+
+    while(true){
+        if(cur.direction.left == 0 &amp;&amp; (o = getObject(Matrix , [cur.x , cur.y+1])) &amp;&amp; !o.disable ){// &amp;&amp; !o.inRoute){
+
+            cur.direction.left=1;
+            o.direction.right=1;
+            o.inRoute = true;
+            Stack.push(cur);
+            Stack.push(o);
+            cur = o;
+
+        }else if(cur.direction.bottom == 0 &amp;&amp; (o = getObject(Matrix , [cur.x+1 , cur.y])) &amp;&amp; !o.disable ){// &amp;&amp; !o.inRoute){
+
+            cur.direction.bottom=1;
+            o.direction.top=1;
+            o.inRoute = true;
+            Stack.push(cur);
+            Stack.push(o);  
+            cur = o;
+
+        }else if(cur.direction.right == 0 &amp;&amp; (o = getObject(Matrix , [cur.x , cur.y-1])) &amp;&amp; !o.disable){// &amp;&amp; !o.inRoute){
+
+            cur.direction.right=1;
+            o.direction.left=1;
+            o.inRoute = true;
+            Stack.push(cur);
+            Stack.push(o);  
+            cur = o;
+
+        }else if(cur.direction.top == 0 &amp;&amp; (o = getObject(Matrix , [cur.x-1 , cur.y])) &amp;&amp; !o.disable ){// &amp;&amp; !o.inRoute){
+            cur.direction.top=1;
+            o.direction.bottom=1;
+            o.inRoute = true;
+            Stack.push(cur);
+            Stack.push(o);  
+            cur = o;
+
+        }else{
+            cur = Stack.pop();
+            if(cur){
+                cur.inRoute = false;
+            }else{
+                showMsg('没有路径连接两个点！');
+                break;
+            }
+        }
+
+        if( cur.x == start.x &amp;&amp; cur.y == start.y &amp;&amp; start.direction.left &amp;&amp; start.direction.bottom &amp;&amp; start.direction.right &amp;&amp; start.direction.top){
+            showMsg('没有路径连接两个点！');
+            break;
+        }
+
+        if( cur.x == end.x &amp;&amp; cur.y == end.y){
+            break;
+        }
+    }
+
+    for(i=0 ; i &lt; Stack.length ; i++){
+        var tmp = Stack[i];
+        $(getid([tmp.x , tmp.y])).addClass('route').html(i/2);
+    }
+}
+
+// 显示信息
+function showMsg(msg){
+    alert(msg);
+}
+
+function getObject(Matrix , arg){
+
+    if(Matrix[arg[0]] &amp;&amp; Matrix[arg[0]][arg[1]]){
+        return Matrix[arg[0]][arg[1]];
+    }else{
+        return null
+    }
+}
+
+/**
+* 将基于javascript 数组形式的 arg 转换为 jquery id形式
+* 用来查找页面中的方块
+* 如 : [3,4] =&gt; “#b-3-4” 
+**/
+function getid(arg){
+    return '#b-'+arg[0]+'-'+arg[1];
+}
+//--&gt;
+&lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-12-06T09:46:51+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>9:46 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/computer/'>computer</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/19/it-gangwei-shuoming/" title="Previous Post: IT 岗位说明书（岗位职责）">&laquo; IT 岗位说明书（岗位职责）</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/08/30/jquery-extend-method/" title="Next Post: jQuery.extend()函数注释说明">jQuery.extend()函数注释说明 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories[分类目录]</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/algorithm/'>algorithm (3)</a></li>
+<li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
+<li class='category'><a href='/blog/categories/computer/'>computer (5)</a></li>
+<li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
+<li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
+<li class='category'><a href='/blog/categories/function/'>function (1)</a></li>
+<li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
+<li class='category'><a href='/blog/categories/http/'>http (1)</a></li>
+<li class='category'><a href='/blog/categories/it/'>it (1)</a></li>
+<li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
+<li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
+<li class='category'><a href='/blog/categories/rsa/'>rsa (1)</a></li>
+<li class='category'><a href='/blog/categories/sed/'>sed (1)</a></li>
+<li class='category'><a href='/blog/categories/shell/'>shell (4)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/wuchangqian">@wuchangqian</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'wuchangqian',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - wuchangqian -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2b97bd9d37a4d1a5e2c81905d6d6d75b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

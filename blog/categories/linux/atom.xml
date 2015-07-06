@@ -4,11 +4,7 @@
   <title><![CDATA[Category: Linux | 学会欣赏]]></title>
   <link href="http://me.94313.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-<<<<<<< HEAD
-  <updated>2015-07-06T14:11:38+08:00</updated>
-=======
-  <updated>2014-10-31T19:09:36+08:00</updated>
->>>>>>> 81df9ffe7a18761f1cceab7a775a4fdf201bdaeb
+  <updated>2015-07-06T14:14:46+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -18,7 +14,6 @@
 
   
   <entry>
-<<<<<<< HEAD
     <title type="html"><![CDATA[Htop是个好东西]]></title>
     <link href="http://me.94313.net/blog/2015/07/06/htop/"/>
     <updated>2015-07-06T13:49:16+08:00</updated>
@@ -43,8 +38,6 @@ make &amp;&amp; make install
   </entry>
   
   <entry>
-=======
->>>>>>> 81df9ffe7a18761f1cceab7a775a4fdf201bdaeb
     <title type="html"><![CDATA[Sed-man-page]]></title>
     <link href="http://me.94313.net/blog/2014/09/01/sed-man-page/"/>
     <updated>2014-09-01T18:30:03+08:00</updated>

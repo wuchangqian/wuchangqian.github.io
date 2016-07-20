@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Html | My Octopress Blog]]></title>
-  <link href="http://yoursite.com/blog/categories/html/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2016-07-20T10:02:17+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Category: Html | 每个人的声音都面向世界]]></title>
+  <link href="http://me.94313.net/blog/categories/html/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2016-07-20T13:55:00+08:00</updated>
+  <id>http://me.94313.net/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[wuchangqian]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[html-DocType]]></title>
-    <link href="http://yoursite.com/blog/2014/08/31/html-doctype/"/>
+    <link href="http://me.94313.net/blog/2014/08/31/html-doctype/"/>
     <updated>2014-08-31T19:29:52+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/31/html-doctype</id>
+    <id>http://me.94313.net/blog/2014/08/31/html-doctype</id>
     <content type="html"><![CDATA[<p>&lt;!doctype html></p>
 
 <ol>

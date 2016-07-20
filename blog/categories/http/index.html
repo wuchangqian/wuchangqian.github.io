@@ -6,8 +6,8 @@
 <head>
   <meta charset="utf-8">
   <script async="true" src="/javascripts/libs/jquery.min.js"></script>
-  <title>Category: Http - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Category: Http - 每个人的声音都面向世界</title>
+  <meta name="author" content="wuchangqian">
   
   <meta name="description" content="Category: http">
   
@@ -15,10 +15,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="canonical" href="http://yoursite.com/blog/categories/http">
+  <link rel="canonical" href="http://me.94313.net/blog/categories/http">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="每个人的声音都面向世界" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   
@@ -27,9 +27,9 @@
 </head>
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">每个人的声音都面向世界</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
   
 </hgroup>
 
@@ -39,9 +39,9 @@
   
 </ul>
   
-<form action="https://www.google.com/search" method="get">
+<form action="https://www.baidu.com/s" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:yoursite.com" />
+    <input type="hidden" name="q" value="site:me.94313.net" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -96,10 +96,6 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2015/01/06/htop(%E5%86%B2%E7%AA%81_wcq-PC_2015-07-06%2022-06-31)/">Htop是个好东西</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
       </li>
     
@@ -115,7 +111,40 @@
         <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
       </li>
     
+      <li class="post">
+        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
+      </li>
+    
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/wuchangqian">@wuchangqian</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'wuchangqian',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -129,7 +158,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Your Name -
+  Copyright &copy; 2016 - wuchangqian -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 <script type="text/javascript">
@@ -145,16 +174,6 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

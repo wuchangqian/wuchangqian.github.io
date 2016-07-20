@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Mysql | My Octopress Blog]]></title>
-  <link href="http://yoursite.com/blog/categories/mysql/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2016-07-20T10:02:17+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Category: Mysql | 每个人的声音都面向世界]]></title>
+  <link href="http://me.94313.net/blog/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2016-07-20T13:55:00+08:00</updated>
+  <id>http://me.94313.net/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[wuchangqian]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MySQL 的 Prompt 转义字符]]></title>
-    <link href="http://yoursite.com/blog/2014/10/19/mysql-shell-prompt-metachar/"/>
+    <link href="http://me.94313.net/blog/2014/10/19/mysql-shell-prompt-metachar/"/>
     <updated>2014-10-19T10:53:38+08:00</updated>
-    <id>http://yoursite.com/blog/2014/10/19/mysql-shell-prompt-metachar</id>
+    <id>http://me.94313.net/blog/2014/10/19/mysql-shell-prompt-metachar</id>
     <content type="html"><![CDATA[<pre><code>\c    ：A counter that increments for each statement you issue
 \D    ：The full current date
 \d    ：The default database
@@ -52,9 +52,9 @@
   
   <entry>
     <title type="html"><![CDATA[理解Mysql字符集设置]]></title>
-    <link href="http://yoursite.com/blog/2012/01/17/understand-mysql-charset/"/>
+    <link href="http://me.94313.net/blog/2012/01/17/understand-mysql-charset/"/>
     <updated>2012-01-17T10:39:27+08:00</updated>
-    <id>http://yoursite.com/blog/2012/01/17/understand-mysql-charset</id>
+    <id>http://me.94313.net/blog/2012/01/17/understand-mysql-charset</id>
     <content type="html"><![CDATA[<h3>基本概念</h3>
 
 <ul>

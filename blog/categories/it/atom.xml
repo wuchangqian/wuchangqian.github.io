@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: It | My Octopress Blog]]></title>
-  <link href="http://yoursite.com/blog/categories/it/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2016-07-20T10:02:17+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Category: It | 每个人的声音都面向世界]]></title>
+  <link href="http://me.94313.net/blog/categories/it/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2016-07-20T13:55:00+08:00</updated>
+  <id>http://me.94313.net/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[wuchangqian]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[IT 岗位说明书（岗位职责）]]></title>
-    <link href="http://yoursite.com/blog/2012/10/19/it-gangwei-shuoming/"/>
+    <link href="http://me.94313.net/blog/2012/10/19/it-gangwei-shuoming/"/>
     <updated>2012-10-19T10:17:27+08:00</updated>
-    <id>http://yoursite.com/blog/2012/10/19/it-gangwei-shuoming</id>
+    <id>http://me.94313.net/blog/2012/10/19/it-gangwei-shuoming</id>
     <content type="html"><![CDATA[<h2>岗位：程序员</h2>
 
 <p>　　程序员(英文Programmer)是从事程序开发、维护的专业人员。一般我们将程序员分为程序设计人员和程序编码员，但两者的界限并不非常清楚，特别是在中国。

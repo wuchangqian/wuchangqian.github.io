@@ -1,145 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/blog/2015/01/06/htop(%E5%86%B2%E7%AA%81_wcq-PC_2015-07-06%2022-06-31)/</loc>
+    <loc>http://me.94313.net/blog/2015/01/06/htop/</loc>
     <lastmod>2015-01-06T13:49:16+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2015/01/06/htop/</loc>
-    <lastmod>2015-01-06T13:49:16+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/blog/2014/10/19/css-clearfix/</loc>
+    <loc>http://me.94313.net/blog/2014/10/19/css-clearfix/</loc>
     <lastmod>2014-10-19T11:20:41+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/10/19/wangzhan-paizhao/</loc>
+    <loc>http://me.94313.net/blog/2014/10/19/wangzhan-paizhao/</loc>
     <lastmod>2014-10-19T10:58:37+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/10/19/mysql-shell-prompt-metachar/</loc>
+    <loc>http://me.94313.net/blog/2014/10/19/mysql-shell-prompt-metachar/</loc>
     <lastmod>2014-10-19T10:53:38+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/09/01/sed-man-page/</loc>
+    <loc>http://me.94313.net/blog/2014/09/01/sed-man-page/</loc>
     <lastmod>2014-09-01T18:30:03+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/08/31/html-doctype/</loc>
+    <loc>http://me.94313.net/blog/2014/08/31/html-doctype/</loc>
     <lastmod>2014-08-31T19:29:52+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/08/31/linux-useful-command/</loc>
+    <loc>http://me.94313.net/blog/2014/08/31/linux-useful-command/</loc>
     <lastmod>2014-08-31T18:57:18+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/08/31/apache-http-request-process/</loc>
+    <loc>http://me.94313.net/blog/2014/08/31/apache-http-request-process/</loc>
     <lastmod>2014-08-31T09:49:40+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/08/31/php-break-keywork/</loc>
+    <loc>http://me.94313.net/blog/2014/08/31/php-break-keywork/</loc>
     <lastmod>2014-08-31T09:26:19+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/05/20/octopress-add-category2rightaside/</loc>
+    <loc>http://me.94313.net/blog/2014/05/20/octopress-add-category2rightaside/</loc>
     <lastmod>2014-05-20T23:02:11+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2014/01/31/consistent-hashing/</loc>
+    <loc>http://me.94313.net/blog/2014/01/31/consistent-hashing/</loc>
     <lastmod>2014-01-31T10:27:40+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2013/08/30/jquery-extend-method/</loc>
+    <loc>http://me.94313.net/blog/2013/08/30/jquery-extend-method/</loc>
     <lastmod>2013-08-30T14:11:50+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2012/12/06/use-of-stack/</loc>
+    <loc>http://me.94313.net/blog/2012/12/06/use-of-stack/</loc>
     <lastmod>2012-12-06T09:46:51+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2012/10/19/it-gangwei-shuoming/</loc>
+    <loc>http://me.94313.net/blog/2012/10/19/it-gangwei-shuoming/</loc>
     <lastmod>2012-10-19T10:17:27+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2012/05/30/intr-rsa/</loc>
+    <loc>http://me.94313.net/blog/2012/05/30/intr-rsa/</loc>
     <lastmod>2012-05-30T20:40:02+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2012/03/23/command-line-skill-of-linux/</loc>
+    <loc>http://me.94313.net/blog/2012/03/23/command-line-skill-of-linux/</loc>
     <lastmod>2012-03-23T13:18:37+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2012/03/02/note-of-yum/</loc>
+    <loc>http://me.94313.net/blog/2012/03/02/note-of-yum/</loc>
     <lastmod>2012-03-02T10:11:18+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/2012/01/17/understand-mysql-charset/</loc>
+    <loc>http://me.94313.net/blog/2012/01/17/understand-mysql-charset/</loc>
     <lastmod>2012-01-17T10:39:27+08:00</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/archives/</loc>
+    <loc>http://me.94313.net/blog/archives/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/</loc>
+    <loc>http://me.94313.net/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/computer/</loc>
+    <loc>http://me.94313.net/blog/categories/computer/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/mysql/</loc>
+    <loc>http://me.94313.net/blog/categories/mysql/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/shell/</loc>
+    <loc>http://me.94313.net/blog/categories/shell/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/linux/</loc>
+    <loc>http://me.94313.net/blog/categories/linux/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/rsa/</loc>
+    <loc>http://me.94313.net/blog/categories/rsa/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/algorithm/</loc>
+    <loc>http://me.94313.net/blog/categories/algorithm/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/it/</loc>
+    <loc>http://me.94313.net/blog/categories/it/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/jquery/</loc>
+    <loc>http://me.94313.net/blog/categories/jquery/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/javascript/</loc>
+    <loc>http://me.94313.net/blog/categories/javascript/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/function/</loc>
+    <loc>http://me.94313.net/blog/categories/function/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/jekyll/</loc>
+    <loc>http://me.94313.net/blog/categories/jekyll/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/octopress/</loc>
+    <loc>http://me.94313.net/blog/categories/octopress/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/php/</loc>
+    <loc>http://me.94313.net/blog/categories/php/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/apache/</loc>
+    <loc>http://me.94313.net/blog/categories/apache/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/http/</loc>
+    <loc>http://me.94313.net/blog/categories/http/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/html/</loc>
+    <loc>http://me.94313.net/blog/categories/html/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/doctype/</loc>
+    <loc>http://me.94313.net/blog/categories/doctype/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/sed/</loc>
+    <loc>http://me.94313.net/blog/categories/sed/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/web/</loc>
+    <loc>http://me.94313.net/blog/categories/web/</loc>
   </url>
   <url>
-    <loc>http://yoursite.com/blog/categories/css/</loc>
+    <loc>http://me.94313.net/blog/categories/css/</loc>
   </url>
 </urlset>

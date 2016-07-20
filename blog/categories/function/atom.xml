@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Function | My Octopress Blog]]></title>
-  <link href="http://yoursite.com/blog/categories/function/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2016-07-20T10:02:17+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Category: Function | 每个人的声音都面向世界]]></title>
+  <link href="http://me.94313.net/blog/categories/function/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2016-07-20T13:55:00+08:00</updated>
+  <id>http://me.94313.net/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[wuchangqian]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[jQuery.extend()函数注释说明]]></title>
-    <link href="http://yoursite.com/blog/2013/08/30/jquery-extend-method/"/>
+    <link href="http://me.94313.net/blog/2013/08/30/jquery-extend-method/"/>
     <updated>2013-08-30T14:11:50+08:00</updated>
-    <id>http://yoursite.com/blog/2013/08/30/jquery-extend-method</id>
+    <id>http://me.94313.net/blog/2013/08/30/jquery-extend-method</id>
     <content type="html"><![CDATA[<ul>
 <li>// 第一个参数是true，则会迭代合并</li>
 <li>// 合并两个或更多对象的属性到第一个对象中，jQuery后续的大部分功能都通过该函数扩展</li>

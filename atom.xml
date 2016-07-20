@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2016-07-20T10:02:17+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[每个人的声音都面向世界]]></title>
+  <link href="http://me.94313.net/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2016-07-20T13:55:00+08:00</updated>
+  <id>http://me.94313.net/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[wuchangqian]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,37 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Htop是个好东西]]></title>
-    <link href="http://yoursite.com/blog/2015/01/06/htop(%E5%86%B2%E7%AA%81_wcq-PC_2015-07-06%2022-06-31)/"/>
+    <link href="http://me.94313.net/blog/2015/01/06/htop/"/>
     <updated>2015-01-06T13:49:16+08:00</updated>
-    <id>http://yoursite.com/blog/2015/01/06/htop(冲突_wcq-PC_2015-07-06 22-06-31)</id>
-    <content type="html"><![CDATA[<pre><code>Htop是一款运行于Linux系统监控与进程管理软件，用于取代Unix下传统的top。与top只提供最消耗资源的进程列表不同，htop提供所有进程的列表，并且使用彩色标识出处理器、swap和内存状态。
-</code></pre>
-
-<p>用户一般可以在top无法提供详尽系统信息的情况下选择安装并使用htop。比如，在查找应用程序的内存泄漏问题时。与top相比，htop提供更方便、光标控制的界面来杀死进程。
-htop用C语言编写，采用了ncurses库。htop的名称源于其作者的名字。</p>
-
-<h2>安装htop</h2>
-
-<pre><code>yum -y install ncurses-devel #htop依赖ncurses
-cd /opt
-wget -c http://ncu.dl.sourceforge.net/project/htop/htop/1.0.2/htop-1.0.2.tar.gz
-tar xzf htop-1.0.2.tar.gz
-cd htop-1.0.2
-./configure
-make &amp;&amp; make install
-</code></pre>
-
-<h2>示例图片</h2>
-
-<p><img src="http://yoursite.com/images/2015/htop.gif" title="示例图片" alt="示例图片" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Htop是个好东西]]></title>
-    <link href="http://yoursite.com/blog/2015/01/06/htop/"/>
-    <updated>2015-01-06T13:49:16+08:00</updated>
-    <id>http://yoursite.com/blog/2015/01/06/htop</id>
+    <id>http://me.94313.net/blog/2015/01/06/htop</id>
     <content type="html"><![CDATA[<pre><code>Htop是一款运行于Linux系统监控与进程管理软件，用于取代Unix下传统的top。与top只提供最消耗资源的进程列表不同，htop提供所有进程的列表，并且使用彩色标识出处理器、swap和内存状态。
 </code></pre>
 
@@ -65,15 +37,15 @@ make &amp;&amp; make install
 
 <h2>示例图片</h2>
 
-<p><img src="http://yoursite.com/images/2015/htop.gif" title="示例图片" alt="示例图片" /></p>
+<p><img src="http://me.94313.net/images/2015/htop.gif" title="示例图片" alt="示例图片" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Css-clearfix]]></title>
-    <link href="http://yoursite.com/blog/2014/10/19/css-clearfix/"/>
+    <link href="http://me.94313.net/blog/2014/10/19/css-clearfix/"/>
     <updated>2014-10-19T11:20:41+08:00</updated>
-    <id>http://yoursite.com/blog/2014/10/19/css-clearfix</id>
+    <id>http://me.94313.net/blog/2014/10/19/css-clearfix</id>
     <content type="html"><![CDATA[<pre><code>&lt;style&gt;
 .clearfix:after{
     visibility: hidden;
@@ -105,9 +77,9 @@ make &amp;&amp; make install
   
   <entry>
     <title type="html"><![CDATA[经营一个网站需要哪些牌照资质]]></title>
-    <link href="http://yoursite.com/blog/2014/10/19/wangzhan-paizhao/"/>
+    <link href="http://me.94313.net/blog/2014/10/19/wangzhan-paizhao/"/>
     <updated>2014-10-19T10:58:37+08:00</updated>
-    <id>http://yoursite.com/blog/2014/10/19/wangzhan-paizhao</id>
+    <id>http://me.94313.net/blog/2014/10/19/wangzhan-paizhao</id>
     <content type="html"><![CDATA[<ul>
 <li>信息产业部ICP备案,主要是针对非经营性网站，任何一个在国内的网站都要备案。审批机构：工业与信息化部</li>
 <li>电信与信息服务业务经营许可证(ICP)主要是针对经营性互联网信息服务网站，注册资金要求100万以上，北京的证叫这个名字，全国其它地方的证的名称为“增值电信业务经营许可证”，经营范围为 互联网信息服务业务。审批机构：各地通信管理局</li>
@@ -128,9 +100,9 @@ make &amp;&amp; make install
   
   <entry>
     <title type="html"><![CDATA[MySQL 的 Prompt 转义字符]]></title>
-    <link href="http://yoursite.com/blog/2014/10/19/mysql-shell-prompt-metachar/"/>
+    <link href="http://me.94313.net/blog/2014/10/19/mysql-shell-prompt-metachar/"/>
     <updated>2014-10-19T10:53:38+08:00</updated>
-    <id>http://yoursite.com/blog/2014/10/19/mysql-shell-prompt-metachar</id>
+    <id>http://me.94313.net/blog/2014/10/19/mysql-shell-prompt-metachar</id>
     <content type="html"><![CDATA[<pre><code>\c    ：A counter that increments for each statement you issue
 \D    ：The full current date
 \d    ：The default database
@@ -165,9 +137,9 @@ make &amp;&amp; make install
   
   <entry>
     <title type="html"><![CDATA[Sed-man-page]]></title>
-    <link href="http://yoursite.com/blog/2014/09/01/sed-man-page/"/>
+    <link href="http://me.94313.net/blog/2014/09/01/sed-man-page/"/>
     <updated>2014-09-01T18:30:03+08:00</updated>
-    <id>http://yoursite.com/blog/2014/09/01/sed-man-page</id>
+    <id>http://me.94313.net/blog/2014/09/01/sed-man-page</id>
     <content type="html"><![CDATA[<p>NAME
        sed - stream editor for filtering and transforming text</p>
 
@@ -393,7 +365,7 @@ make &amp;&amp; make install
        regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
 <p>BUGS
-       E-mail  bug  reports  to <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#98;&#117;&#x67;&#x2d;&#115;&#x65;&#x64;&#64;&#x67;&#x6e;&#x75;&#46;&#x6f;&#x72;&#x67;&#46;">&#x62;&#x75;&#x67;&#45;&#115;&#101;&#x64;&#x40;&#103;&#x6e;&#x75;&#x2e;&#x6f;&#x72;&#x67;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       E-mail  bug  reports  to <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x62;&#x75;&#x67;&#x2d;&#x73;&#101;&#100;&#x40;&#x67;&#110;&#x75;&#x2e;&#111;&#114;&#103;&#46;">&#x62;&#x75;&#x67;&#45;&#115;&#x65;&#100;&#x40;&#x67;&#110;&#117;&#46;&#x6f;&#114;&#103;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
        report if at all possible.</p>
 
 <p>AUTHOR
@@ -425,9 +397,9 @@ make &amp;&amp; make install
   
   <entry>
     <title type="html"><![CDATA[html-DocType]]></title>
-    <link href="http://yoursite.com/blog/2014/08/31/html-doctype/"/>
+    <link href="http://me.94313.net/blog/2014/08/31/html-doctype/"/>
     <updated>2014-08-31T19:29:52+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/31/html-doctype</id>
+    <id>http://me.94313.net/blog/2014/08/31/html-doctype</id>
     <content type="html"><![CDATA[<p>&lt;!doctype html></p>
 
 <ol>
@@ -499,9 +471,9 @@ HTML 5
   
   <entry>
     <title type="html"><![CDATA[Linux-有用的命令]]></title>
-    <link href="http://yoursite.com/blog/2014/08/31/linux-useful-command/"/>
+    <link href="http://me.94313.net/blog/2014/08/31/linux-useful-command/"/>
     <updated>2014-08-31T18:57:18+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/31/linux-useful-command</id>
+    <id>http://me.94313.net/blog/2014/08/31/linux-useful-command</id>
     <content type="html"><![CDATA[<p>下面我将和大家分享一些学习Linux命令行的技巧，希望能对大家有所助益。如果在本文中遇到不太熟悉的命令，可以在终端中键入以下命令寻求帮助。
 Man <command>
  Linux入门必备
@@ -576,9 +548,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
   
   <entry>
     <title type="html"><![CDATA[Apache处理http请求的生命周期]]></title>
-    <link href="http://yoursite.com/blog/2014/08/31/apache-http-request-process/"/>
+    <link href="http://me.94313.net/blog/2014/08/31/apache-http-request-process/"/>
     <updated>2014-08-31T09:49:40+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/31/apache-http-request-process</id>
+    <id>http://me.94313.net/blog/2014/08/31/apache-http-request-process</id>
     <content type="html"><![CDATA[<p>Apache请求处理循环的11个阶段都做了哪些事情呢？</p>
 
 <ol>
@@ -600,9 +572,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
   
   <entry>
     <title type="html"><![CDATA[PHP Break 关键字]]></title>
-    <link href="http://yoursite.com/blog/2014/08/31/php-break-keywork/"/>
+    <link href="http://me.94313.net/blog/2014/08/31/php-break-keywork/"/>
     <updated>2014-08-31T09:26:19+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/31/php-break-keywork</id>
+    <id>http://me.94313.net/blog/2014/08/31/php-break-keywork</id>
     <content type="html"><![CDATA[<p>php的break关键字可以接受一个可选的数字参数来决定跳出几重循环
 break 结束当前 for，foreach，while，do-while 或者 switch 结构的执行。
 break可以接受一个可选的数字参数来决定跳出几重循环。</p>
@@ -637,9 +609,9 @@ break可以接受一个可选的数字参数来决定跳出几重循环。</p>
   
   <entry>
     <title type="html"><![CDATA[Octopress添加分类到侧边栏]]></title>
-    <link href="http://yoursite.com/blog/2014/05/20/octopress-add-category2rightaside/"/>
+    <link href="http://me.94313.net/blog/2014/05/20/octopress-add-category2rightaside/"/>
     <updated>2014-05-20T23:02:11+08:00</updated>
-    <id>http://yoursite.com/blog/2014/05/20/octopress-add-category2rightaside</id>
+    <id>http://me.94313.net/blog/2014/05/20/octopress-add-category2rightaside</id>
     <content type="html"><![CDATA[<h2>增加category_list插件</h2>
 
 <p>保存以下代码到plugins/category_list_tag.rb：</p>
@@ -653,7 +625,7 @@ break可以接受一个可选的数字参数来决定跳出几重循环。</p>
         posts_in_category = context.registers[:site].categories[category].size
         category_dir = context.registers[:site].config['category_dir']
         category_url = File.join(category_dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase)
-        html &lt;&lt; "&lt;li class='category'&gt;&lt;a href='http://yoursite.com/#{category_url}/'&gt;#{category} (#{posts_in_category})&lt;/a&gt;&lt;/li&gt;\n"
+        html &lt;&lt; "&lt;li class='category'&gt;&lt;a href='http://me.94313.net/#{category_url}/'&gt;#{category} (#{posts_in_category})&lt;/a&gt;&lt;/li&gt;\n"
       end
       html
     end
@@ -685,9 +657,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[一致性哈希算法浅析]]></title>
-    <link href="http://yoursite.com/blog/2014/01/31/consistent-hashing/"/>
+    <link href="http://me.94313.net/blog/2014/01/31/consistent-hashing/"/>
     <updated>2014-01-31T10:27:40+08:00</updated>
-    <id>http://yoursite.com/blog/2014/01/31/consistent-hashing</id>
+    <id>http://me.94313.net/blog/2014/01/31/consistent-hashing</id>
     <content type="html"><![CDATA[<p>在做服务器负载均衡时候可供选择的负载均衡的算法有很多，包括：</p>
 
 <ul>
@@ -708,17 +680,17 @@ end
 由于hash算法结果一般为unsigned int型，因此对于hash函数的结果应该均匀分布在[0,232-1]间，如果我们把一个圆环用232 个点来进行均匀切割，首先按照hash(key)函数算出服务器（节点）的哈希值， 并将其分布到0～232的圆上。
 用同样的hash(key)函数求出需要存储数据的键的哈希值，并映射到圆上。然后从数据映射到的位置开始顺时针查找，将数据保存到找到的第一个服务器（节点）上。</p>
 
-<p><img src="http://yoursite.com/images/consistent-hashing-01.png" alt="consistent hashing" /></p>
+<p><img src="http://me.94313.net/images/consistent-hashing-01.png" alt="consistent hashing" /></p>
 
 <p>Consistent Hashing原理示意图
 新增一个节点的时候，只有在圆环上新增节点逆时针方向的第一个节点的数据会受到影响。删除一个节点的时候，只有在圆环上原来删除节点顺时针方向的第一个节点的数据会受到影响，因此通过Consistent Hashing很好地解决了负载均衡中由于新增节点、删除节点引起的hash值颠簸问题。</p>
 
-<p><img src="http://yoursite.com/images/consistent-hashing-02.png" alt="consistent hashing" /></p>
+<p><img src="http://me.94313.net/images/consistent-hashing-02.png" alt="consistent hashing" /></p>
 
 <p>Consistent Hashing添加服务器示意图
 虚拟节点（virtual nodes）：之所以要引进虚拟节点是因为在服务器（节点）数较少的情况下（例如只有3台服务器），通过hash(key)算出节点的哈希值在圆环上并不是均匀分布的（稀疏的），仍然会出现各节点负载不均衡的问题。虚拟节点可以认为是实际节点的复制品（replicas），本质上与实际节点实际上是一样的（key并不相同）。引入虚拟节点后，通过将每个实际的服务器（节点）数按照一定的比例(例如200倍)扩大后并计算其hash(key)值以均匀分布到圆环上。在进行负载均衡时候，落到虚拟节点的哈希值实际就落到了实际的节点上。由于所有的实际节点是按照相同的比例复制成虚拟节点的，因此解决了节点数较少的情况下哈希值在圆环上均匀分布的问题。</p>
 
-<p><img src="http://yoursite.com/images/consistent-hashing-03.png" alt="consistent hashing" /></p>
+<p><img src="http://me.94313.net/images/consistent-hashing-03.png" alt="consistent hashing" /></p>
 
 <p>虚拟节点对Consistent Hashing结果的影响
 从上图可以看出，在节点数为10个的情况下，每个实际节点的虚拟节点数为实际节点的100-200倍的时候，结果还是很均衡的。</p>
@@ -744,9 +716,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[jQuery.extend()函数注释说明]]></title>
-    <link href="http://yoursite.com/blog/2013/08/30/jquery-extend-method/"/>
+    <link href="http://me.94313.net/blog/2013/08/30/jquery-extend-method/"/>
     <updated>2013-08-30T14:11:50+08:00</updated>
-    <id>http://yoursite.com/blog/2013/08/30/jquery-extend-method</id>
+    <id>http://me.94313.net/blog/2013/08/30/jquery-extend-method</id>
     <content type="html"><![CDATA[<ul>
 <li>// 第一个参数是true，则会迭代合并</li>
 <li>// 合并两个或更多对象的属性到第一个对象中，jQuery后续的大部分功能都通过该函数扩展</li>
@@ -848,10 +820,10 @@ end
   
   <entry>
     <title type="html"><![CDATA[使用栈来找路径]]></title>
-    <link href="http://yoursite.com/blog/2012/12/06/use-of-stack/"/>
+    <link href="http://me.94313.net/blog/2012/12/06/use-of-stack/"/>
     <updated>2012-12-06T09:46:51+08:00</updated>
-    <id>http://yoursite.com/blog/2012/12/06/use-of-stack</id>
-    <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/use-of-stack-01.png" alt="示例图片-01" />
+    <id>http://me.94313.net/blog/2012/12/06/use-of-stack</id>
+    <content type="html"><![CDATA[<p><img src="http://me.94313.net/images/use-of-stack-01.png" alt="示例图片-01" />
     &lt;!DOCTYPE html>
     <html>
     <head>
@@ -1114,9 +1086,9 @@ function getid(arg){
   
   <entry>
     <title type="html"><![CDATA[IT 岗位说明书（岗位职责）]]></title>
-    <link href="http://yoursite.com/blog/2012/10/19/it-gangwei-shuoming/"/>
+    <link href="http://me.94313.net/blog/2012/10/19/it-gangwei-shuoming/"/>
     <updated>2012-10-19T10:17:27+08:00</updated>
-    <id>http://yoursite.com/blog/2012/10/19/it-gangwei-shuoming</id>
+    <id>http://me.94313.net/blog/2012/10/19/it-gangwei-shuoming</id>
     <content type="html"><![CDATA[<h2>岗位：程序员</h2>
 
 <p>　　程序员(英文Programmer)是从事程序开发、维护的专业人员。一般我们将程序员分为程序设计人员和程序编码员，但两者的界限并不非常清楚，特别是在中国。
@@ -1333,9 +1305,9 @@ function getid(arg){
   
   <entry>
     <title type="html"><![CDATA[RSA加密算法简单介绍]]></title>
-    <link href="http://yoursite.com/blog/2012/05/30/intr-rsa/"/>
+    <link href="http://me.94313.net/blog/2012/05/30/intr-rsa/"/>
     <updated>2012-05-30T20:40:02+08:00</updated>
-    <id>http://yoursite.com/blog/2012/05/30/intr-rsa</id>
+    <id>http://me.94313.net/blog/2012/05/30/intr-rsa</id>
     <content type="html"><![CDATA[<p>这种算法1978年就出现了，它是第一个既能用于数据加密也能用于数字签名的算法。它易于理解和操作，也很流行。
    算法的名字以发明者的名字命名：Ron Rivest, AdiShamir 和Leonard Adleman。
    　　RSA算法是一种非对称密码算法，所谓非对称，就是指该算法需要一对密钥，使用其中一个加密，则需要用另一个
@@ -1369,9 +1341,9 @@ function getid(arg){
   
   <entry>
     <title type="html"><![CDATA[Linux命令行技巧]]></title>
-    <link href="http://yoursite.com/blog/2012/03/23/command-line-skill-of-linux/"/>
+    <link href="http://me.94313.net/blog/2012/03/23/command-line-skill-of-linux/"/>
     <updated>2012-03-23T13:18:37+08:00</updated>
-    <id>http://yoursite.com/blog/2012/03/23/command-line-skill-of-linux</id>
+    <id>http://me.94313.net/blog/2012/03/23/command-line-skill-of-linux</id>
     <content type="html"><![CDATA[<h2>编辑命令</h2>
 
 <pre><code>* Ctrl + a ：移到命令行首
@@ -1439,9 +1411,9 @@ function getid(arg){
   
   <entry>
     <title type="html"><![CDATA[Yum配置笔记]]></title>
-    <link href="http://yoursite.com/blog/2012/03/02/note-of-yum/"/>
+    <link href="http://me.94313.net/blog/2012/03/02/note-of-yum/"/>
     <updated>2012-03-02T10:11:18+08:00</updated>
-    <id>http://yoursite.com/blog/2012/03/02/note-of-yum</id>
+    <id>http://me.94313.net/blog/2012/03/02/note-of-yum</id>
     <content type="html"><![CDATA[<h3>YUM 优点</h3>
 
 <p>自动解决包的依赖性的问题能更新的添加/删除/更新/RPM包
@@ -1651,9 +1623,9 @@ rpm -ql yum-cron
   
   <entry>
     <title type="html"><![CDATA[理解Mysql字符集设置]]></title>
-    <link href="http://yoursite.com/blog/2012/01/17/understand-mysql-charset/"/>
+    <link href="http://me.94313.net/blog/2012/01/17/understand-mysql-charset/"/>
     <updated>2012-01-17T10:39:27+08:00</updated>
-    <id>http://yoursite.com/blog/2012/01/17/understand-mysql-charset</id>
+    <id>http://me.94313.net/blog/2012/01/17/understand-mysql-charset</id>
     <content type="html"><![CDATA[<h3>基本概念</h3>
 
 <ul>
@@ -1695,7 +1667,7 @@ rpm -ql yum-cron
 3. 将操作结果从内部操作字符集转换为character_set_results。
 </code></pre>
 
-<p><img src="http://yoursite.com/images/understand-mysql-charset-01.jpg" alt="understand-mysql-charset" /></p>
+<p><img src="http://me.94313.net/images/understand-mysql-charset-01.jpg" alt="understand-mysql-charset" /></p>
 
 <h3>常见问题解析</h3>
 
@@ -1707,7 +1679,7 @@ rpm -ql yum-cron
 </ul>
 
 
-<p><img src="http://yoursite.com/images/understand-mysql-charset-02.jpg" alt="understand-mysql-charset" /></p>
+<p><img src="http://me.94313.net/images/understand-mysql-charset-02.jpg" alt="understand-mysql-charset" /></p>
 
 <ul>
 <li>向默认字符集为latin1的数据表插入utf8编码的数据前设置了连接字符集为utf8</li>
@@ -1716,7 +1688,7 @@ rpm -ql yum-cron
 </ul>
 
 
-<p><img src="http://yoursite.com/images/understand-mysql-charset-02.jpg" alt="understand-mysql-charset" /></p>
+<p><img src="http://me.94313.net/images/understand-mysql-charset-02.jpg" alt="understand-mysql-charset" /></p>
 
 <h3>检测字符集问题的一些手段</h3>
 

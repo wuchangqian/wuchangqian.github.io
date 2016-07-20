@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Shell | My Octopress Blog]]></title>
-  <link href="http://yoursite.com/blog/categories/shell/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2016-07-20T10:02:17+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Category: Shell | 每个人的声音都面向世界]]></title>
+  <link href="http://me.94313.net/blog/categories/shell/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2016-07-20T13:55:00+08:00</updated>
+  <id>http://me.94313.net/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[wuchangqian]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Sed-man-page]]></title>
-    <link href="http://yoursite.com/blog/2014/09/01/sed-man-page/"/>
+    <link href="http://me.94313.net/blog/2014/09/01/sed-man-page/"/>
     <updated>2014-09-01T18:30:03+08:00</updated>
-    <id>http://yoursite.com/blog/2014/09/01/sed-man-page</id>
+    <id>http://me.94313.net/blog/2014/09/01/sed-man-page</id>
     <content type="html"><![CDATA[<p>NAME
        sed - stream editor for filtering and transforming text</p>
 
@@ -243,7 +243,7 @@
        regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
 <p>BUGS
-       E-mail  bug  reports  to <a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#x62;&#x75;&#x67;&#x2d;&#115;&#x65;&#100;&#x40;&#x67;&#110;&#x75;&#46;&#111;&#x72;&#x67;&#x2e;">&#98;&#x75;&#x67;&#x2d;&#115;&#x65;&#100;&#x40;&#103;&#110;&#x75;&#x2e;&#111;&#x72;&#x67;&#46;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       E-mail  bug  reports  to <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x62;&#117;&#x67;&#x2d;&#x73;&#101;&#x64;&#x40;&#x67;&#110;&#x75;&#46;&#111;&#x72;&#103;&#46;">&#98;&#117;&#x67;&#x2d;&#115;&#101;&#x64;&#x40;&#103;&#110;&#x75;&#x2e;&#x6f;&#x72;&#x67;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
        report if at all possible.</p>
 
 <p>AUTHOR
@@ -275,9 +275,9 @@
   
   <entry>
     <title type="html"><![CDATA[Linux-有用的命令]]></title>
-    <link href="http://yoursite.com/blog/2014/08/31/linux-useful-command/"/>
+    <link href="http://me.94313.net/blog/2014/08/31/linux-useful-command/"/>
     <updated>2014-08-31T18:57:18+08:00</updated>
-    <id>http://yoursite.com/blog/2014/08/31/linux-useful-command</id>
+    <id>http://me.94313.net/blog/2014/08/31/linux-useful-command</id>
     <content type="html"><![CDATA[<p>下面我将和大家分享一些学习Linux命令行的技巧，希望能对大家有所助益。如果在本文中遇到不太熟悉的命令，可以在终端中键入以下命令寻求帮助。
 Man <command>
  Linux入门必备
@@ -352,9 +352,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
   
   <entry>
     <title type="html"><![CDATA[Linux命令行技巧]]></title>
-    <link href="http://yoursite.com/blog/2012/03/23/command-line-skill-of-linux/"/>
+    <link href="http://me.94313.net/blog/2012/03/23/command-line-skill-of-linux/"/>
     <updated>2012-03-23T13:18:37+08:00</updated>
-    <id>http://yoursite.com/blog/2012/03/23/command-line-skill-of-linux</id>
+    <id>http://me.94313.net/blog/2012/03/23/command-line-skill-of-linux</id>
     <content type="html"><![CDATA[<h2>编辑命令</h2>
 
 <pre><code>* Ctrl + a ：移到命令行首
@@ -422,9 +422,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
   
   <entry>
     <title type="html"><![CDATA[Yum配置笔记]]></title>
-    <link href="http://yoursite.com/blog/2012/03/02/note-of-yum/"/>
+    <link href="http://me.94313.net/blog/2012/03/02/note-of-yum/"/>
     <updated>2012-03-02T10:11:18+08:00</updated>
-    <id>http://yoursite.com/blog/2012/03/02/note-of-yum</id>
+    <id>http://me.94313.net/blog/2012/03/02/note-of-yum</id>
     <content type="html"><![CDATA[<h3>YUM 优点</h3>
 
 <p>自动解决包的依赖性的问题能更新的添加/删除/更新/RPM包

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://me.94313.net/blog/2016/07/20/wangyu/</loc>
+    <lastmod>2016-07-20T15:18:21+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://me.94313.net/blog/2016/07/20/learn-sed/</loc>
     <lastmod>2016-07-20T14:28:19+08:00</lastmod>
   </url>

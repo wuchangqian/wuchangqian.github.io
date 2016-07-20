@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Http | 学会欣赏]]></title>
-  <link href="http://me.94313.net/blog/categories/http/atom.xml" rel="self"/>
-  <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T22:12:35+08:00</updated>
-  <id>http://me.94313.net/</id>
+  <title><![CDATA[Category: Http | My Octopress Blog]]></title>
+  <link href="http://yoursite.com/blog/categories/http/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2016-07-20T10:02:17+08:00</updated>
+  <id>http://yoursite.com/</id>
   <author>
-    <name><![CDATA[wuchangqian]]></name>
+    <name><![CDATA[Your Name]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Apache处理http请求的生命周期]]></title>
-    <link href="http://me.94313.net/blog/2014/08/31/apache-http-request-process/"/>
+    <link href="http://yoursite.com/blog/2014/08/31/apache-http-request-process/"/>
     <updated>2014-08-31T09:49:40+08:00</updated>
-    <id>http://me.94313.net/blog/2014/08/31/apache-http-request-process</id>
+    <id>http://yoursite.com/blog/2014/08/31/apache-http-request-process</id>
     <content type="html"><![CDATA[<p>Apache请求处理循环的11个阶段都做了哪些事情呢？</p>
 
 <ol>

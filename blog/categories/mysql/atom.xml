@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Mysql | 学会欣赏]]></title>
-  <link href="http://me.94313.net/blog/categories/mysql/atom.xml" rel="self"/>
-  <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T22:12:35+08:00</updated>
-  <id>http://me.94313.net/</id>
+  <title><![CDATA[Category: Mysql | My Octopress Blog]]></title>
+  <link href="http://yoursite.com/blog/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2016-07-20T10:02:17+08:00</updated>
+  <id>http://yoursite.com/</id>
   <author>
-    <name><![CDATA[wuchangqian]]></name>
+    <name><![CDATA[Your Name]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MySQL 的 Prompt 转义字符]]></title>
-    <link href="http://me.94313.net/blog/2014/10/19/mysql-shell-prompt-metachar/"/>
+    <link href="http://yoursite.com/blog/2014/10/19/mysql-shell-prompt-metachar/"/>
     <updated>2014-10-19T10:53:38+08:00</updated>
-    <id>http://me.94313.net/blog/2014/10/19/mysql-shell-prompt-metachar</id>
+    <id>http://yoursite.com/blog/2014/10/19/mysql-shell-prompt-metachar</id>
     <content type="html"><![CDATA[<pre><code>\c    ：A counter that increments for each statement you issue
 \D    ：The full current date
 \d    ：The default database
@@ -52,9 +52,9 @@
   
   <entry>
     <title type="html"><![CDATA[理解Mysql字符集设置]]></title>
-    <link href="http://me.94313.net/blog/2012/01/17/understand-mysql-charset/"/>
+    <link href="http://yoursite.com/blog/2012/01/17/understand-mysql-charset/"/>
     <updated>2012-01-17T10:39:27+08:00</updated>
-    <id>http://me.94313.net/blog/2012/01/17/understand-mysql-charset</id>
+    <id>http://yoursite.com/blog/2012/01/17/understand-mysql-charset</id>
     <content type="html"><![CDATA[<h3>基本概念</h3>
 
 <ul>
@@ -70,25 +70,20 @@
 
 <h3>MySQL字符集设置</h3>
 
-<p>• 系统变量：</p>
-
-<pre><code>– character_set_server：默认的内部操作字符集
-– character_set_client：客户端来源数据使用的字符集
-– character_set_connection：连接层字符集
-– character_set_results：查询结果字符集
-– character_set_database：当前选中数据库的默认字符集
-– character_set_system：系统元数据(字段名等)字符集
-– 还有以collation_开头的同上面对应的变量，用来描述字符序。
-</code></pre>
-
-<p>• 用introducer指定文本字符串的字符集：</p>
-
-<pre><code>– 格式为：[_charset] ’string’ [COLLATE collation]
-– 例如：
-    • SELECT _latin1 ’string’;
-    • SELECT _utf8 ‘你好’ COLLATE utf8_general_ci;
-– 由introducer修饰的文本字符串在请求过程中不经过多余的转码，直接转换为内部字符集处理。
-</code></pre>
+<p>• 系统变量：
+    – character_set_server：默认的内部操作字符集
+    – character_set_client：客户端来源数据使用的字符集
+    – character_set_connection：连接层字符集
+    – character_set_results：查询结果字符集
+    – character_set_database：当前选中数据库的默认字符集
+    – character_set_system：系统元数据(字段名等)字符集
+    – 还有以collation<em>开头的同上面对应的变量，用来描述字符序。
+• 用introducer指定文本字符串的字符集：
+    – 格式为：[</em>charset] ’string’ [COLLATE collation]
+    – 例如：
+        • SELECT <em>latin1 ’string’;
+        • SELECT </em>utf8 ‘你好’ COLLATE utf8_general_ci;
+    – 由introducer修饰的文本字符串在请求过程中不经过多余的转码，直接转换为内部字符集处理。</p>
 
 <h3>MySQL中的字符集转换过程</h3>
 

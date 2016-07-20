@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Css | 学会欣赏]]></title>
-  <link href="http://me.94313.net/blog/categories/css/atom.xml" rel="self"/>
-  <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T22:12:35+08:00</updated>
-  <id>http://me.94313.net/</id>
+  <title><![CDATA[Category: Css | My Octopress Blog]]></title>
+  <link href="http://yoursite.com/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2016-07-20T10:02:17+08:00</updated>
+  <id>http://yoursite.com/</id>
   <author>
-    <name><![CDATA[wuchangqian]]></name>
+    <name><![CDATA[Your Name]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Css-clearfix]]></title>
-    <link href="http://me.94313.net/blog/2014/10/19/css-clearfix/"/>
+    <link href="http://yoursite.com/blog/2014/10/19/css-clearfix/"/>
     <updated>2014-10-19T11:20:41+08:00</updated>
-    <id>http://me.94313.net/blog/2014/10/19/css-clearfix</id>
+    <id>http://yoursite.com/blog/2014/10/19/css-clearfix</id>
     <content type="html"><![CDATA[<pre><code>&lt;style&gt;
 .clearfix:after{
     visibility: hidden;

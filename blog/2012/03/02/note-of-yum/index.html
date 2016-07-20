@@ -6,8 +6,8 @@
 <head>
   <meta charset="utf-8">
   <script async="true" src="/javascripts/libs/jquery.min.js"></script>
-  <title>Yum配置笔记 - 学会欣赏</title>
-  <meta name="author" content="wuchangqian">
+  <title>Yum配置笔记 - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
   
   <meta name="description" content="YUM 优点 自动解决包的依赖性的问题能更新的添加/删除/更新/RPM包
 便于管理大量系统的更新问题
@@ -20,10 +20,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="canonical" href="http://me.94313.net/blog/2012/03/02/note-of-yum">
+  <link rel="canonical" href="http://yoursite.com/blog/2012/03/02/note-of-yum">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="学会欣赏" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   
@@ -32,9 +32,9 @@
 </head>
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">学会欣赏</a></h1>
+  <h1><a href="/">My Octopress Blog</a></h1>
   
-    <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
+    <h2>A blogging framework for hackers.</h2>
   
 </hgroup>
 
@@ -46,7 +46,7 @@
   
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:me.94313.net" />
+    <input type="hidden" name="q" value="site:yoursite.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -92,19 +92,17 @@
 
 <h3>CentOS的镜像站点</h3>
 
-<p>了解 镜像站点的文件结构 对理解 yum 配置文件 .repo 文件有帮助</p>
-
-<pre><code>http://mirror-status.centos.org
-http://isoredirect.centos.org/centos/5/isos/i386/
-addons/      本目录包含Centos的addons 仓库
-centosplus/  本目录包含Centos的centosplus 仓库
-extras/      本目录包含Centos的extras 仓库
-fasttrack/   本目录包含Centos的extras 仓库
-isos-dvd/    本目录包含发行版的DVD iso 下载
-isos/        本目录包含发行版 CD iso 下载
-os/          本目录包含发行版(distributions)的仓库
-updates/     本目录包含Centos的updates仓库
-</code></pre>
+<p>了解 镜像站点的文件结构 对理解 yum 配置文件 .repo 文件有帮助
+    <a href="http://mirror-status.centos.org">http://mirror-status.centos.org</a>
+    <a href="http://isoredirect.centos.org/centos/5/isos/i386/">http://isoredirect.centos.org/centos/5/isos/i386/</a>
+    addons/      本目录包含Centos的addons 仓库
+    centosplus/  本目录包含Centos的centosplus 仓库
+    extras/      本目录包含Centos的extras 仓库
+    fasttrack/   本目录包含Centos的extras 仓库
+    isos-dvd/    本目录包含发行版的DVD iso 下载
+    isos/        本目录包含发行版 CD iso 下载
+    os/          本目录包含发行版(distributions)的仓库
+    updates/     本目录包含Centos的updates仓库</p>
 
 <h3>CentOS 的仓库</h3>
 
@@ -143,37 +141,32 @@ centospuls:　用于增强一些现有软件包的功能(默认未启用)</p>
 Centos-Base.repo: 用于设置远程仓库
 Centos-Media.repo: 用于设置本地仓库</p>
 
-<p>yum 目录结构</p>
-
-<pre><code>/etc
-  |--yum/
-  |   |--/pluginconf.d    
-  |   |--/yum-updatesd.conf/
-  |            |--downloadonly.conf
-  |            |--fastestmirror.conf
-  |            |--priorities.conf
-  |--yum.conf
-  |--yum.repos.d/
-        |--CentOS-Base.repo
-        |--CentOS-Media.repo
-</code></pre>
+<p>yum 目录结构
+    /etc
+      |&ndash;yum/
+      |   |&ndash;/pluginconf.d  <br/>
+      |   |&ndash;/yum-updatesd.conf/
+      |            |&ndash;downloadonly.conf
+      |            |&ndash;fastestmirror.conf
+      |            |&ndash;priorities.conf
+      |&ndash;yum.conf
+      |&ndash;yum.repos.d/
+            |&ndash;CentOS-Base.repo
+            |&ndash;CentOS-Media.repo</p>
 
 <p>在.repo 文件中，配置语法是分段的，每一段配置一个软件仓库，语法如下：
 设置网络更新源
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
-
-<pre><code>[base]  \\用于指定仓库
-name=CentOS-$releasever - Base \\用于指定易读的仓库名称
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os \\用于指定本仓库的URL
-#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-#        =ftp://  \\用于指定远程ftp协议的愿
-#        =file://  \\ 用于本地镜像或NFS挂载文件系统
-#nabled=0/1  \\用于指定是否使用本地仓库，默认为1，即可用。
-gpgcheck=1  \\用于指定是否检查软件包的GPG签名
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5  \\用于指定GPG签名文件的URL
-</code></pre>
-
-<p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [base]  \用于指定仓库
+    name=CentOS-$releasever - Base \用于指定易读的仓库名称
+    mirrorlist=<a href="http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os">http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</a> \用于指定本仓库的URL
+    #baseurl=<a href="http://mirror.centos.org/centos/$releasever/os/$basearch/">http://mirror.centos.org/centos/$releasever/os/$basearch/</a>
+    #        =<a href="ftp://">ftp://</a>  \用于指定远程ftp协议的愿
+    #        =file://  \ 用于本地镜像或NFS挂载文件系统
+    #nabled=0/1  \用于指定是否使用本地仓库，默认为1，即可用。
+    gpgcheck=1  \用于指定是否检查软件包的GPG签名
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5  \用于指定GPG签名文件的URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 注：若指定mirrorlist,系统将从Centos 的镜像站点中选择离你最近的仓库。
 [$releasever]当前系统的版本号
 [$basearch] 当前系统的构架
@@ -181,20 +174,17 @@ baseurl 可以指定多个URL ,系统会依次检查你列出的仓库。以便�
 
 <h3>设置本地更新源</h3>
 
-<p>为了使用 [c5-media]仓库，需将Centos-Base</p>
-
-<pre><code>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[c5-media]
-name=CentOS-$releasever - Media
-baseurl=file:///media/CentOS/
-        file:///media/cdrom/
-        file:///media/cdrecorder/
-gpgcheck=1
-enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-</code></pre>
-
-<p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
+<p>为了使用 [c5-media]仓库，需将Centos-Base
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [c5-media]
+    name=CentOS-$releasever - Media
+    baseurl=file:///media/CentOS/
+            file:///media/cdrom/
+            file:///media/cdrecorder/
+    gpgcheck=1
+    enabled=0
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
 
 <h3>设置非官方更新源</h3>
 
@@ -267,12 +257,11 @@ yum –exclude=kernel</em> update</p>
 
 <h3>附：</h3>
 
-<p>当仓库配置文件 *.repo 使用了多个URL yum-fastestmirror  可以自动选择最快的镜像站点</p>
+<p>当仓库配置文件 *.repo 使用了多个URL yum-fastestmirror  可以自动选择最快的镜像站点
+    yum -y install yum-fastestmirror
+    yum-fastestmirror 的配置文件在 /etc/yum/pluginconf.d/fastestmirror.conf 默认不需要修改。</p>
 
-<pre><code>yum -y install yum-fastestmirror
-yum-fastestmirror 的配置文件在 /etc/yum/pluginconf.d/fastestmirror.conf 默认不需要修改。
-
-yum -updatesd
+<pre><code>yum -updatesd
 rpm -ql yum-updatesd
 yum -cron
 yum -y install yum-cron
@@ -288,18 +277,14 @@ rpm -ql yum-cron
 </code></pre>
 
 <p>使用yum下载而不安装rpm包
-先安装yum-downloadonly</p>
+先安装yum-downloadonly
+    # yum install yum-downloadonly</p>
 
-<pre><code># yum install yum-downloadonly
-</code></pre>
-
-<p>安装后使用方法如下:</p>
-
-<pre><code># yum update httpd -y --downloadonly   ###下载到默认目录  /var/cache/yum
-OR
-# yum update httpd -y --downloadonly --downloaddir=/opt     ##下载到指定目录
-# yum install perl-MailTools --downloadonly --downloaddir=/opt -y     ##如果软件已经下载过了，必须使用这个来下载
-</code></pre>
+<p>安装后使用方法如下:
+    # yum update httpd -y &ndash;downloadonly   ###下载到默认目录  /var/cache/yum
+    OR
+    # yum update httpd -y &ndash;downloadonly &ndash;downloaddir=/opt     ##下载到指定目录
+    # yum install perl-MailTools &ndash;downloadonly &ndash;downloaddir=/opt -y     ##如果软件已经下载过了，必须使用这个来下载</p>
 </div>
 
 
@@ -308,7 +293,7 @@ OR
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
 
       
 
@@ -328,6 +313,8 @@ OR
     </p>
     
       <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://yoursite.com/blog/2012/03/02/note-of-yum/" data-via="" data-counturl="http://yoursite.com/blog/2012/03/02/note-of-yum/" >Tweet</a>
   
   
   
@@ -354,6 +341,10 @@ OR
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/06/htop(%E5%86%B2%E7%AA%81_wcq-PC_2015-07-06%2022-06-31)/">Htop是个好东西</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
       </li>
     
@@ -369,66 +360,11 @@ OR
         <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
-      </li>
-    
   </ul>
 </section>
-<section>
-  <h1>Categories[分类目录]</h1>
-  <ul id="categories">
-    <li class='category'><a href='/blog/categories/algorithm/'>algorithm (3)</a></li>
-<li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
-<li class='category'><a href='/blog/categories/computer/'>computer (5)</a></li>
-<li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
-<li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
-<li class='category'><a href='/blog/categories/function/'>function (1)</a></li>
-<li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
-<li class='category'><a href='/blog/categories/http/'>http (1)</a></li>
-<li class='category'><a href='/blog/categories/it/'>it (1)</a></li>
-<li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
-<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
-<li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
-<li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
-<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
-<li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
-<li class='category'><a href='/blog/categories/rsa/'>rsa (1)</a></li>
-<li class='category'><a href='/blog/categories/sed/'>sed (1)</a></li>
-<li class='category'><a href='/blog/categories/shell/'>shell (4)</a></li>
-<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
 
-  </ul>
-</section>
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/wuchangqian">@wuchangqian</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
 
-        github.showRepos({
-            user: 'wuchangqian',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
+
 
 
   
@@ -438,7 +374,7 @@ OR
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - wuchangqian -
+  Copyright &copy; 2016 - Your Name -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 <script type="text/javascript">
@@ -454,6 +390,16 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 
 
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Shell | 学会欣赏]]></title>
-  <link href="http://me.94313.net/blog/categories/shell/atom.xml" rel="self"/>
-  <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T22:12:35+08:00</updated>
-  <id>http://me.94313.net/</id>
+  <title><![CDATA[Category: Shell | My Octopress Blog]]></title>
+  <link href="http://yoursite.com/blog/categories/shell/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2016-07-20T10:02:17+08:00</updated>
+  <id>http://yoursite.com/</id>
   <author>
-    <name><![CDATA[wuchangqian]]></name>
+    <name><![CDATA[Your Name]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,27 +15,22 @@
   
   <entry>
     <title type="html"><![CDATA[Sed-man-page]]></title>
-    <link href="http://me.94313.net/blog/2014/09/01/sed-man-page/"/>
+    <link href="http://yoursite.com/blog/2014/09/01/sed-man-page/"/>
     <updated>2014-09-01T18:30:03+08:00</updated>
-    <id>http://me.94313.net/blog/2014/09/01/sed-man-page</id>
-    <content type="html"><![CDATA[<p>NAME</p>
+    <id>http://yoursite.com/blog/2014/09/01/sed-man-page</id>
+    <content type="html"><![CDATA[<p>NAME
+       sed - stream editor for filtering and transforming text</p>
 
-<pre><code>   sed - stream editor for filtering and transforming text
-</code></pre>
+<p>SYNOPSIS
+       sed [OPTION]&hellip; {script-only-if-no-other-script} [input-file]&hellip;</p>
 
-<p>SYNOPSIS</p>
+<p>DESCRIPTION
+       Sed  is  a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file
+       or input from a pipeline).  While in some ways similar to an editor which permits scripted edits (such as ed),  sed
+       works  by  making  only one pass over the input(s), and is consequently more efficient.  But it is sed&rsquo;s ability to
+       filter text in a pipeline which particularly distinguishes it from other types of editors.</p>
 
-<pre><code>   sed [OPTION]... {script-only-if-no-other-script} [input-file]...
-</code></pre>
-
-<p>DESCRIPTION</p>
-
-<pre><code>   Sed  is  a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file
-   or input from a pipeline).  While in some ways similar to an editor which permits scripted edits (such as ed),  sed
-   works  by  making  only one pass over the input(s), and is consequently more efficient.  But it is sed's ability to
-   filter text in a pipeline which particularly distinguishes it from other types of editors.
-
-   -n, --quiet, --silent
+<pre><code>   -n, --quiet, --silent
 
           suppress automatic printing of pattern space
 
@@ -98,28 +93,24 @@
    ject:'' field.
 </code></pre>
 
-<p>COMMAND SYNOPSIS</p>
+<p>COMMAND SYNOPSIS
+       This is just a brief synopsis of sed commands to serve as a reminder to those who already know sed; other  documen‐
+       tation (such as the texinfo document) must be consulted for fuller descriptions.</p>
 
-<pre><code>   This is just a brief synopsis of sed commands to serve as a reminder to those who already know sed; other  documen‐
-   tation (such as the texinfo document) must be consulted for fuller descriptions.
-</code></pre>
+<p>   Zero-address &ldquo;commands&rdquo;
+       : label
+              Label for b and t commands.</p>
 
-<p>   Zero-address &ldquo;commands&rdquo;</p>
-
-<pre><code>   : label
-          Label for b and t commands.
-
-   #comment
+<pre><code>   #comment
           The comment extends until the next newline (or the end of a -e script fragment).
 
    }      The closing bracket of a { } block.
 </code></pre>
 
-<p>   Zero- or One- address commands</p>
+<p>   Zero- or One- address commands
+       =      Print the current line number.</p>
 
-<pre><code>   =      Print the current line number.
-
-   a \
+<pre><code>   a \
 
    text   Append text, which has each embedded newline preceded by a backslash.
 
@@ -142,11 +133,10 @@
           extension.
 </code></pre>
 
-<p>   Commands which accept address ranges</p>
+<p>   Commands which accept address ranges
+       {      Begin a block of commands (end with a }).</p>
 
-<pre><code>   {      Begin a block of commands (end with a }).
-
-   b label
+<pre><code>   b label
           Branch to label; if label is omitted, branch to end of script.
 
    c \
@@ -202,17 +192,16 @@
           dest.
 </code></pre>
 
-<p>Addresses</p>
+<p>Addresses
+       Sed commands can be given with no addresses, in which case the command will be executed for all input  lines;  with
+       one  address, in which case the command will only be executed for input lines which match that address; or with two
+       addresses, in which case the command will be executed for all input lines which match the inclusive range of  lines
+       starting  from  the first address and continuing to the second address.  Three things to note about address ranges:
+       the syntax is addr1,addr2 (i.e., the addresses are separated by a comma); the line which addr1 matched will  always
+       be  accepted,  even  if  addr2 selects an earlier line; and if addr2 is a regexp, it will not be tested against the
+       line that addr1 matched.</p>
 
-<pre><code>   Sed commands can be given with no addresses, in which case the command will be executed for all input  lines;  with
-   one  address, in which case the command will only be executed for input lines which match that address; or with two
-   addresses, in which case the command will be executed for all input lines which match the inclusive range of  lines
-   starting  from  the first address and continuing to the second address.  Three things to note about address ranges:
-   the syntax is addr1,addr2 (i.e., the addresses are separated by a comma); the line which addr1 matched will  always
-   be  accepted,  even  if  addr2 selects an earlier line; and if addr2 is a regexp, it will not be tested against the
-   line that addr1 matched.
-
-   After the address (or address-range), and before the command, a !  may be inserted, which specifies that  the  com‐
+<pre><code>   After the address (or address-range), and before the command, a !  may be inserted, which specifies that  the  com‐
    mand shall only be executed if the address (or address-range) does not match.
 
    The following address types are supported:
@@ -249,39 +238,30 @@
           N.
 </code></pre>
 
-<p>REGULAR EXPRESSIONS</p>
+<p>REGULAR EXPRESSIONS
+       POSIX.2 BREs should be supported, but they aren&rsquo;t completely because of performance problems.  The \n sequence in a
+       regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
-<pre><code>   POSIX.2 BREs should be supported, but they aren't completely because of performance problems.  The \n sequence in a
-   regular expression matches the newline character, and similarly for \a, \t, and other sequences.
-</code></pre>
+<p>BUGS
+       E-mail  bug  reports  to <a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#x62;&#x75;&#x67;&#x2d;&#115;&#x65;&#100;&#x40;&#x67;&#110;&#x75;&#46;&#111;&#x72;&#x67;&#x2e;">&#98;&#x75;&#x67;&#x2d;&#115;&#x65;&#100;&#x40;&#103;&#110;&#x75;&#x2e;&#111;&#x72;&#x67;&#46;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       report if at all possible.</p>
 
-<p>BUGS</p>
+<p>AUTHOR
+       Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU sed  home  page:  &lt;<a href="http://www.gnu.org/soft%E2%80%90">http://www.gnu.org/soft%E2%80%90</a>
+       ware/sed/>.   General  help  using  GNU  software:  <a href="http://www.gnu.org/gethelp/">http://www.gnu.org/gethelp/</a>.   E-mail  bug  reports to: <bug-
+       sed@gnu.org>.  Be sure to include the word &ldquo;sed&rdquo; somewhere in the &ldquo;Subject:&rdquo; field.</p>
 
-<pre><code>   E-mail  bug  reports  to bug-sed@gnu.org.  Also, please include the output of ``sed --version'' in the body of your
-   report if at all possible.
-</code></pre>
+<p>COPYRIGHT
+       Copyright  ©  2012  Free  Software   Foundation,   Inc.    License   GPLv3+:   GNU   GPL   version   3   or   later
+       <a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>.
+       This  is  free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted
+       by law.</p>
 
-<p>AUTHOR</p>
+<p>SEE ALSO
+       awk(1), ed(1), grep(1), tr(1), perlre(1), sed.info, any of various books on sed, the sed FAQ
+       (<a href="http://sed.sf.net/grabbag/tutorials/sedfaq.txt">http://sed.sf.net/grabbag/tutorials/sedfaq.txt</a>), <a href="http://sed.sf.net/grabbag/.">http://sed.sf.net/grabbag/.</a></p>
 
-<pre><code>   Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU sed  home  page:  &lt;http://www.gnu.org/soft‐
-   ware/sed/&gt;.   General  help  using  GNU  software:  &lt;http://www.gnu.org/gethelp/&gt;.   E-mail  bug  reports to: &lt;bug-
-   sed@gnu.org&gt;.  Be sure to include the word ``sed'' somewhere in the ``Subject:'' field.
-</code></pre>
-
-<p>COPYRIGHT</p>
-
-<pre><code>   Copyright  ©  2012  Free  Software   Foundation,   Inc.    License   GPLv3+:   GNU   GPL   version   3   or   later
-   &lt;http://gnu.org/licenses/gpl.html&gt;.
-   This  is  free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted
-   by law.
-</code></pre>
-
-<p>SEE ALSO</p>
-
-<pre><code>   awk(1), ed(1), grep(1), tr(1), perlre(1), sed.info, any of various books on sed, the sed FAQ
-   (http://sed.sf.net/grabbag/tutorials/sedfaq.txt), http://sed.sf.net/grabbag/.
-
-   The full documentation for sed is maintained as a Texinfo manual.  If the info and sed programs are properly
+<pre><code>   The full documentation for sed is maintained as a Texinfo manual.  If the info and sed programs are properly
    installed at your site, the command
 
           info sed
@@ -295,9 +275,9 @@
   
   <entry>
     <title type="html"><![CDATA[Linux-有用的命令]]></title>
-    <link href="http://me.94313.net/blog/2014/08/31/linux-useful-command/"/>
+    <link href="http://yoursite.com/blog/2014/08/31/linux-useful-command/"/>
     <updated>2014-08-31T18:57:18+08:00</updated>
-    <id>http://me.94313.net/blog/2014/08/31/linux-useful-command</id>
+    <id>http://yoursite.com/blog/2014/08/31/linux-useful-command</id>
     <content type="html"><![CDATA[<p>下面我将和大家分享一些学习Linux命令行的技巧，希望能对大家有所助益。如果在本文中遇到不太熟悉的命令，可以在终端中键入以下命令寻求帮助。
 Man <command>
  Linux入门必备
@@ -329,7 +309,7 @@ $ cat hosts | xargs -I{} ssh root@{} hostnameX
 
 <h1>continue in original dir</h1>
 
-<p>字符串修剪（Trimming Strings）：${var%suffix}和${var#prefix}。例如if var=foo.pdf then echo ${var%.pdf}.txt prints &ldquo;foo.txt&#8221;。
+<p>字符串修剪（Trimming Strings）：${var%suffix}和${var#prefix}。例如if var=foo.pdf then echo ${var%.pdf}.txt prints &ldquo;foo.txt"。
 命令的输出可以当做文件使用。例如，比较本地和远程的/etc/hosts文件：
 diff /etc/hosts &lt;(ssh somehost cat /etc/hosts)
 了解bash中的“here documents”。
@@ -372,9 +352,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
   
   <entry>
     <title type="html"><![CDATA[Linux命令行技巧]]></title>
-    <link href="http://me.94313.net/blog/2012/03/23/command-line-skill-of-linux/"/>
+    <link href="http://yoursite.com/blog/2012/03/23/command-line-skill-of-linux/"/>
     <updated>2012-03-23T13:18:37+08:00</updated>
-    <id>http://me.94313.net/blog/2012/03/23/command-line-skill-of-linux</id>
+    <id>http://yoursite.com/blog/2012/03/23/command-line-skill-of-linux</id>
     <content type="html"><![CDATA[<h2>编辑命令</h2>
 
 <pre><code>* Ctrl + a ：移到命令行首
@@ -442,9 +422,9 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
   
   <entry>
     <title type="html"><![CDATA[Yum配置笔记]]></title>
-    <link href="http://me.94313.net/blog/2012/03/02/note-of-yum/"/>
+    <link href="http://yoursite.com/blog/2012/03/02/note-of-yum/"/>
     <updated>2012-03-02T10:11:18+08:00</updated>
-    <id>http://me.94313.net/blog/2012/03/02/note-of-yum</id>
+    <id>http://yoursite.com/blog/2012/03/02/note-of-yum</id>
     <content type="html"><![CDATA[<h3>YUM 优点</h3>
 
 <p>自动解决包的依赖性的问题能更新的添加/删除/更新/RPM包
@@ -456,19 +436,17 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
 
 <h3>CentOS的镜像站点</h3>
 
-<p>了解 镜像站点的文件结构 对理解 yum 配置文件 .repo 文件有帮助</p>
-
-<pre><code>http://mirror-status.centos.org
-http://isoredirect.centos.org/centos/5/isos/i386/
-addons/      本目录包含Centos的addons 仓库
-centosplus/  本目录包含Centos的centosplus 仓库
-extras/      本目录包含Centos的extras 仓库
-fasttrack/   本目录包含Centos的extras 仓库
-isos-dvd/    本目录包含发行版的DVD iso 下载
-isos/        本目录包含发行版 CD iso 下载
-os/          本目录包含发行版(distributions)的仓库
-updates/     本目录包含Centos的updates仓库
-</code></pre>
+<p>了解 镜像站点的文件结构 对理解 yum 配置文件 .repo 文件有帮助
+    <a href="http://mirror-status.centos.org">http://mirror-status.centos.org</a>
+    <a href="http://isoredirect.centos.org/centos/5/isos/i386/">http://isoredirect.centos.org/centos/5/isos/i386/</a>
+    addons/      本目录包含Centos的addons 仓库
+    centosplus/  本目录包含Centos的centosplus 仓库
+    extras/      本目录包含Centos的extras 仓库
+    fasttrack/   本目录包含Centos的extras 仓库
+    isos-dvd/    本目录包含发行版的DVD iso 下载
+    isos/        本目录包含发行版 CD iso 下载
+    os/          本目录包含发行版(distributions)的仓库
+    updates/     本目录包含Centos的updates仓库</p>
 
 <h3>CentOS 的仓库</h3>
 
@@ -507,37 +485,32 @@ centospuls:　用于增强一些现有软件包的功能(默认未启用)</p>
 Centos-Base.repo: 用于设置远程仓库
 Centos-Media.repo: 用于设置本地仓库</p>
 
-<p>yum 目录结构</p>
-
-<pre><code>/etc
-  |--yum/
-  |   |--/pluginconf.d    
-  |   |--/yum-updatesd.conf/
-  |            |--downloadonly.conf
-  |            |--fastestmirror.conf
-  |            |--priorities.conf
-  |--yum.conf
-  |--yum.repos.d/
-        |--CentOS-Base.repo
-        |--CentOS-Media.repo
-</code></pre>
+<p>yum 目录结构
+    /etc
+      |&ndash;yum/
+      |   |&ndash;/pluginconf.d  <br/>
+      |   |&ndash;/yum-updatesd.conf/
+      |            |&ndash;downloadonly.conf
+      |            |&ndash;fastestmirror.conf
+      |            |&ndash;priorities.conf
+      |&ndash;yum.conf
+      |&ndash;yum.repos.d/
+            |&ndash;CentOS-Base.repo
+            |&ndash;CentOS-Media.repo</p>
 
 <p>在.repo 文件中，配置语法是分段的，每一段配置一个软件仓库，语法如下：
 设置网络更新源
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
-
-<pre><code>[base]  \\用于指定仓库
-name=CentOS-$releasever - Base \\用于指定易读的仓库名称
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os \\用于指定本仓库的URL
-#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-#        =ftp://  \\用于指定远程ftp协议的愿
-#        =file://  \\ 用于本地镜像或NFS挂载文件系统
-#nabled=0/1  \\用于指定是否使用本地仓库，默认为1，即可用。
-gpgcheck=1  \\用于指定是否检查软件包的GPG签名
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5  \\用于指定GPG签名文件的URL
-</code></pre>
-
-<p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [base]  \用于指定仓库
+    name=CentOS-$releasever - Base \用于指定易读的仓库名称
+    mirrorlist=<a href="http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os">http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</a> \用于指定本仓库的URL
+    #baseurl=<a href="http://mirror.centos.org/centos/$releasever/os/$basearch/">http://mirror.centos.org/centos/$releasever/os/$basearch/</a>
+    #        =<a href="ftp://">ftp://</a>  \用于指定远程ftp协议的愿
+    #        =file://  \ 用于本地镜像或NFS挂载文件系统
+    #nabled=0/1  \用于指定是否使用本地仓库，默认为1，即可用。
+    gpgcheck=1  \用于指定是否检查软件包的GPG签名
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5  \用于指定GPG签名文件的URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 注：若指定mirrorlist,系统将从Centos 的镜像站点中选择离你最近的仓库。
 [$releasever]当前系统的版本号
 [$basearch] 当前系统的构架
@@ -545,20 +518,17 @@ baseurl 可以指定多个URL ,系统会依次检查你列出的仓库。以便�
 
 <h3>设置本地更新源</h3>
 
-<p>为了使用 [c5-media]仓库，需将Centos-Base</p>
-
-<pre><code>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[c5-media]
-name=CentOS-$releasever - Media
-baseurl=file:///media/CentOS/
-        file:///media/cdrom/
-        file:///media/cdrecorder/
-gpgcheck=1
-enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-</code></pre>
-
-<p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
+<p>为了使用 [c5-media]仓库，需将Centos-Base
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [c5-media]
+    name=CentOS-$releasever - Media
+    baseurl=file:///media/CentOS/
+            file:///media/cdrom/
+            file:///media/cdrecorder/
+    gpgcheck=1
+    enabled=0
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
 
 <h3>设置非官方更新源</h3>
 
@@ -631,12 +601,11 @@ yum –exclude=kernel</em> update</p>
 
 <h3>附：</h3>
 
-<p>当仓库配置文件 *.repo 使用了多个URL yum-fastestmirror  可以自动选择最快的镜像站点</p>
+<p>当仓库配置文件 *.repo 使用了多个URL yum-fastestmirror  可以自动选择最快的镜像站点
+    yum -y install yum-fastestmirror
+    yum-fastestmirror 的配置文件在 /etc/yum/pluginconf.d/fastestmirror.conf 默认不需要修改。</p>
 
-<pre><code>yum -y install yum-fastestmirror
-yum-fastestmirror 的配置文件在 /etc/yum/pluginconf.d/fastestmirror.conf 默认不需要修改。
-
-yum -updatesd
+<pre><code>yum -updatesd
 rpm -ql yum-updatesd
 yum -cron
 yum -y install yum-cron
@@ -652,18 +621,14 @@ rpm -ql yum-cron
 </code></pre>
 
 <p>使用yum下载而不安装rpm包
-先安装yum-downloadonly</p>
+先安装yum-downloadonly
+    # yum install yum-downloadonly</p>
 
-<pre><code># yum install yum-downloadonly
-</code></pre>
-
-<p>安装后使用方法如下:</p>
-
-<pre><code># yum update httpd -y --downloadonly   ###下载到默认目录  /var/cache/yum
-OR
-# yum update httpd -y --downloadonly --downloaddir=/opt     ##下载到指定目录
-# yum install perl-MailTools --downloadonly --downloaddir=/opt -y     ##如果软件已经下载过了，必须使用这个来下载
-</code></pre>
+<p>安装后使用方法如下:
+    # yum update httpd -y &ndash;downloadonly   ###下载到默认目录  /var/cache/yum
+    OR
+    # yum update httpd -y &ndash;downloadonly &ndash;downloaddir=/opt     ##下载到指定目录
+    # yum install perl-MailTools &ndash;downloadonly &ndash;downloaddir=/opt -y     ##如果软件已经下载过了，必须使用这个来下载</p>
 ]]></content>
   </entry>
   

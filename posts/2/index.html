@@ -9,12 +9,7 @@
   <title>每个人的声音都面向世界</title>
   <meta name="author" content="wuchangqian">
   
-  <meta name="description" content="在做服务器负载均衡时候可供选择的负载均衡的算法有很多，包括： 轮循算法（Round Robin）
-哈希算法（HASH）
-最少连接算法（Least Connection）
-响应速度算法（Response Time）
-加权法（Weighted ）等 其中哈希算法是最为常用的算法.
-典型的应用场景是： &hellip;">
+  <meta name="description" content="增加category_list插件 保存以下代码到plugins/category_list_tag.rb： module Jekyll class CategoryListTag &lt; Liquid::Tag def render(context) html = "" categories &hellip;">
   
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -62,6 +57,74 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/20/octopress-add-category2rightaside/">Octopress添加分类到侧边栏</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-20T23:02:11+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:02 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>增加category_list插件</h2>
+
+<p>保存以下代码到plugins/category_list_tag.rb：</p>
+
+<pre><code>module Jekyll
+  class CategoryListTag &lt; Liquid::Tag
+    def render(context)
+      html = ""
+      categories = context.registers[:site].categories.keys
+      categories.sort.each do |category|
+        posts_in_category = context.registers[:site].categories[category].size
+        category_dir = context.registers[:site].config['category_dir']
+        category_url = File.join(category_dir, category.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase)
+        html &lt;&lt; "&lt;li class='category'&gt;&lt;a href='/#{category_url}/'&gt;#{category} (#{posts_in_category})&lt;/a&gt;&lt;/li&gt;\n"
+      end
+      html
+    end
+  end
+end
+</code></pre>
+
+<p>Liquid::Template.register_tag(&lsquo;category_list&rsquo;, Jekyll::CategoryListTag)<br/>
+这个插件会向liquid注册一个名为category_list的tag，该tag就是以li的形式将站点所有的category组织起来。如果要将category加入到侧边导航栏，需要增加一个aside。</p>
+
+<h2>增加aside</h2>
+
+<p>复制以下代码到source/_includes/asides/category_list.html。</p>
+
+<pre><code>&lt;section&gt;
+  &lt;h1&gt;Categories&lt;/h1&gt;
+  &lt;ul id="categories"&gt;
+    { % category_list % }
+  &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+
+<h2>配置侧边栏需要修改_config.yml文件，修改其default_asides项：</h2>
+
+<p>default_asides: [asides/category_list.html, asides/recent_posts.html]<br/>
+以上asides根据自己的需求调整。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1306,6 +1369,10 @@ rpm -ql yum-cron
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/07/20/2016middle/">2016middle</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
       </li>
     
@@ -1319,10 +1386,6 @@ rpm -ql yum-cron
     
       <li class="post">
         <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
       </li>
     
   </ul>

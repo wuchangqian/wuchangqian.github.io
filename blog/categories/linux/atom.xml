@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2017-05-07T20:14:18+08:00</updated>
+  <updated>2017-05-07T20:35:24+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -41,6 +41,354 @@
 <p>录制屏幕</p>
 
 <pre><code>1. ffmpeg -f -dshow -s 1600x900 -r 50 -vcodec libx264 –preset:v ultrafast –tune:v zerolatency -crf 18 -f mpegts rtmp://192.168.1.5/mytv/test2      在Windows平台下，使用-dshow取代x11grab
+</code></pre>
+
+<p>-i 指定输入的文件
+-acodec 指定输出文件的音频编码
+-vcodec 指定输出文件的视频编码</p>
+
+<p>最简单的抓屏：</p>
+
+<pre><code>ffmpeg -f gdigrab -i desktop out.mpg
+</code></pre>
+
+<p>从屏幕的（10,20）点处开始，抓取640x480的屏幕，设定帧率为5</p>
+
+<pre><code>ffmpeg -f gdigrab -framerate 5 -offset_x 10 -offset_y 20 -video_size 640x480 -i desktop out.mpg
+</code></pre>
+
+<p>//=======================================================================
+    ffmpeg -ss START -t DURATION -i INPUT -vcodec copy -acodec copy OUTPUT
+    对上面的命令稍做个解释。
+    -ss 开始时间，如： 00:00:20，表示从20秒开始；
+    -t 时长，如： 00:00:10，表示截取10秒长的视频；
+    -i 输入，后面是空格，紧跟着就是输入视频文件；
+    -vcodec copy 和 -acodec copy表示所要使用的视频和音频的编码格式，这里指定为copy表示原样拷贝；
+    INPUT，输入视频文件；
+    OUTPUT，输出视频文件；
+//=======================================================================</p>
+
+<pre><code>ffmpeg -f x11grab -s xga -r 10 -i :0.0+0+0 wheer.avi
+-i video="screen-capture-recorder"
+
+ffmpeg -f dshow -i video="DirectShow video devices" -f dshow -i audio="DirectShow audio devices" -pix_fmt yuv420p -vcodec libx264 -acodec libvo_aacenc -s 1280x720 -r 25 -q 10 -ar 44100 -ac 2 -tune zerolatency -preset ultrafast -f mpegts - | ffmpeg -f mpegts -i - -c copy -bsf:a aac_adtstoasc -f flv temp.flv
+</code></pre>
+
+<p>-r选项设置每秒提取图片的帧数。
+-q:v 2  设置输出文件的视频质量为：优</p>
+
+<p>截取一张352x240尺寸大小的，格式为jpg的图片</p>
+
+<pre><code>ffmpeg -i 1.mp4 -y -f image2 -t 120.001 -s 352x240 a.jpg
+</code></pre>
+
+<p>把视频的前30帧转换成一个Animated Gif ：</p>
+
+<pre><code>ffmpeg -i 1.mp4 -vframes 30 -y -f gif a.gif
+</code></pre>
+
+<p>生成缩略图</p>
+
+<pre><code>ffmpeg -i 1.mp4 -y -f image2 -ss 08.010 -t 0.001 -s 352x240 b.jpg
+</code></pre>
+
+<p>列出本机设备</p>
+
+<pre><code>ffmpeg -list_devices true -f dshow -i dummy
+</code></pre>
+
+<p>从视频中生成gif图片</p>
+
+<pre><code>ffmpeg -i 1.mp4 -ss 10 -t 10   -s 480x360  tutu.gif
+</code></pre>
+
+<h2>-ss 指从 10s 开始转码,-t 指转换 10s 的视频 -s 指定尺寸</h2>
+
+<pre><code>rtmp://video-center.alivecdn.com/AppName/StreamName?vhost=zhibo.busionline.com
+</code></pre>
+
+<p>前言：FFmpeg是做音视频开发的一个优秀的开源库，可以在不同平台下编译，能够实现视频采集、视频格式转化、视频截图、视频添加水印、视频切片、视频录制、视频推流、更改音视频参数功能等。通过终端命令及开发时如何实现这些功能，本文做一整理记录，以备不时之需。下面共四组命令。</p>
+
+<p>第一组</p>
+
+<p>1.分离视频音频流</p>
+
+<pre><code>ffmpeg -i input_file -vcodec copy -an output_file_video　　//分离视频流ffmpeg -i input_file -acodec copy -vn output_file_audio　　//分离音频流
+</code></pre>
+
+<p>2.视频解复用</p>
+
+<pre><code>ffmpeg –i test.mp4 –vcodec copy –an –f m4v test.264
+
+ffmpeg –i test.avi –vcodec copy –an –f m4v test.264
+</code></pre>
+
+<p>3.视频转码</p>
+
+<pre><code>ffmpeg –i test.mp4 –vcodec h264 –s 352*278 –an –f m4v test.264
+</code></pre>
+
+<p>//转码为码流原始文件</p>
+
+<pre><code>ffmpeg –i test.mp4 –vcodec h264 –bf 0 –g 25 –s 352*278 –an –f m4v test.264 //转码为码流原始文件
+
+ffmpeg –i test.avi -vcodec mpeg4 –vtag xvid –qsame test_xvid.avi //转码为封装文件
+</code></pre>
+
+<p>说明：-bf B帧数目控制，-g 关键帧间隔控制，-s 分辨率控制</p>
+
+<p>4.视频封装</p>
+
+<pre><code>ffmpeg –i video_file –i audio_file –vcodec copy –acodec copy output_file
+</code></pre>
+
+<p>5.视频剪切</p>
+
+<pre><code>ffmpeg –i test.avi –r 1 –f image2 image-%3d.jpeg //提取图片
+
+ffmpeg -ss 0:1:30 -t 0:0:20 -i input.avi -vcodec copy -acodec copy output.avi //剪切视频//-r 提取图像的频率，-ss 开始时间，-t 持续时间
+</code></pre>
+
+<p>6.视频录制</p>
+
+<pre><code>ffmpeg –i rtsp://192.168.3.205:5555/test –vcodec copy out.avi
+</code></pre>
+
+<p>7、利用ffmpeg视频切片</p>
+
+<p>主要把视频源切成若干个.ts格式的视频片段然后生成一个.m3u8的切片文件索引提供给html5的video做hls直播源</p>
+
+<p>命令如下：</p>
+
+<pre><code>ffmpeg -i 视频源地址 -strict -2 -c:v libx264 -c:a aac -f hls m3u8文件输出地址
+</code></pre>
+
+<p>8、ffmpeg缩放视频</p>
+
+<p>假设原始视频尺寸是 1080p（即 1920×1080 px，16:9），使用下面命令可以缩小到 480p：(ps:以下这个命令，据说违反微信平台相关法律，蛋疼，用不了文字，只能用图片了)</p>
+
+<p>各个参数的含义：-i a.mov 指定待处理视频的文件名-vf scale=853:480 vf 参数用于指定视频滤镜，其中 scale 表示缩放，后面的数字表示缩放至 853×480 px，其中的 853px 是计算而得，因为原始视频的宽高比为 16:9，所以为了让目标视频的高度为 480px，则宽度 = 480 x 9 / 16 = 853-acodec aac 指定音频使用 aac 编码。注：因为 ffmpeg 的内置 aac 编码目前还是试验阶段，故会提示添加参数 “-strict -2” 才能继续，尽管添加即可。又或者使用外部的 libfaac（需要重新编译 ffmpeg）。-vcodec h264 指定视频使用 h264 编码。注：目前手机一般视频拍摄的格式（封装格式、文件格式）为 mov 或者 mp4，这两者的音频编码都是 aac，视频都是 h264。out.mp4 指定输出文件名上面的参数 scale=853:480 当中的宽度和高度实际应用场景中通常只需指定一个，比如指定高度为 480 或者 720，至于宽度则可以传入 “-1” 表示由原始视频的宽高比自动计算而得。即参数可以写为：scale=-1:480，当然也可以 scale=480:-1</p>
+
+<p>9、ffmpeg裁剪</p>
+
+<p>有时可能只需要视频的正中一块，而两头的内容不需要，这时可以对视频进行裁剪（crop），比如有一个竖向的视频 1080 x 1920，如果指向保留中间 1080×1080 部分命令如下：ffmpeg -i 视频源地址 -strict -2 -vf crop=1080:1080:0:420 视频输出地址（如：out.mp4）</p>
+
+<p>其中的 crop=1080:1080:0:420 才裁剪参数，具体含义是 crop=width:height:x:y，其中 width 和 height 表示裁剪后的尺寸，x:y 表示裁剪区域的左上角坐标。比如当前这个示例，我们只需要保留竖向视频的中间部分，所以 x 不用偏移，故传入0，而 y 则需要向下偏移：(1920 – 1080) / 2 = 420</p>
+
+<ol>
+<li><p>转视频格式</p>
+
+<p>ffmpeng -i source.mp4 -c:v libx264 -crf 24 destination.flv</p></li>
+</ol>
+
+
+<p>其中 -crf 很重要，是控制转码后视频的质量，质量越高，文件也就越大。</p>
+
+<p>此值的范围是 0 到 51：0 表示高清无损；23 是默认值（如果没有指定此参数）；51 虽然文件最小，但效果是最差的。</p>
+
+<p>值越小，质量越高，但文件也越大，建议的值范围是 18 到 28。而值 18 是视觉上看起来无损或接近无损的，当然不代表是数据（技术上）的转码无损。</p>
+
+<p>第二组</p>
+
+<p>1.ffmpeg 把文件当做直播推送至服务器 (RTMP + FLV)</p>
+
+<pre><code>ffmpeg - re -i demo.mp4 -c copy - f flv rtmp://w.gslb.letv/live/streamid
+</code></pre>
+
+<p>2.将直播的媒体保存到本地</p>
+
+<pre><code>ffmpeg -i rtmp://r.glsb.letv/live/streamid -c copy streamfile.flv
+</code></pre>
+
+<p>3.将一个直播流，视频改用h264压缩，音频改用faac压缩，送至另一个直播服务器</p>
+
+<pre><code>ffmpeg -i rtmp://r.glsb.letv/live/streamidA -c:a libfaac -ar 44100 -ab 48k -c:v libx264 -vpre slow -vpre baseline -f flv rtmp://w.glsb.letv/live/streamb
+</code></pre>
+
+<p>4.提取视频中的音频,并保存为mp3 然后输出</p>
+
+<pre><code>ffmpeg -i input.avi -b:a 128k output.mp3
+</code></pre>
+
+<ol>
+<li><p>将mp3转为pcm</p>
+
+<p> ffmpeg-iinput.mp3-fs16be-acodecpcm_s16beoutput.pcm</p></li>
+</ol>
+
+
+<p>第三组</p>
+
+<p>1.获取视频的信息</p>
+
+<pre><code>ffmpeg -i video.avi
+</code></pre>
+
+<p>2.将图片序列合成视频</p>
+
+<pre><code>ffmpeg -f image2 -i image%d.jpg video.mpg
+</code></pre>
+
+<p>上面的命令会把当前目录下的图片（名字如：image1.jpg. image2.jpg. 等&hellip;）合并成video.mpg</p>
+
+<p>3.将视频分解成图片序列</p>
+
+<pre><code>ffmpeg -i video.mpg image%d.jpg
+</code></pre>
+
+<p>上面的命令会生成image1.jpg. image2.jpg. &hellip;</p>
+
+<pre><code>支持的图片格式有：PGM. PPM. PAM. PGMYUV. JPEG. GIF. PNG. TIFF. SGI
+</code></pre>
+
+<p>4.为视频重新编码以适合在iPod/iPhone上播放</p>
+
+<pre><code>ffmpeg -i source_video.avi input -acodec aac -ab 128kb -vcodec mpeg4 -b 1200kb -mbd 2 -flags +4mv+trell -aic 2 -cmp 2 -subcmp 2 -s 320x180 -title X final_video.mp4
+</code></pre>
+
+<p>5.为视频重新编码以适合在PSP上播放</p>
+
+<pre><code>ffmpeg -i source_video.avi -b 300 -s 320x240 -vcodec xvid -ab 32 -ar 24000 -acodec aac final_video.mp4
+</code></pre>
+
+<p>6.从视频抽出声音.并存为Mp3</p>
+
+<pre><code>ffmpeg -i source_video.avi -vn -ar 44100 -ac 2 -ab 192 -f mp3 sound.mp3
+</code></pre>
+
+<p>7.将wav文件转成Mp3</p>
+
+<pre><code>ffmpeg -i son_origine.avi -vn -ar 44100 -ac 2 -ab 192 -f mp3 son_final.mp3
+</code></pre>
+
+<p>8.将.avi视频转成.mpg</p>
+
+<pre><code>ffmpeg -i video_origine.avi video_finale.mpg
+</code></pre>
+
+<p>9.将.mpg转成.avi</p>
+
+<pre><code>ffmpeg -i video_origine.mpg video_finale.avi
+</code></pre>
+
+<p>10.将.avi转成gif动画（未压缩）</p>
+
+<pre><code>ffmpeg -i video_origine.avi gif_anime.gif
+</code></pre>
+
+<p>11.合成视频和音频</p>
+
+<pre><code>ffmpeg -i son.wav -i video_origine.avi video_finale.mpg
+</code></pre>
+
+<p>12.将.avi转成.flv</p>
+
+<pre><code>ffmpeg -i video_origine.avi -ab 56 -ar 44100 -b 200 -r 15 -s 320x240 -f flv video_finale.flv
+</code></pre>
+
+<p>13.将.avi转成dv</p>
+
+<pre><code>ffmpeg -i video_origine.avi -s pal -r pal -aspect 4:3 -ar 48000 -ac 2 video_finale.dv
+</code></pre>
+
+<p>或者：</p>
+
+<pre><code>ffmpeg -i video_origine.avi -target pal-dv video_finale.dv
+</code></pre>
+
+<p>14.将.avi压缩成divx</p>
+
+<pre><code>ffmpeg -i video_origine.avi -s 320x240 -vcodec msmpeg4v2 video_finale.avi
+</code></pre>
+
+<p>15.将Ogg Theora压缩成Mpeg dvd</p>
+
+<pre><code>ffmpeg -i film_sortie_cinelerra.ogm -s 720x576 -vcodec mpeg2video -acodec mp3 film_terminate.mpg
+</code></pre>
+
+<p>16.将.avi压缩成SVCD mpeg2</p>
+
+<p>NTSC格式：</p>
+
+<pre><code>ffmpeg -i video_origine.avi -target ntsc-svcd video_finale.mpg
+</code></pre>
+
+<p>PAL格式：</p>
+
+<pre><code>ffmpeg -i video_origine.avi -target pal-dvcd video_finale.mpg
+</code></pre>
+
+<p>17.将.avi压缩成VCD mpeg2</p>
+
+<pre><code>NTSC格式： 
+ffmpeg -i video_origine.avi -target ntsc-vcd video_finale.mpg
+</code></pre>
+
+<p>PAL格式：</p>
+
+<pre><code>ffmpeg -i video_origine.avi -target pal-vcd video_finale.mpg
+</code></pre>
+
+<p>18.多通道编码</p>
+
+<pre><code>ffmpeg -i fichierentree -pass 2 -passlogfile ffmpeg2pass fichiersortie-2
+</code></pre>
+
+<p>19.从flv提取mp3</p>
+
+<pre><code>ffmpeg -i source.flv -ab 128k dest.mp3
+</code></pre>
+
+<p>第四组</p>
+
+<p>1、将文件当做直播送至live</p>
+
+<pre><code>ffmpeg -re -i localFile.mp4 -c copy -f flv rtmp://server/live/streamName
+</code></pre>
+
+<p>2、将直播媒体保存至本地文件</p>
+
+<pre><code>ffmpeg -i rtmp://server/live/streamName -c copy dump.flv
+</code></pre>
+
+<p>3、将其中一个直播流，视频改用h264压缩，音频不变，送至另外一个直播服务流</p>
+
+<pre><code>ffmpeg -i rtmp://server/live/originalStream -c:a copy -c:v libx264 -vpre slow -f flv rtmp://server/live/h264Stream
+</code></pre>
+
+<p>4、将其中一个直播流，视频改用h264压缩，音频改用faac压缩，送至另外一个直播服务流</p>
+
+<pre><code>ffmpeg -i rtmp://server/live/originalStream -c:a libfaac -ar 44100 -ab 48k -c:v libx264 -vpre slow -vpre baseline -f flv rtmp://server/live/h264Stream
+</code></pre>
+
+<p>5、将其中一个直播流，视频不变，音频改用faac压缩，送至另外一个直播服务流</p>
+
+<pre><code>ffmpeg -i rtmp://server/live/originalStream -acodec libfaac -ar 44100 -ab 48k -vcodec copy -f flv rtmp://server/live/h264_AAC_Stream
+</code></pre>
+
+<p>6、将一个高清流，复制为几个不同视频清晰度的流重新发布，其中音频不变</p>
+
+<pre><code>ffmpeg -re -i rtmp://server/live/high_FMLE_stream -acodec copy -vcodec x264lib -s 640×360 -b 500k -vpre medium -vpre baseline rtmp://server/live/baseline_500k -acodec copy -vcodec x264lib -s 480×272 -b 300k -vpre medium -vpre baseline rtmp://server/live/baseline_300k -acodec copy -vcodec x264lib -s 320×200 -b 150k -vpre medium -vpre baseline rtmp://server/live/baseline_150k -acodec libfaac -vn -ab 48k rtmp://server/live/audio_only_AAC_48k
+</code></pre>
+
+<p>7、功能一样，只是采用-x264opts选项</p>
+
+<pre><code>ffmpeg -re -i rtmp://server/live/high_FMLE_stream -c:a copy -c:v x264lib -s 640×360 -x264opts bitrate=500:profile=baseline:preset=slow rtmp://server/live/baseline_500k -c:a copy -c:v x264lib -s 480×272 -x264opts bitrate=300:profile=baseline:preset=slow rtmp://server/live/baseline_300k -c:a copy -c:v x264lib -s 320×200 -x264opts bitrate=150:profile=baseline:preset=slow rtmp://server/live/baseline_150k -c:a libfaac -vn -b:a 48k rtmp://server/live/audio_only_AAC_48k
+</code></pre>
+
+<p>8、将当前摄像头及音频通过DSSHOW采集，视频h264、音频faac压缩后发布</p>
+
+<pre><code>ffmpeg -r 25 -f dshow -s 640×480 -i video=”video source name”:audio=”audio source name” -vcodec libx264 -b 600k -vpre slow -acodec libfaac -ab 128k -f flv rtmp://server/application/stream_name
+</code></pre>
+
+<p>9、将一个JPG图片经过h264压缩循环输出为mp4视频</p>
+
+<pre><code>ffmpeg.exe -i INPUT.jpg -an -vcodec libx264 -coder 1 -flags +loop -cmp +chroma -subq 10 -qcomp 0.6 -qmin 10 -qmax 51 -qdiff 4 -flags2 +dct8x8 -trellis 2 -partitions +parti8x8+parti4x4 -crf 24 -threads 0 -r 25 -g 25 -y OUTPUT.mp4
+</code></pre>
+
+<p>10、将普通流视频改用h264压缩，音频不变，送至高清流服务(新版本FMS live=1)</p>
+
+<pre><code>ffmpeg -i rtmp://server/live/originalStream -c:a copy -c:v libx264 -vpre slow -f flv “rtmp://server/live/h264Stream live=1〃
 </code></pre>
 ]]></content>
   </entry>
@@ -303,7 +651,7 @@ make &amp;&amp; make install
        regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
 <p>BUGS
-       E-mail  bug  reports  to <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#x62;&#117;&#103;&#x2d;&#x73;&#x65;&#x64;&#x40;&#x67;&#x6e;&#117;&#x2e;&#x6f;&#114;&#x67;&#46;">&#98;&#117;&#x67;&#45;&#115;&#101;&#100;&#x40;&#x67;&#110;&#x75;&#x2e;&#x6f;&#x72;&#x67;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       E-mail  bug  reports  to <a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#98;&#x75;&#103;&#x2d;&#115;&#x65;&#100;&#64;&#103;&#110;&#117;&#46;&#x6f;&#x72;&#103;&#46;">&#98;&#117;&#x67;&#45;&#x73;&#x65;&#100;&#x40;&#103;&#x6e;&#117;&#46;&#x6f;&#114;&#103;&#46;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
        report if at all possible.</p>
 
 <p>AUTHOR

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Sed | 学会欣赏]]></title>
+  <title><![CDATA[Category: Sed | 每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/blog/categories/sed/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T22:12:35+08:00</updated>
+  <updated>2017-05-07T18:11:11+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -18,24 +18,19 @@
     <link href="http://me.94313.net/blog/2014/09/01/sed-man-page/"/>
     <updated>2014-09-01T18:30:03+08:00</updated>
     <id>http://me.94313.net/blog/2014/09/01/sed-man-page</id>
-    <content type="html"><![CDATA[<p>NAME</p>
+    <content type="html"><![CDATA[<p>NAME
+       sed - stream editor for filtering and transforming text</p>
 
-<pre><code>   sed - stream editor for filtering and transforming text
-</code></pre>
+<p>SYNOPSIS
+       sed [OPTION]&hellip; {script-only-if-no-other-script} [input-file]&hellip;</p>
 
-<p>SYNOPSIS</p>
+<p>DESCRIPTION
+       Sed  is  a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file
+       or input from a pipeline).  While in some ways similar to an editor which permits scripted edits (such as ed),  sed
+       works  by  making  only one pass over the input(s), and is consequently more efficient.  But it is sed&rsquo;s ability to
+       filter text in a pipeline which particularly distinguishes it from other types of editors.</p>
 
-<pre><code>   sed [OPTION]... {script-only-if-no-other-script} [input-file]...
-</code></pre>
-
-<p>DESCRIPTION</p>
-
-<pre><code>   Sed  is  a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file
-   or input from a pipeline).  While in some ways similar to an editor which permits scripted edits (such as ed),  sed
-   works  by  making  only one pass over the input(s), and is consequently more efficient.  But it is sed's ability to
-   filter text in a pipeline which particularly distinguishes it from other types of editors.
-
-   -n, --quiet, --silent
+<pre><code>   -n, --quiet, --silent
 
           suppress automatic printing of pattern space
 
@@ -98,28 +93,24 @@
    ject:'' field.
 </code></pre>
 
-<p>COMMAND SYNOPSIS</p>
+<p>COMMAND SYNOPSIS
+       This is just a brief synopsis of sed commands to serve as a reminder to those who already know sed; other  documen‐
+       tation (such as the texinfo document) must be consulted for fuller descriptions.</p>
 
-<pre><code>   This is just a brief synopsis of sed commands to serve as a reminder to those who already know sed; other  documen‐
-   tation (such as the texinfo document) must be consulted for fuller descriptions.
-</code></pre>
+<p>   Zero-address &ldquo;commands&rdquo;
+       : label
+              Label for b and t commands.</p>
 
-<p>   Zero-address &ldquo;commands&rdquo;</p>
-
-<pre><code>   : label
-          Label for b and t commands.
-
-   #comment
+<pre><code>   #comment
           The comment extends until the next newline (or the end of a -e script fragment).
 
    }      The closing bracket of a { } block.
 </code></pre>
 
-<p>   Zero- or One- address commands</p>
+<p>   Zero- or One- address commands
+       =      Print the current line number.</p>
 
-<pre><code>   =      Print the current line number.
-
-   a \
+<pre><code>   a \
 
    text   Append text, which has each embedded newline preceded by a backslash.
 
@@ -142,11 +133,10 @@
           extension.
 </code></pre>
 
-<p>   Commands which accept address ranges</p>
+<p>   Commands which accept address ranges
+       {      Begin a block of commands (end with a }).</p>
 
-<pre><code>   {      Begin a block of commands (end with a }).
-
-   b label
+<pre><code>   b label
           Branch to label; if label is omitted, branch to end of script.
 
    c \
@@ -202,17 +192,16 @@
           dest.
 </code></pre>
 
-<p>Addresses</p>
+<p>Addresses
+       Sed commands can be given with no addresses, in which case the command will be executed for all input  lines;  with
+       one  address, in which case the command will only be executed for input lines which match that address; or with two
+       addresses, in which case the command will be executed for all input lines which match the inclusive range of  lines
+       starting  from  the first address and continuing to the second address.  Three things to note about address ranges:
+       the syntax is addr1,addr2 (i.e., the addresses are separated by a comma); the line which addr1 matched will  always
+       be  accepted,  even  if  addr2 selects an earlier line; and if addr2 is a regexp, it will not be tested against the
+       line that addr1 matched.</p>
 
-<pre><code>   Sed commands can be given with no addresses, in which case the command will be executed for all input  lines;  with
-   one  address, in which case the command will only be executed for input lines which match that address; or with two
-   addresses, in which case the command will be executed for all input lines which match the inclusive range of  lines
-   starting  from  the first address and continuing to the second address.  Three things to note about address ranges:
-   the syntax is addr1,addr2 (i.e., the addresses are separated by a comma); the line which addr1 matched will  always
-   be  accepted,  even  if  addr2 selects an earlier line; and if addr2 is a regexp, it will not be tested against the
-   line that addr1 matched.
-
-   After the address (or address-range), and before the command, a !  may be inserted, which specifies that  the  com‐
+<pre><code>   After the address (or address-range), and before the command, a !  may be inserted, which specifies that  the  com‐
    mand shall only be executed if the address (or address-range) does not match.
 
    The following address types are supported:
@@ -249,39 +238,30 @@
           N.
 </code></pre>
 
-<p>REGULAR EXPRESSIONS</p>
+<p>REGULAR EXPRESSIONS
+       POSIX.2 BREs should be supported, but they aren&rsquo;t completely because of performance problems.  The \n sequence in a
+       regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
-<pre><code>   POSIX.2 BREs should be supported, but they aren't completely because of performance problems.  The \n sequence in a
-   regular expression matches the newline character, and similarly for \a, \t, and other sequences.
-</code></pre>
+<p>BUGS
+       E-mail  bug  reports  to <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#x62;&#117;&#103;&#x2d;&#115;&#101;&#x64;&#64;&#x67;&#110;&#117;&#x2e;&#x6f;&#x72;&#103;&#x2e;">&#x62;&#x75;&#x67;&#x2d;&#115;&#101;&#100;&#64;&#103;&#x6e;&#x75;&#46;&#x6f;&#x72;&#x67;&#46;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       report if at all possible.</p>
 
-<p>BUGS</p>
+<p>AUTHOR
+       Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU sed  home  page:  &lt;<a href="http://www.gnu.org/soft%E2%80%90">http://www.gnu.org/soft%E2%80%90</a>
+       ware/sed/>.   General  help  using  GNU  software:  <a href="http://www.gnu.org/gethelp/">http://www.gnu.org/gethelp/</a>.   E-mail  bug  reports to: <bug-
+       sed@gnu.org>.  Be sure to include the word &ldquo;sed&rdquo; somewhere in the &ldquo;Subject:&rdquo; field.</p>
 
-<pre><code>   E-mail  bug  reports  to bug-sed@gnu.org.  Also, please include the output of ``sed --version'' in the body of your
-   report if at all possible.
-</code></pre>
+<p>COPYRIGHT
+       Copyright  ©  2012  Free  Software   Foundation,   Inc.    License   GPLv3+:   GNU   GPL   version   3   or   later
+       <a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>.
+       This  is  free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted
+       by law.</p>
 
-<p>AUTHOR</p>
+<p>SEE ALSO
+       awk(1), ed(1), grep(1), tr(1), perlre(1), sed.info, any of various books on sed, the sed FAQ
+       (<a href="http://sed.sf.net/grabbag/tutorials/sedfaq.txt">http://sed.sf.net/grabbag/tutorials/sedfaq.txt</a>), <a href="http://sed.sf.net/grabbag/.">http://sed.sf.net/grabbag/.</a></p>
 
-<pre><code>   Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU sed  home  page:  &lt;http://www.gnu.org/soft‐
-   ware/sed/&gt;.   General  help  using  GNU  software:  &lt;http://www.gnu.org/gethelp/&gt;.   E-mail  bug  reports to: &lt;bug-
-   sed@gnu.org&gt;.  Be sure to include the word ``sed'' somewhere in the ``Subject:'' field.
-</code></pre>
-
-<p>COPYRIGHT</p>
-
-<pre><code>   Copyright  ©  2012  Free  Software   Foundation,   Inc.    License   GPLv3+:   GNU   GPL   version   3   or   later
-   &lt;http://gnu.org/licenses/gpl.html&gt;.
-   This  is  free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted
-   by law.
-</code></pre>
-
-<p>SEE ALSO</p>
-
-<pre><code>   awk(1), ed(1), grep(1), tr(1), perlre(1), sed.info, any of various books on sed, the sed FAQ
-   (http://sed.sf.net/grabbag/tutorials/sedfaq.txt), http://sed.sf.net/grabbag/.
-
-   The full documentation for sed is maintained as a Texinfo manual.  If the info and sed programs are properly
+<pre><code>   The full documentation for sed is maintained as a Texinfo manual.  If the info and sed programs are properly
    installed at your site, the command
 
           info sed

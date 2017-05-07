@@ -6,14 +6,10 @@
 <head>
   <meta charset="utf-8">
   <script async="true" src="/javascripts/libs/jquery.min.js"></script>
-  <title>使用栈来找路径 - 学会欣赏</title>
+  <title>使用栈来找路径 - 每个人的声音都面向世界</title>
   <meta name="author" content="wuchangqian">
   
-  <meta name="description" content="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt; 数据结构-栈的应用 &lt;/title&gt;
-&lt;meta http-equiv="Content-type" content="text/html;charset &hellip;">
+  <meta name="description" content="&lt;!DOCTYPE html> 数据结构-栈的应用 使用栈来找路径 查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通） 清除路径 查找路径 &lt;!&ndash; / 入口函数 / $(function(){ init(); addEvents &hellip;&#8221;>
   
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -22,7 +18,7 @@
   <link rel="canonical" href="http://me.94313.net/blog/2012/12/06/use-of-stack">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="学会欣赏" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="每个人的声音都面向世界" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   
@@ -31,7 +27,7 @@
 </head>
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">学会欣赏</a></h1>
+  <h1><a href="/">每个人的声音都面向世界</a></h1>
   
     <h2>木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</h2>
   
@@ -80,41 +76,40 @@
   </header>
 
 
-<div class="entry-content"><p><img src="/images/use-of-stack-01.png" alt="示例图片-01" /></p>
+<div class="entry-content"><p><img src="/images/use-of-stack-01.png" alt="示例图片-01" />
+    &lt;!DOCTYPE html>
+    <html>
+    <head>
+    <title> 数据结构-栈的应用 </title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8;" >
+    <style>
+    <em>{margin:0;padding:0;}
+    #container .line{display:block;float:left;}
+    .block{width:15px;height:15px;float:left;font-size:8px;border-right:1px solid #111;border-bottom:1px solid #111;}
+    .bld{background:black;color:#fff;}
+    .start{background:red;color:#fff;}
+    .end{background:red;color:#f00;}
+    .route{background:red;}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>使用栈来找路径</h1>
+        <p>
+        查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通）
+        </p>
+    <button text='clear' id="btn-clear">清除路径</button>
+    <button text='clear' id="btn-find">查找路径</button>
+      <div id='container'></div>
+      <script type="text/javascript">
+    &lt;!&ndash;
+    /</em><strong><strong> 入口函数 </strong></strong>/
+    $(function(){
+        init();
+        addEvents();
+    });</p>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt; 数据结构-栈的应用 &lt;/title&gt;
-&lt;meta http-equiv="Content-type" content="text/html;charset=utf-8;" &gt;
-&lt;style&gt;
-*{margin:0;padding:0;}
-#container .line{display:block;float:left;}
-.block{width:15px;height:15px;float:left;font-size:8px;border-right:1px solid #111;border-bottom:1px solid #111;}
-.bld{background:black;color:#fff;}
-.start{background:red;color:#fff;}
-.end{background:red;color:#f00;}
-.route{background:red;}
-&lt;/style&gt;
-&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;使用栈来找路径&lt;/h1&gt;
-    &lt;p&gt;
-    查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通）
-    &lt;/p&gt;
-&lt;button text='clear' id="btn-clear"&gt;清除路径&lt;/button&gt;
-&lt;button text='clear' id="btn-find"&gt;查找路径&lt;/button&gt;
-  &lt;div id='container'&gt;&lt;/div&gt;
-  &lt;script type="text/javascript"&gt;
-&lt;!--
-/***** 入口函数 ****/
-$(function(){
-    init();
-    addEvents();
-});
-
-function init(){
+<pre><code>function init(){
 
     window.M_x = 70;  //矩阵的宽和高
     window.M_y = 45;
@@ -393,6 +388,10 @@ function getid(arg){
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/06/htop(%E5%86%B2%E7%AA%81_wcq-PC_2015-07-06%2022-06-31)/">Htop是个好东西</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
       </li>
     
@@ -408,10 +407,6 @@ function getid(arg){
         <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -419,7 +414,7 @@ function getid(arg){
   <ul id="categories">
     <li class='category'><a href='/blog/categories/algorithm/'>algorithm (3)</a></li>
 <li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
-<li class='category'><a href='/blog/categories/computer/'>computer (5)</a></li>
+<li class='category'><a href='/blog/categories/computer/'>computer (6)</a></li>
 <li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
 <li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
 <li class='category'><a href='/blog/categories/function/'>function (1)</a></li>
@@ -429,7 +424,7 @@ function getid(arg){
 <li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
 <li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (5)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (6)</a></li>
 <li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
@@ -477,7 +472,7 @@ function getid(arg){
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - wuchangqian -
+  Copyright &copy; 2017 - wuchangqian -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 <script type="text/javascript">

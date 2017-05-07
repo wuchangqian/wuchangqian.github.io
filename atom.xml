@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[学会欣赏]]></title>
+  <title><![CDATA[每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T22:12:35+08:00</updated>
+  <updated>2017-05-07T18:11:11+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Htop是个好东西]]></title>
+    <link href="http://me.94313.net/blog/2015/01/06/htop(%E5%86%B2%E7%AA%81_wcq-PC_2015-07-06%2022-06-31)/"/>
+    <updated>2015-01-06T13:49:16+08:00</updated>
+    <id>http://me.94313.net/blog/2015/01/06/htop(冲突_wcq-PC_2015-07-06 22-06-31)</id>
+    <content type="html"><![CDATA[<pre><code>Htop是一款运行于Linux系统监控与进程管理软件，用于取代Unix下传统的top。与top只提供最消耗资源的进程列表不同，htop提供所有进程的列表，并且使用彩色标识出处理器、swap和内存状态。
+</code></pre>
+
+<p>用户一般可以在top无法提供详尽系统信息的情况下选择安装并使用htop。比如，在查找应用程序的内存泄漏问题时。与top相比，htop提供更方便、光标控制的界面来杀死进程。
+htop用C语言编写，采用了ncurses库。htop的名称源于其作者的名字。</p>
+
+<h2>安装htop</h2>
+
+<pre><code>yum -y install ncurses-devel #htop依赖ncurses
+cd /opt
+wget -c http://ncu.dl.sourceforge.net/project/htop/htop/1.0.2/htop-1.0.2.tar.gz
+tar xzf htop-1.0.2.tar.gz
+cd htop-1.0.2
+./configure
+make &amp;&amp; make install
+</code></pre>
+
+<h2>示例图片</h2>
+
+<p><img src="http://me.94313.net/images/2015/htop.gif" title="示例图片" alt="示例图片" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Htop是个好东西]]></title>
@@ -140,24 +168,19 @@ make &amp;&amp; make install
     <link href="http://me.94313.net/blog/2014/09/01/sed-man-page/"/>
     <updated>2014-09-01T18:30:03+08:00</updated>
     <id>http://me.94313.net/blog/2014/09/01/sed-man-page</id>
-    <content type="html"><![CDATA[<p>NAME</p>
+    <content type="html"><![CDATA[<p>NAME
+       sed - stream editor for filtering and transforming text</p>
 
-<pre><code>   sed - stream editor for filtering and transforming text
-</code></pre>
+<p>SYNOPSIS
+       sed [OPTION]&hellip; {script-only-if-no-other-script} [input-file]&hellip;</p>
 
-<p>SYNOPSIS</p>
+<p>DESCRIPTION
+       Sed  is  a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file
+       or input from a pipeline).  While in some ways similar to an editor which permits scripted edits (such as ed),  sed
+       works  by  making  only one pass over the input(s), and is consequently more efficient.  But it is sed&rsquo;s ability to
+       filter text in a pipeline which particularly distinguishes it from other types of editors.</p>
 
-<pre><code>   sed [OPTION]... {script-only-if-no-other-script} [input-file]...
-</code></pre>
-
-<p>DESCRIPTION</p>
-
-<pre><code>   Sed  is  a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file
-   or input from a pipeline).  While in some ways similar to an editor which permits scripted edits (such as ed),  sed
-   works  by  making  only one pass over the input(s), and is consequently more efficient.  But it is sed's ability to
-   filter text in a pipeline which particularly distinguishes it from other types of editors.
-
-   -n, --quiet, --silent
+<pre><code>   -n, --quiet, --silent
 
           suppress automatic printing of pattern space
 
@@ -220,28 +243,24 @@ make &amp;&amp; make install
    ject:'' field.
 </code></pre>
 
-<p>COMMAND SYNOPSIS</p>
+<p>COMMAND SYNOPSIS
+       This is just a brief synopsis of sed commands to serve as a reminder to those who already know sed; other  documen‐
+       tation (such as the texinfo document) must be consulted for fuller descriptions.</p>
 
-<pre><code>   This is just a brief synopsis of sed commands to serve as a reminder to those who already know sed; other  documen‐
-   tation (such as the texinfo document) must be consulted for fuller descriptions.
-</code></pre>
+<p>   Zero-address &ldquo;commands&rdquo;
+       : label
+              Label for b and t commands.</p>
 
-<p>   Zero-address &ldquo;commands&rdquo;</p>
-
-<pre><code>   : label
-          Label for b and t commands.
-
-   #comment
+<pre><code>   #comment
           The comment extends until the next newline (or the end of a -e script fragment).
 
    }      The closing bracket of a { } block.
 </code></pre>
 
-<p>   Zero- or One- address commands</p>
+<p>   Zero- or One- address commands
+       =      Print the current line number.</p>
 
-<pre><code>   =      Print the current line number.
-
-   a \
+<pre><code>   a \
 
    text   Append text, which has each embedded newline preceded by a backslash.
 
@@ -264,11 +283,10 @@ make &amp;&amp; make install
           extension.
 </code></pre>
 
-<p>   Commands which accept address ranges</p>
+<p>   Commands which accept address ranges
+       {      Begin a block of commands (end with a }).</p>
 
-<pre><code>   {      Begin a block of commands (end with a }).
-
-   b label
+<pre><code>   b label
           Branch to label; if label is omitted, branch to end of script.
 
    c \
@@ -324,17 +342,16 @@ make &amp;&amp; make install
           dest.
 </code></pre>
 
-<p>Addresses</p>
+<p>Addresses
+       Sed commands can be given with no addresses, in which case the command will be executed for all input  lines;  with
+       one  address, in which case the command will only be executed for input lines which match that address; or with two
+       addresses, in which case the command will be executed for all input lines which match the inclusive range of  lines
+       starting  from  the first address and continuing to the second address.  Three things to note about address ranges:
+       the syntax is addr1,addr2 (i.e., the addresses are separated by a comma); the line which addr1 matched will  always
+       be  accepted,  even  if  addr2 selects an earlier line; and if addr2 is a regexp, it will not be tested against the
+       line that addr1 matched.</p>
 
-<pre><code>   Sed commands can be given with no addresses, in which case the command will be executed for all input  lines;  with
-   one  address, in which case the command will only be executed for input lines which match that address; or with two
-   addresses, in which case the command will be executed for all input lines which match the inclusive range of  lines
-   starting  from  the first address and continuing to the second address.  Three things to note about address ranges:
-   the syntax is addr1,addr2 (i.e., the addresses are separated by a comma); the line which addr1 matched will  always
-   be  accepted,  even  if  addr2 selects an earlier line; and if addr2 is a regexp, it will not be tested against the
-   line that addr1 matched.
-
-   After the address (or address-range), and before the command, a !  may be inserted, which specifies that  the  com‐
+<pre><code>   After the address (or address-range), and before the command, a !  may be inserted, which specifies that  the  com‐
    mand shall only be executed if the address (or address-range) does not match.
 
    The following address types are supported:
@@ -371,39 +388,30 @@ make &amp;&amp; make install
           N.
 </code></pre>
 
-<p>REGULAR EXPRESSIONS</p>
+<p>REGULAR EXPRESSIONS
+       POSIX.2 BREs should be supported, but they aren&rsquo;t completely because of performance problems.  The \n sequence in a
+       regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
-<pre><code>   POSIX.2 BREs should be supported, but they aren't completely because of performance problems.  The \n sequence in a
-   regular expression matches the newline character, and similarly for \a, \t, and other sequences.
-</code></pre>
+<p>BUGS
+       E-mail  bug  reports  to <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#98;&#117;&#103;&#x2d;&#115;&#x65;&#x64;&#x40;&#x67;&#x6e;&#117;&#46;&#x6f;&#114;&#103;&#46;">&#x62;&#x75;&#x67;&#x2d;&#x73;&#x65;&#100;&#x40;&#x67;&#x6e;&#x75;&#x2e;&#x6f;&#x72;&#103;&#46;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       report if at all possible.</p>
 
-<p>BUGS</p>
+<p>AUTHOR
+       Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU sed  home  page:  &lt;<a href="http://www.gnu.org/soft%E2%80%90">http://www.gnu.org/soft%E2%80%90</a>
+       ware/sed/>.   General  help  using  GNU  software:  <a href="http://www.gnu.org/gethelp/">http://www.gnu.org/gethelp/</a>.   E-mail  bug  reports to: <bug-
+       sed@gnu.org>.  Be sure to include the word &ldquo;sed&rdquo; somewhere in the &ldquo;Subject:&rdquo; field.</p>
 
-<pre><code>   E-mail  bug  reports  to bug-sed@gnu.org.  Also, please include the output of ``sed --version'' in the body of your
-   report if at all possible.
-</code></pre>
+<p>COPYRIGHT
+       Copyright  ©  2012  Free  Software   Foundation,   Inc.    License   GPLv3+:   GNU   GPL   version   3   or   later
+       <a href="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</a>.
+       This  is  free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted
+       by law.</p>
 
-<p>AUTHOR</p>
+<p>SEE ALSO
+       awk(1), ed(1), grep(1), tr(1), perlre(1), sed.info, any of various books on sed, the sed FAQ
+       (<a href="http://sed.sf.net/grabbag/tutorials/sedfaq.txt">http://sed.sf.net/grabbag/tutorials/sedfaq.txt</a>), <a href="http://sed.sf.net/grabbag/.">http://sed.sf.net/grabbag/.</a></p>
 
-<pre><code>   Written by Jay Fenlason, Tom Lord, Ken Pizzini, and Paolo Bonzini.  GNU sed  home  page:  &lt;http://www.gnu.org/soft‐
-   ware/sed/&gt;.   General  help  using  GNU  software:  &lt;http://www.gnu.org/gethelp/&gt;.   E-mail  bug  reports to: &lt;bug-
-   sed@gnu.org&gt;.  Be sure to include the word ``sed'' somewhere in the ``Subject:'' field.
-</code></pre>
-
-<p>COPYRIGHT</p>
-
-<pre><code>   Copyright  ©  2012  Free  Software   Foundation,   Inc.    License   GPLv3+:   GNU   GPL   version   3   or   later
-   &lt;http://gnu.org/licenses/gpl.html&gt;.
-   This  is  free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted
-   by law.
-</code></pre>
-
-<p>SEE ALSO</p>
-
-<pre><code>   awk(1), ed(1), grep(1), tr(1), perlre(1), sed.info, any of various books on sed, the sed FAQ
-   (http://sed.sf.net/grabbag/tutorials/sedfaq.txt), http://sed.sf.net/grabbag/.
-
-   The full documentation for sed is maintained as a Texinfo manual.  If the info and sed programs are properly
+<pre><code>   The full documentation for sed is maintained as a Texinfo manual.  If the info and sed programs are properly
    installed at your site, the command
 
           info sed
@@ -455,37 +463,37 @@ HTML 5
 <h3>HTML 4.01 Strict</h3>
 
 <p>该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。
-&lt;!DOCTYPE HTML PUBLIC &ldquo;&ndash;//W3C//DTD HTML 4.01//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/html4/strict.dtd">http://www.w3.org/TR/html4/strict.dtd</a>&rdquo;></p>
+&lt;!DOCTYPE HTML PUBLIC &ldquo;-//W3C//DTD HTML 4.01//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/html4/strict.dtd">http://www.w3.org/TR/html4/strict.dtd</a>&rdquo;></p>
 
 <h3>HTML 4.01 Transitional</h3>
 
 <p>该 DTD 包含所有 HTML 元素和属性，包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。
-&lt;!DOCTYPE HTML PUBLIC &ldquo;&ndash;//W3C//DTD HTML 4.01 Transitional//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/html4/loose.dtd">http://www.w3.org/TR/html4/loose.dtd</a>&rdquo;></p>
+&lt;!DOCTYPE HTML PUBLIC &ldquo;-//W3C//DTD HTML 4.01 Transitional//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/html4/loose.dtd">http://www.w3.org/TR/html4/loose.dtd</a>&rdquo;></p>
 
 <h3>HTML 4.01 Frameset</h3>
 
 <p>该 DTD 等同于 HTML 4.01 Transitional，但允许框架集内容。
-&lt;!DOCTYPE HTML PUBLIC &ldquo;&ndash;//W3C//DTD HTML 4.01 Frameset//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/html4/frameset.dtd">http://www.w3.org/TR/html4/frameset.dtd</a>&rdquo;></p>
+&lt;!DOCTYPE HTML PUBLIC &ldquo;-//W3C//DTD HTML 4.01 Frameset//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/html4/frameset.dtd">http://www.w3.org/TR/html4/frameset.dtd</a>&rdquo;></p>
 
 <h3>XHTML 1.0 Strict</h3>
 
 <p>该 DTD 包含所有 HTML 元素和属性，但不包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。必须以格式正确的 XML 来编写标记。
-&lt;!DOCTYPE html PUBLIC &ldquo;&ndash;//W3C//DTD XHTML 1.0 Strict//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</a>&rdquo;></p>
+&lt;!DOCTYPE html PUBLIC &ldquo;-//W3C//DTD XHTML 1.0 Strict//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</a>&rdquo;></p>
 
 <h3>XHTML 1.0 Transitional</h3>
 
 <p>该 DTD 包含所有 HTML 元素和属性，包括展示性的和弃用的元素（比如 font）。不允许框架集（Framesets）。必须以格式正确的 XML 来编写标记。
-&lt;!DOCTYPE html PUBLIC &ldquo;&ndash;//W3C//DTD XHTML 1.0 Transitional//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</a>&rdquo;></p>
+&lt;!DOCTYPE html PUBLIC &ldquo;-//W3C//DTD XHTML 1.0 Transitional//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</a>&rdquo;></p>
 
 <h3>XHTML 1.0 Frameset</h3>
 
 <p>该 DTD 等同于 XHTML 1.0 Transitional，但允许框架集内容。
-&lt;!DOCTYPE html PUBLIC &ldquo;&ndash;//W3C//DTD XHTML 1.0 Frameset//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd</a>&rdquo;></p>
+&lt;!DOCTYPE html PUBLIC &ldquo;-//W3C//DTD XHTML 1.0 Frameset//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd</a>&rdquo;></p>
 
 <h3>XHTML 1.1</h3>
 
 <p>该 DTD 等同于 XHTML 1.0 Strict，但允许添加模型（例如提供对东亚语系的 ruby 支持）。
-&lt;!DOCTYPE html PUBLIC &ldquo;&ndash;//W3C//DTD XHTML 1.1//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd</a>&rdquo;></p>
+&lt;!DOCTYPE html PUBLIC &ldquo;-//W3C//DTD XHTML 1.1//EN&rdquo; &ldquo;<a href="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd</a>&rdquo;></p>
 ]]></content>
   </entry>
   
@@ -843,41 +851,40 @@ end
     <link href="http://me.94313.net/blog/2012/12/06/use-of-stack/"/>
     <updated>2012-12-06T09:46:51+08:00</updated>
     <id>http://me.94313.net/blog/2012/12/06/use-of-stack</id>
-    <content type="html"><![CDATA[<p><img src="http://me.94313.net/images/use-of-stack-01.png" alt="示例图片-01" /></p>
+    <content type="html"><![CDATA[<p><img src="http://me.94313.net/images/use-of-stack-01.png" alt="示例图片-01" />
+    &lt;!DOCTYPE html>
+    <html>
+    <head>
+    <title> 数据结构-栈的应用 </title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8;" >
+    <style>
+    <em>{margin:0;padding:0;}
+    #container .line{display:block;float:left;}
+    .block{width:15px;height:15px;float:left;font-size:8px;border-right:1px solid #111;border-bottom:1px solid #111;}
+    .bld{background:black;color:#fff;}
+    .start{background:red;color:#fff;}
+    .end{background:red;color:#f00;}
+    .route{background:red;}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>使用栈来找路径</h1>
+        <p>
+        查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通）
+        </p>
+    <button text='clear' id="btn-clear">清除路径</button>
+    <button text='clear' id="btn-find">查找路径</button>
+      <div id='container'></div>
+      <script type="text/javascript">
+    &lt;!&ndash;
+    /</em><strong><strong> 入口函数 </strong></strong>/
+    $(function(){
+        init();
+        addEvents();
+    });</p>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt; 数据结构-栈的应用 &lt;/title&gt;
-&lt;meta http-equiv="Content-type" content="text/html;charset=utf-8;" &gt;
-&lt;style&gt;
-*{margin:0;padding:0;}
-#container .line{display:block;float:left;}
-.block{width:15px;height:15px;float:left;font-size:8px;border-right:1px solid #111;border-bottom:1px solid #111;}
-.bld{background:black;color:#fff;}
-.start{background:red;color:#fff;}
-.end{background:red;color:#f00;}
-.route{background:red;}
-&lt;/style&gt;
-&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;使用栈来找路径&lt;/h1&gt;
-    &lt;p&gt;
-    查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通）
-    &lt;/p&gt;
-&lt;button text='clear' id="btn-clear"&gt;清除路径&lt;/button&gt;
-&lt;button text='clear' id="btn-find"&gt;查找路径&lt;/button&gt;
-  &lt;div id='container'&gt;&lt;/div&gt;
-  &lt;script type="text/javascript"&gt;
-&lt;!--
-/***** 入口函数 ****/
-$(function(){
-    init();
-    addEvents();
-});
-
-function init(){
+<pre><code>function init(){
 
     window.M_x = 70;  //矩阵的宽和高
     window.M_y = 45;
@@ -1113,147 +1120,126 @@ function getid(arg){
     <content type="html"><![CDATA[<h2>岗位：程序员</h2>
 
 <p>　　程序员(英文Programmer)是从事程序开发、维护的专业人员。一般我们将程序员分为程序设计人员和程序编码员，但两者的界限并不非常清楚，特别是在中国。
-　　作一个真正合格的程序员，应该具有的素质。</p>
-
-<pre><code>1：团队精神和协作能力
-　　团队精神和协作能力是作为一个程序员应具备的最基本的素质。软件工程 已经提了将近三十年了，当今的软件开发已经不是编程了，而是工程。独行侠可以写一些程序也能赚钱发财，但是进入研发团队，从事商业化和产品化的开发任务， 就必须具备这种素质。可以毫不夸张的说这种素质是一个程序员乃至一个团队的安身立命之本。
-2：文档习惯
-　　文档是一个软件系统的生命力。一个公司的产品再好、技术含量再高，如果没有缺乏文档，知识就没有继承，公司还是一个来料加工的软件作坊。作为代码程序员，必须将30％的工作时间写用于技术文档。没有文档的程序员势必会被淘汰。
-3：规范化的代码编写习惯
-　　知名软件公司的代码的变量命名、注释格式，甚至嵌套中行缩进的长度和函数间的空行数字都有明确规定，良好的编写习惯，不但有助于代码的移植和纠错，也有助于不同技术人员之间的协作。一些所谓的高手甚至叫嚣高手写的代码一般人看不懂，我只能说他不是一名合格的程序员。
-4：需求理解能力
-　　程序员要能正确理解任务单中描述的需求。在这里要明确一点，程序员不 仅仅要注意到软件的功能需求，还应注意软件的性能需求，要能正确评估自己的模块对整个项目中的影响及潜在的威胁，如果有着两到三年项目经验的熟练程序员对 这一点没有体会的话，只能说明他或许是认真工作过，但是没有用心工作。
-5：模块化思维能力
-　　作为一个优秀的程序员，他的思想不能在局限当前的工作任务里面，要想 想看自己写的模块是否可以脱离当前系统存在，通过简单的封装在其他系统中或其他模块中直接使用。这样做可以使代码能重复利用，减少重复的劳动，也能是系统 结构越趋合理。模块化思维能力的提高是一个程序员的技术水平提高的一项重要指标。
-6：测试习惯
-　　测试是软件工程质量保证的重要环节，但是测试不仅仅是测试工程师的工作，而是每个程序员的一种基本职责。程序员要认识测试不仅是正常的程序调试，而要是要进行有目的有针对性的异常调用测试，这一点要结合需求理解能力。
-7：学习和总结的能力
-　　程序员是很容易被淘汰的职业，所以要善于学习总结。许多程序员喜欢盲 目追求一些编码的小技巧，这样的技术人员无论学了多少语言，代码写起来多熟练，我们只能说他是一名熟练的代码民工，他永远都不会有质的提高。一个善于学习 的程序员会经常总结自己的技术水平，对自己的技术层面要有良好的定位，这样才能有目的地提高自己。这样才能逐步提高，从程序员升级为软件设计师、系统分析 员。
-</code></pre>
-
-<p>　　</p>
-
-<pre><code>作为高级程序员，乃至于设计师而言，除了应该具备上述全部素质之外，还需要具备以下素质：
-    1、 需求分析能力
-    2、 整体框架能力
-    3、 流程处理能力
-    4、 模块分解能力
-    5、 整体项目评估能力
-    6、 团队组织管理能力
-</code></pre>
-
-<p>　</p>
+　　作一个真正合格的程序员，应该具有的素质。
+    1：团队精神和协作能力
+    　　团队精神和协作能力是作为一个程序员应具备的最基本的素质。软件工程 已经提了将近三十年了，当今的软件开发已经不是编程了，而是工程。独行侠可以写一些程序也能赚钱发财，但是进入研发团队，从事商业化和产品化的开发任务， 就必须具备这种素质。可以毫不夸张的说这种素质是一个程序员乃至一个团队的安身立命之本。
+    2：文档习惯
+    　　文档是一个软件系统的生命力。一个公司的产品再好、技术含量再高，如果没有缺乏文档，知识就没有继承，公司还是一个来料加工的软件作坊。作为代码程序员，必须将30％的工作时间写用于技术文档。没有文档的程序员势必会被淘汰。
+    3：规范化的代码编写习惯
+    　　知名软件公司的代码的变量命名、注释格式，甚至嵌套中行缩进的长度和函数间的空行数字都有明确规定，良好的编写习惯，不但有助于代码的移植和纠错，也有助于不同技术人员之间的协作。一些所谓的高手甚至叫嚣高手写的代码一般人看不懂，我只能说他不是一名合格的程序员。
+    4：需求理解能力
+    　　程序员要能正确理解任务单中描述的需求。在这里要明确一点，程序员不 仅仅要注意到软件的功能需求，还应注意软件的性能需求，要能正确评估自己的模块对整个项目中的影响及潜在的威胁，如果有着两到三年项目经验的熟练程序员对 这一点没有体会的话，只能说明他或许是认真工作过，但是没有用心工作。
+    5：模块化思维能力
+    　　作为一个优秀的程序员，他的思想不能在局限当前的工作任务里面，要想 想看自己写的模块是否可以脱离当前系统存在，通过简单的封装在其他系统中或其他模块中直接使用。这样做可以使代码能重复利用，减少重复的劳动，也能是系统 结构越趋合理。模块化思维能力的提高是一个程序员的技术水平提高的一项重要指标。
+    6：测试习惯
+    　　测试是软件工程质量保证的重要环节，但是测试不仅仅是测试工程师的工作，而是每个程序员的一种基本职责。程序员要认识测试不仅是正常的程序调试，而要是要进行有目的有针对性的异常调用测试，这一点要结合需求理解能力。
+    7：学习和总结的能力
+    　　程序员是很容易被淘汰的职业，所以要善于学习总结。许多程序员喜欢盲 目追求一些编码的小技巧，这样的技术人员无论学了多少语言，代码写起来多熟练，我们只能说他是一名熟练的代码民工，他永远都不会有质的提高。一个善于学习 的程序员会经常总结自己的技术水平，对自己的技术层面要有良好的定位，这样才能有目的地提高自己。这样才能逐步提高，从程序员升级为软件设计师、系统分析 员。
+　　
+    作为高级程序员，乃至于设计师而言，除了应该具备上述全部素质之外，还需要具备以下素质：
+        1、 需求分析能力
+        2、 整体框架能力
+        3、 流程处理能力
+        4、 模块分解能力
+        5、 整体项目评估能力
+        6、 团队组织管理能力
+　</p>
 
 <h3>岗位：项目经理</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1、 计划：
-    a)项目范围、项目质量、项目时间、项目成本的确认。
-    b)项目过程/活动的标准化、规范化。
-    c)根据项目范围、质量、时间与成本的综合因素的考虑，进行项目的总体规划与阶段计划。
-    d)各项计划得到上级领导、客户方及项目组成员认可。
-2、 组织：
-    a)组织项目所需的各项资源。
-    b)设置项目组中的各种角色，并分配好各角色的责任与权限。
-    c)定制项目组内外的沟通计划。（必要时可按配置管理要求写项目策划目录中的《项目沟通计划》）
-    d)安排组内需求分析师、客户联系人等角色与客户的沟通与交流。
-    e)处理项目组与其它项目干系人之间的关系。
-    f)处理项目组内各角色之间的关系、处理项目组内各成员之间的关系。
-    g)安排客户培训工作。
-3、 领导：
-    a)保证项目组目标明确且理解一致。
-    b)创建项目组的开发环境及氛围，在项目范围内保证项目组成员不受项目其它方面的影响。
-    c)提升项目组士气，加强项目组凝聚力。
-    d)合理安排项目组各成员的工作，使各成员工作都能达到一定的饱满度。
-    e)制定项目组需要的招聘或培训人员的计划。
-    f)定期组织项目组成员进行相关技术培训以及与项目相关的行业培训等。
-    g)及时发现项目组中出现的问题。
-    h)及时处理项目组中出现的问题。
-4、 控制
-    a)保证项目在预算成本范围内按规定的质量和进度达到项目目标。
-    b)在项目生命周期的各个阶段，跟踪、检查项目组成员的工作质量；
-    c)定期向领导汇报项目工作进度以及项目开发过程中的难题。
-    d)对项目进行配置管理与规划。
-    e)控制项目组各成员的工作进度，即时了解项目组成员的工作情况，并能快速的解决项目组成员所碰到的难题。
-    f)不定期组织项目组成员进行项目以外的短期活动，以培养团队精神。
-</code></pre>
-
-<p>结语：
+<p>主要职责：
+    1、 计划：
+        a)项目范围、项目质量、项目时间、项目成本的确认。
+        b)项目过程/活动的标准化、规范化。
+        c)根据项目范围、质量、时间与成本的综合因素的考虑，进行项目的总体规划与阶段计划。
+        d)各项计划得到上级领导、客户方及项目组成员认可。
+    2、 组织：
+        a)组织项目所需的各项资源。
+        b)设置项目组中的各种角色，并分配好各角色的责任与权限。
+        c)定制项目组内外的沟通计划。（必要时可按配置管理要求写项目策划目录中的《项目沟通计划》）
+        d)安排组内需求分析师、客户联系人等角色与客户的沟通与交流。
+        e)处理项目组与其它项目干系人之间的关系。
+        f)处理项目组内各角色之间的关系、处理项目组内各成员之间的关系。
+        g)安排客户培训工作。
+    3、 领导：
+        a)保证项目组目标明确且理解一致。
+        b)创建项目组的开发环境及氛围，在项目范围内保证项目组成员不受项目其它方面的影响。
+        c)提升项目组士气，加强项目组凝聚力。
+        d)合理安排项目组各成员的工作，使各成员工作都能达到一定的饱满度。
+        e)制定项目组需要的招聘或培训人员的计划。
+        f)定期组织项目组成员进行相关技术培训以及与项目相关的行业培训等。
+        g)及时发现项目组中出现的问题。
+        h)及时处理项目组中出现的问题。
+    4、 控制
+        a)保证项目在预算成本范围内按规定的质量和进度达到项目目标。
+        b)在项目生命周期的各个阶段，跟踪、检查项目组成员的工作质量；
+        c)定期向领导汇报项目工作进度以及项目开发过程中的难题。
+        d)对项目进行配置管理与规划。
+        e)控制项目组各成员的工作进度，即时了解项目组成员的工作情况，并能快速的解决项目组成员所碰到的难题。
+        f)不定期组织项目组成员进行项目以外的短期活动，以培养团队精神。
+结语：
 项目经理是在整个项目开发过程中项目组内对所有非技术性重要事情做出最终决定的人。</p>
 
 <h3>岗位：系统架构师（技术总监）</h3>
 
-<p>主要功能及职责：</p>
-
-<pre><code>1、系统架构师是软件项目的总体设计师，是软件组织新产品的开发与集成、新技术体系的构建者。
-2、系统架构师是在技术上对所有重要事情做出决定的人。（系统架构师在整个软件开发过程中都起着重要作用，并随着开发进程的推进而其职责或关注点不断地变化。）
-3、 需求阶段，软件架构师负责理解和管理非功能性系统需求，比如软件的可维护性、性能、复用性、可靠性、有效性和可测试性等。审查客户和市场人员所提出的需 求，确认开发团队所提出的设计；组织开发团队成员和开发过程的定义；协助需求分析师完成《用户需求说明书》、《需求变更说明书》。
-4、设计阶段，架构师负责对整个软件架构、关键构件、接口的设计。协助系统分析师完成《系统概要设计说明书》
-5、编码阶段，架构师则成为程序员的顾问，并且经常性地要举行一些技术研讨会、技术培训班等；
-6、测试及实施阶段，随着软件开始测试、集成和交付，集成和测试支持将成为软件架构师的工作重点；
-</code></pre>
-
-<p>结语：
+<p>主要功能及职责：
+    1、系统架构师是软件项目的总体设计师，是软件组织新产品的开发与集成、新技术体系的构建者。
+    2、系统架构师是在技术上对所有重要事情做出决定的人。（系统架构师在整个软件开发过程中都起着重要作用，并随着开发进程的推进而其职责或关注点不断地变化。）
+    3、 需求阶段，软件架构师负责理解和管理非功能性系统需求，比如软件的可维护性、性能、复用性、可靠性、有效性和可测试性等。审查客户和市场人员所提出的需 求，确认开发团队所提出的设计；组织开发团队成员和开发过程的定义；协助需求分析师完成《用户需求说明书》、《需求变更说明书》。
+    4、设计阶段，架构师负责对整个软件架构、关键构件、接口的设计。协助系统分析师完成《系统概要设计说明书》
+    5、编码阶段，架构师则成为程序员的顾问，并且经常性地要举行一些技术研讨会、技术培训班等；
+    6、测试及实施阶段，随着软件开始测试、集成和交付，集成和测试支持将成为软件架构师的工作重点；
+结语：
 系统架构师也可以理解成技术总监。系统架构师是在部门内所有软件项目中，对技术上所有重要的事情做出决定的人。</p>
 
 <h3>岗位：需求分析师</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1、在项目前期根据《需求调研计划》对客户进行需求调研。
-2、收集整理客户需求，负责编写《用户需求说明书》。
-3、代表项目组与用户沟通与项目需求有关的所有事项。
-4、代表客户与项目组成员沟通项目需求有关的所有事项。
-5、负责《用户需求说明书》得到用户的认可与签字。
-6、负责将完成的项目模块给客户做演示，并收集对完成模块的意见。
-7、完成《需求变更说明书》，并得到用户的认可与签字。
-8、并协助系统架构师、系统分析师对需求进行理解。
-</code></pre>
-
-<p>结语：
+<p>主要职责：
+    1、在项目前期根据《需求调研计划》对客户进行需求调研。
+    2、收集整理客户需求，负责编写《用户需求说明书》。
+    3、代表项目组与用户沟通与项目需求有关的所有事项。
+    4、代表客户与项目组成员沟通项目需求有关的所有事项。
+    5、负责《用户需求说明书》得到用户的认可与签字。
+    6、负责将完成的项目模块给客户做演示，并收集对完成模块的意见。
+    7、完成《需求变更说明书》，并得到用户的认可与签字。
+    8、并协助系统架构师、系统分析师对需求进行理解。
+结语：
 需求分析师是项目前期与客户方打交道最多的人，对于客户来说，他可以代表整个项目组，对与项目组成员来说他的意见可以代表客户方的意见，项目组内所有与客户需求相关的事情必需得到他的认可。</p>
 
 <h3>岗位：系统分析师</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1、 协助需求分析师进行需求调研。
-2、分析、解析《用户需求说明书》，将系统需求整理成《软件需求规格说明书》；
-3、负责解决《软件需求规格说明书》被评审后发现的问题；
-4、在分析系统前，负责向架构设计师解释《软件需求规格说明书》的内容。
-5、协助架构设计师进行架构设计，并协助其完成《系统架构说明书》。
-6、根据《系统架构说明书》对系统进行建模；
-7、系统分析及建模完成后，负责将建模成果转化为《系统概要设计》；
-8、协助数据库设计师按《系统概要设计说明书》进行数据库逻辑设计和物理设计，完成数据库CDM及PDM图，并协助其完成《数据库设计说明书》
-9、协助软件设计师按《系统概要设计说明书》进行《系统详细设计说明书》。
-10、指导软件工程师按《系统详细设计说明书》进行代码实现。
-11、 负责重点代码检查；
-12、协助项目经理进行配置管理，并提供优化改进建议；
-13、定期对项目组成员进行技术方面的培训。
-</code></pre>
-
-<p>结语：
+<p>主要职责：
+    1、 协助需求分析师进行需求调研。
+    2、分析、解析《用户需求说明书》，将系统需求整理成《软件需求规格说明书》；
+    3、负责解决《软件需求规格说明书》被评审后发现的问题；
+    4、在分析系统前，负责向架构设计师解释《软件需求规格说明书》的内容。
+    5、协助架构设计师进行架构设计，并协助其完成《系统架构说明书》。
+    6、根据《系统架构说明书》对系统进行建模；
+    7、系统分析及建模完成后，负责将建模成果转化为《系统概要设计》；
+    8、协助数据库设计师按《系统概要设计说明书》进行数据库逻辑设计和物理设计，完成数据库CDM及PDM图，并协助其完成《数据库设计说明书》
+    9、协助软件设计师按《系统概要设计说明书》进行《系统详细设计说明书》。
+    10、指导软件工程师按《系统详细设计说明书》进行代码实现。
+    11、 负责重点代码检查；
+    12、协助项目经理进行配置管理，并提供优化改进建议；
+    13、定期对项目组成员进行技术方面的培训。
+结语：
 系统分析师是项目组中的首席执行官，他涉及项目的所有方面，是项目进度的推动者，也是项目成功的关键。</p>
 
 <h3>岗位：数据库设计师</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1、根据《系统架构说明书》与系统架构师、系统分析师一同进行数据库建模。
-2、根据数据库建模结果，绘制数据库CDM与PDM图。
-3、 根据数据库PDM图进行数据库建库。
-4、 对数据库进行维护、备份、恢复、同步。
-5、 负责客户数据的导入导出。
-6、 对数据库进行初始化操作。
-7、协助软件设计师完成《系统详细设计说明书》中与数据库相关的部分。
-8、根据《系统详细设计说明书》编写对应的视图、存储过程、函数、触发器等。
-9、对项目组其它成员进行SQL方面的指导。
-10、定期对项目组其它成员进行数据库方面知识的培训。
-11、为测试经理及测试工程师建立测试数据。
-</code></pre>
-
-<p>结语：
+<p>主要职责：
+    1、根据《系统架构说明书》与系统架构师、系统分析师一同进行数据库建模。
+    2、根据数据库建模结果，绘制数据库CDM与PDM图。
+    3、 根据数据库PDM图进行数据库建库。
+    4、 对数据库进行维护、备份、恢复、同步。
+    5、 负责客户数据的导入导出。
+    6、 对数据库进行初始化操作。
+    7、协助软件设计师完成《系统详细设计说明书》中与数据库相关的部分。
+    8、根据《系统详细设计说明书》编写对应的视图、存储过程、函数、触发器等。
+    9、对项目组其它成员进行SQL方面的指导。
+    10、定期对项目组其它成员进行数据库方面知识的培训。
+    11、为测试经理及测试工程师建立测试数据。
+结语：
 数据库设计师又称DBA，是项目组中唯一能对数据库进行直接的操作的人。对项目中与数据库相关的所有重要的事做最终决定的人。</p>
 
 <h3>岗位：软件设计师（模块）</h3>
@@ -1269,98 +1255,79 @@ function getid(arg){
 
 <h3>岗位：软件工程师</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1.根据《系统详细设计说明书》进行代码实现；
-2.对自己代码进行复查，并进行简单的测试；
-</code></pre>
-
-<p>结语：
+<p>主要职责：
+    1.根据《系统详细设计说明书》进行代码实现；
+    2.对自己代码进行复查，并进行简单的测试；
+结语：
 软件工程师是最终实现代码的成员。</p>
 
 <h3>岗位：测试经理</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1.独立编写测试计划；
-2.独立编写测试用例；
-3.协调测试团队内部的工作以及与开发团队之间的工作；
-4.完成“执行测试”的工作；
-5.掌握较深层次的测试方法、测试技术和较复杂的业务流程；
-6.负责测试过程工具的研究、推广与维护，负责测试数据库维护工作；
-7.负责编写《用户手册》、《操作手册》和相关培训教材；
-8.负责项目的质量审查。
-</code></pre>
-
-<p>结语：
+<p>主要职责：
+    1.独立编写测试计划；
+    2.独立编写测试用例；
+    3.协调测试团队内部的工作以及与开发团队之间的工作；
+    4.完成“执行测试”的工作；
+    5.掌握较深层次的测试方法、测试技术和较复杂的业务流程；
+    6.负责测试过程工具的研究、推广与维护，负责测试数据库维护工作；
+    7.负责编写《用户手册》、《操作手册》和相关培训教材；
+    8.负责项目的质量审查。
+结语：
 测试经理其实应该是整个项目中最关心项目质量的人，他的主要工作就是找到项目中存在的不合理、不合格的部份，并要求项目其它成员按其给定的项目质量完成项目。</p>
 
 <h3>岗位：测试工程师</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1.在测试经理的安排和指导下，编写测试用例；
-2.在测试经理的安排和指导下，完成“执行测试”的工作；
-3.在测试经理的指导下，按测试计划进行测试工作；
-4.按测试用例进行测试工作。
-5.负责被分派项目的质量审计。
-6.了解项目的基本流程，可以熟练的进行项目中各种流程的操作。
-</code></pre>
-
-<p>结语：
+<p>主要职责：
+    1.在测试经理的安排和指导下，编写测试用例；
+    2.在测试经理的安排和指导下，完成“执行测试”的工作；
+    3.在测试经理的指导下，按测试计划进行测试工作；
+    4.按测试用例进行测试工作。
+    5.负责被分派项目的质量审计。
+    6.了解项目的基本流程，可以熟练的进行项目中各种流程的操作。
+结语：
 测试工程师是项目质量的保证，是最终进行项目测试的成员。</p>
 
 <h3>岗位：实施经理</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1.负责制定项目实施计划；
-2.在项目实施计划的约束下，协调项目组相关资源，完成系统实施相关工作（包括系统安装、用户培训、系统上线、系统试运行等）；
-3.在项目实施阶段，跟踪、检查实施人员的工作质量；
-5.负责协助用户进行“用户确认测试”和编写《确认测试报告》。
-</code></pre>
+<p>主要职责：
+    1.负责制定项目实施计划；
+    2.在项目实施计划的约束下，协调项目组相关资源，完成系统实施相关工作（包括系统安装、用户培训、系统上线、系统试运行等）；
+    3.在项目实施阶段，跟踪、检查实施人员的工作质量；
+    5.负责协助用户进行“用户确认测试”和编写《确认测试报告》。</p>
 
 <h3>岗位：实施工程师</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1.在实施经理安排和指导下，执行项目用户现场实施任务；
-2.参与编写《用户手册》、《操作手册》和相关培训教材；
-3.参与进行“用户确认测试”和编写《确认测试报告》。
-</code></pre>
+<p>主要职责：
+    1.在实施经理安排和指导下，执行项目用户现场实施任务；
+    2.参与编写《用户手册》、《操作手册》和相关培训教材；
+    3.参与进行“用户确认测试”和编写《确认测试报告》。</p>
 
 <h3>岗位：美术工程师</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1.负责完成软件设计师安排的功能界面设计。
-2.负责对项目整体色彩的调配。
-3.向系统分析师提出项目美化的建议。
-4.为BS项目提供一套或几套CSS样式表及HTML结构表
-5.为CS项目提供符合项目内容的静态、动态图片。
-6.并为软件设计师提供界面指导。
-</code></pre>
+<p>主要职责：
+    1.负责完成软件设计师安排的功能界面设计。
+    2.负责对项目整体色彩的调配。
+    3.向系统分析师提出项目美化的建议。
+    4.为BS项目提供一套或几套CSS样式表及HTML结构表
+    5.为CS项目提供符合项目内容的静态、动态图片。
+    6.并为软件设计师提供界面指导。</p>
 
 <h3>岗位：客户经理（当所开发的项目属于定制型的项目时设立，可由项目经理或部门经理兼）</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1.策划并独立完成目标客户的拜访和沟通；
-2.定期分析、整理客户需求，制定有针对性的方案；
-3.进行重点客户的关系维护，了解并整理重点客户的需求，为开发更符合用户需求的产品提供富有价值的市场信息；
-4.参与产品定位的研讨，为产品策划献计献策。
-</code></pre>
+<p>主要职责：
+    1.策划并独立完成目标客户的拜访和沟通；
+    2.定期分析、整理客户需求，制定有针对性的方案；
+    3.进行重点客户的关系维护，了解并整理重点客户的需求，为开发更符合用户需求的产品提供富有价值的市场信息；
+    4.参与产品定位的研讨，为产品策划献计献策。</p>
 
 <h3>岗位：产品经理（当所开发的项目为产品型项目时设立，可由市场部成员兼）</h3>
 
-<p>主要职责：</p>
-
-<pre><code>1.对所负责的产品进行策划和管理；
-2.对所负责的产品进行市场调研和分析，及时提出应对措施；
-3.负责产品实现的内部管理，保证产品功能的顺利实现以及时满足市场需求；
-4.负责产品对外宣传与推广，开拓市场，提高产品品牌知名度和认可度；
-5.配合销售制订产品销售策略，支持市场销售业务。
-</code></pre>
+<p>主要职责：
+    1.对所负责的产品进行策划和管理；
+    2.对所负责的产品进行市场调研和分析，及时提出应对措施；
+    3.负责产品实现的内部管理，保证产品功能的顺利实现以及时满足市场需求；
+    4.负责产品对外宣传与推广，开拓市场，提高产品品牌知名度和认可度；
+    5.配合销售制订产品销售策略，支持市场销售业务。</p>
 ]]></content>
   </entry>
   
@@ -1378,32 +1345,23 @@ function getid(arg){
    　　e和d是一对相关的值，e可以任意取，但要求满足e&lt;(p-1)<em>(q-1)并具 e与(p-1)</em>(q-1)互质（就是最大公约数为1）；
    再选择d，要求(d<em>e)mod((p-1)</em>(q-1))=1。
    　　(n及e),(n及d)就是密钥对。
-   　　RSA加解密的算法完全相同,设M为明文，c为密文，则：</p>
-
-<pre><code>   加密：C=M^e mod n; 
-   解密：m=c^d mod n;
-</code></pre>
-
-<p>   　　注：上面两式中的e和d可以互换。</p>
-
-<pre><code>   n d两个数构成公钥，可以告诉别人；
-   n e两个数构成私钥，e自己保留，不让任何人知道。
-   给别人发送的信息使用私钥e加密,只要别人能用公钥d解开就证明信息是由你发送的,构成了签名机制,起验证身份的作用。
-</code></pre>
-
-<p>   别人给你发送信息时使用d加密，这样只有拥有e的你能够对其解密,起到数据保密的作用。<br/>
-   整理一下：</p>
-
-<pre><code>为实现RSA的加解密
-最终目标：找三个参数 n,e,d
-1、n = p*q (p,q 是两个质数)
-2、 
-    1)、φ(N)=(p-1)*(q-1)
-    2)、取任何一个数e,要求满足e&lt;φ(N)并且e与φ(N)互质
-3、(d*e) modφ(N)=1
-</code></pre>
-
-<p>//================================================================
+   　　RSA加解密的算法完全相同,设M为明文，c为密文，则：
+       加密：C=M<sup>e</sup> mod n;
+       解密：m=c<sup>d</sup> mod n;
+   　　注：上面两式中的e和d可以互换。<br/>
+       n d两个数构成公钥，可以告诉别人；
+       n e两个数构成私钥，e自己保留，不让任何人知道。
+       给别人发送的信息使用私钥e加密,只要别人能用公钥d解开就证明信息是由你发送的,构成了签名机制,起验证身份的作用。
+   别人给你发送信息时使用d加密，这样只有拥有e的你能够对其解密,起到数据保密的作用。<br/>
+   整理一下：
+    为实现RSA的加解密
+    最终目标：找三个参数 n,e,d
+    1、n = p<em>q (p,q 是两个质数)
+    2、
+        1)、φ(N)=(p-1)</em>(q-1)
+        2)、取任何一个数e,要求满足e&lt;φ(N)并且e与φ(N)互质
+    3、(d*e) modφ(N)=1
+//================================================================
 加密的明文长度不能超过RSA密钥的长度-11，比如1024位的，明文长度不能超过117。 <br/>
 密文的长度总是密钥的长度的一半，比如1024位的，密文长度是64，如果是1032位，密文长度是65位。</p>
 ]]></content>
@@ -1495,19 +1453,17 @@ function getid(arg){
 
 <h3>CentOS的镜像站点</h3>
 
-<p>了解 镜像站点的文件结构 对理解 yum 配置文件 .repo 文件有帮助</p>
-
-<pre><code>http://mirror-status.centos.org
-http://isoredirect.centos.org/centos/5/isos/i386/
-addons/      本目录包含Centos的addons 仓库
-centosplus/  本目录包含Centos的centosplus 仓库
-extras/      本目录包含Centos的extras 仓库
-fasttrack/   本目录包含Centos的extras 仓库
-isos-dvd/    本目录包含发行版的DVD iso 下载
-isos/        本目录包含发行版 CD iso 下载
-os/          本目录包含发行版(distributions)的仓库
-updates/     本目录包含Centos的updates仓库
-</code></pre>
+<p>了解 镜像站点的文件结构 对理解 yum 配置文件 .repo 文件有帮助
+    <a href="http://mirror-status.centos.org">http://mirror-status.centos.org</a>
+    <a href="http://isoredirect.centos.org/centos/5/isos/i386/">http://isoredirect.centos.org/centos/5/isos/i386/</a>
+    addons/      本目录包含Centos的addons 仓库
+    centosplus/  本目录包含Centos的centosplus 仓库
+    extras/      本目录包含Centos的extras 仓库
+    fasttrack/   本目录包含Centos的extras 仓库
+    isos-dvd/    本目录包含发行版的DVD iso 下载
+    isos/        本目录包含发行版 CD iso 下载
+    os/          本目录包含发行版(distributions)的仓库
+    updates/     本目录包含Centos的updates仓库</p>
 
 <h3>CentOS 的仓库</h3>
 
@@ -1546,37 +1502,32 @@ centospuls:　用于增强一些现有软件包的功能(默认未启用)</p>
 Centos-Base.repo: 用于设置远程仓库
 Centos-Media.repo: 用于设置本地仓库</p>
 
-<p>yum 目录结构</p>
-
-<pre><code>/etc
-  |--yum/
-  |   |--/pluginconf.d    
-  |   |--/yum-updatesd.conf/
-  |            |--downloadonly.conf
-  |            |--fastestmirror.conf
-  |            |--priorities.conf
-  |--yum.conf
-  |--yum.repos.d/
-        |--CentOS-Base.repo
-        |--CentOS-Media.repo
-</code></pre>
+<p>yum 目录结构
+    /etc
+      |&ndash;yum/
+      |   |&ndash;/pluginconf.d  <br/>
+      |   |&ndash;/yum-updatesd.conf/
+      |            |&ndash;downloadonly.conf
+      |            |&ndash;fastestmirror.conf
+      |            |&ndash;priorities.conf
+      |&ndash;yum.conf
+      |&ndash;yum.repos.d/
+            |&ndash;CentOS-Base.repo
+            |&ndash;CentOS-Media.repo</p>
 
 <p>在.repo 文件中，配置语法是分段的，每一段配置一个软件仓库，语法如下：
 设置网络更新源
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
-
-<pre><code>[base]  \\用于指定仓库
-name=CentOS-$releasever - Base \\用于指定易读的仓库名称
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os \\用于指定本仓库的URL
-#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-#        =ftp://  \\用于指定远程ftp协议的愿
-#        =file://  \\ 用于本地镜像或NFS挂载文件系统
-#nabled=0/1  \\用于指定是否使用本地仓库，默认为1，即可用。
-gpgcheck=1  \\用于指定是否检查软件包的GPG签名
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5  \\用于指定GPG签名文件的URL
-</code></pre>
-
-<p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [base]  \用于指定仓库
+    name=CentOS-$releasever - Base \用于指定易读的仓库名称
+    mirrorlist=<a href="http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os">http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</a> \用于指定本仓库的URL
+    #baseurl=<a href="http://mirror.centos.org/centos/$releasever/os/$basearch/">http://mirror.centos.org/centos/$releasever/os/$basearch/</a>
+    #        =<a href="ftp://">ftp://</a>  \用于指定远程ftp协议的愿
+    #        =file://  \ 用于本地镜像或NFS挂载文件系统
+    #nabled=0/1  \用于指定是否使用本地仓库，默认为1，即可用。
+    gpgcheck=1  \用于指定是否检查软件包的GPG签名
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5  \用于指定GPG签名文件的URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 注：若指定mirrorlist,系统将从Centos 的镜像站点中选择离你最近的仓库。
 [$releasever]当前系统的版本号
 [$basearch] 当前系统的构架
@@ -1584,20 +1535,17 @@ baseurl 可以指定多个URL ,系统会依次检查你列出的仓库。以便�
 
 <h3>设置本地更新源</h3>
 
-<p>为了使用 [c5-media]仓库，需将Centos-Base</p>
-
-<pre><code>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[c5-media]
-name=CentOS-$releasever - Media
-baseurl=file:///media/CentOS/
-        file:///media/cdrom/
-        file:///media/cdrecorder/
-gpgcheck=1
-enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-</code></pre>
-
-<p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
+<p>为了使用 [c5-media]仓库，需将Centos-Base
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [c5-media]
+    name=CentOS-$releasever - Media
+    baseurl=file:///media/CentOS/
+            file:///media/cdrom/
+            file:///media/cdrecorder/
+    gpgcheck=1
+    enabled=0
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
 
 <h3>设置非官方更新源</h3>
 
@@ -1670,12 +1618,11 @@ yum –exclude=kernel</em> update</p>
 
 <h3>附：</h3>
 
-<p>当仓库配置文件 *.repo 使用了多个URL yum-fastestmirror  可以自动选择最快的镜像站点</p>
+<p>当仓库配置文件 *.repo 使用了多个URL yum-fastestmirror  可以自动选择最快的镜像站点
+    yum -y install yum-fastestmirror
+    yum-fastestmirror 的配置文件在 /etc/yum/pluginconf.d/fastestmirror.conf 默认不需要修改。</p>
 
-<pre><code>yum -y install yum-fastestmirror
-yum-fastestmirror 的配置文件在 /etc/yum/pluginconf.d/fastestmirror.conf 默认不需要修改。
-
-yum -updatesd
+<pre><code>yum -updatesd
 rpm -ql yum-updatesd
 yum -cron
 yum -y install yum-cron
@@ -1691,18 +1638,14 @@ rpm -ql yum-cron
 </code></pre>
 
 <p>使用yum下载而不安装rpm包
-先安装yum-downloadonly</p>
+先安装yum-downloadonly
+    # yum install yum-downloadonly</p>
 
-<pre><code># yum install yum-downloadonly
-</code></pre>
-
-<p>安装后使用方法如下:</p>
-
-<pre><code># yum update httpd -y --downloadonly   ###下载到默认目录  /var/cache/yum
-OR
-# yum update httpd -y --downloadonly --downloaddir=/opt     ##下载到指定目录
-# yum install perl-MailTools --downloadonly --downloaddir=/opt -y     ##如果软件已经下载过了，必须使用这个来下载
-</code></pre>
+<p>安装后使用方法如下:
+    # yum update httpd -y &ndash;downloadonly   ###下载到默认目录  /var/cache/yum
+    OR
+    # yum update httpd -y &ndash;downloadonly &ndash;downloaddir=/opt     ##下载到指定目录
+    # yum install perl-MailTools &ndash;downloadonly &ndash;downloaddir=/opt -y     ##如果软件已经下载过了，必须使用这个来下载</p>
 ]]></content>
   </entry>
   
@@ -1726,25 +1669,20 @@ OR
 
 <h3>MySQL字符集设置</h3>
 
-<p>• 系统变量：</p>
-
-<pre><code>– character_set_server：默认的内部操作字符集
-– character_set_client：客户端来源数据使用的字符集
-– character_set_connection：连接层字符集
-– character_set_results：查询结果字符集
-– character_set_database：当前选中数据库的默认字符集
-– character_set_system：系统元数据(字段名等)字符集
-– 还有以collation_开头的同上面对应的变量，用来描述字符序。
-</code></pre>
-
-<p>• 用introducer指定文本字符串的字符集：</p>
-
-<pre><code>– 格式为：[_charset] ’string’ [COLLATE collation]
-– 例如：
-    • SELECT _latin1 ’string’;
-    • SELECT _utf8 ‘你好’ COLLATE utf8_general_ci;
-– 由introducer修饰的文本字符串在请求过程中不经过多余的转码，直接转换为内部字符集处理。
-</code></pre>
+<p>• 系统变量：
+    – character_set_server：默认的内部操作字符集
+    – character_set_client：客户端来源数据使用的字符集
+    – character_set_connection：连接层字符集
+    – character_set_results：查询结果字符集
+    – character_set_database：当前选中数据库的默认字符集
+    – character_set_system：系统元数据(字段名等)字符集
+    – 还有以collation<em>开头的同上面对应的变量，用来描述字符序。
+• 用introducer指定文本字符串的字符集：
+    – 格式为：[</em>charset] ’string’ [COLLATE collation]
+    – 例如：
+        • SELECT <em>latin1 ’string’;
+        • SELECT </em>utf8 ‘你好’ COLLATE utf8_general_ci;
+    – 由introducer修饰的文本字符串在请求过程中不经过多余的转码，直接转换为内部字符集处理。</p>
 
 <h3>MySQL中的字符集转换过程</h3>
 

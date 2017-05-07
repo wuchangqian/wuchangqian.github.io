@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Algorithm | 学会欣赏]]></title>
+  <title><![CDATA[Category: Algorithm | 每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2015-07-06T22:12:35+08:00</updated>
+  <updated>2017-05-07T18:11:11+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -77,41 +77,40 @@
     <link href="http://me.94313.net/blog/2012/12/06/use-of-stack/"/>
     <updated>2012-12-06T09:46:51+08:00</updated>
     <id>http://me.94313.net/blog/2012/12/06/use-of-stack</id>
-    <content type="html"><![CDATA[<p><img src="/images/use-of-stack-01.png" alt="示例图片-01" /></p>
+    <content type="html"><![CDATA[<p><img src="/images/use-of-stack-01.png" alt="示例图片-01" />
+    &lt;!DOCTYPE html>
+    <html>
+    <head>
+    <title> 数据结构-栈的应用 </title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8;" >
+    <style>
+    <em>{margin:0;padding:0;}
+    #container .line{display:block;float:left;}
+    .block{width:15px;height:15px;float:left;font-size:8px;border-right:1px solid #111;border-bottom:1px solid #111;}
+    .bld{background:black;color:#fff;}
+    .start{background:red;color:#fff;}
+    .end{background:red;color:#f00;}
+    .route{background:red;}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>使用栈来找路径</h1>
+        <p>
+        查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通）
+        </p>
+    <button text='clear' id="btn-clear">清除路径</button>
+    <button text='clear' id="btn-find">查找路径</button>
+      <div id='container'></div>
+      <script type="text/javascript">
+    &lt;!&ndash;
+    /</em><strong><strong> 入口函数 </strong></strong>/
+    $(function(){
+        init();
+        addEvents();
+    });</p>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt; 数据结构-栈的应用 &lt;/title&gt;
-&lt;meta http-equiv="Content-type" content="text/html;charset=utf-8;" &gt;
-&lt;style&gt;
-*{margin:0;padding:0;}
-#container .line{display:block;float:left;}
-.block{width:15px;height:15px;float:left;font-size:8px;border-right:1px solid #111;border-bottom:1px solid #111;}
-.bld{background:black;color:#fff;}
-.start{background:red;color:#fff;}
-.end{background:red;color:#f00;}
-.route{background:red;}
-&lt;/style&gt;
-&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;使用栈来找路径&lt;/h1&gt;
-    &lt;p&gt;
-    查找从左上角到右下角的路径，图中的方块表示障碍；点击方块可以改变其状态（通或者不通）
-    &lt;/p&gt;
-&lt;button text='clear' id="btn-clear"&gt;清除路径&lt;/button&gt;
-&lt;button text='clear' id="btn-find"&gt;查找路径&lt;/button&gt;
-  &lt;div id='container'&gt;&lt;/div&gt;
-  &lt;script type="text/javascript"&gt;
-&lt;!--
-/***** 入口函数 ****/
-$(function(){
-    init();
-    addEvents();
-});
-
-function init(){
+<pre><code>function init(){
 
     window.M_x = 70;  //矩阵的宽和高
     window.M_y = 45;
@@ -353,32 +352,23 @@ function getid(arg){
    　　e和d是一对相关的值，e可以任意取，但要求满足e&lt;(p-1)<em>(q-1)并具 e与(p-1)</em>(q-1)互质（就是最大公约数为1）；
    再选择d，要求(d<em>e)mod((p-1)</em>(q-1))=1。
    　　(n及e),(n及d)就是密钥对。
-   　　RSA加解密的算法完全相同,设M为明文，c为密文，则：</p>
-
-<pre><code>   加密：C=M^e mod n; 
-   解密：m=c^d mod n;
-</code></pre>
-
-<p>   　　注：上面两式中的e和d可以互换。</p>
-
-<pre><code>   n d两个数构成公钥，可以告诉别人；
-   n e两个数构成私钥，e自己保留，不让任何人知道。
-   给别人发送的信息使用私钥e加密,只要别人能用公钥d解开就证明信息是由你发送的,构成了签名机制,起验证身份的作用。
-</code></pre>
-
-<p>   别人给你发送信息时使用d加密，这样只有拥有e的你能够对其解密,起到数据保密的作用。<br/>
-   整理一下：</p>
-
-<pre><code>为实现RSA的加解密
-最终目标：找三个参数 n,e,d
-1、n = p*q (p,q 是两个质数)
-2、 
-    1)、φ(N)=(p-1)*(q-1)
-    2)、取任何一个数e,要求满足e&lt;φ(N)并且e与φ(N)互质
-3、(d*e) modφ(N)=1
-</code></pre>
-
-<p>//================================================================
+   　　RSA加解密的算法完全相同,设M为明文，c为密文，则：
+       加密：C=M<sup>e</sup> mod n;
+       解密：m=c<sup>d</sup> mod n;
+   　　注：上面两式中的e和d可以互换。<br/>
+       n d两个数构成公钥，可以告诉别人；
+       n e两个数构成私钥，e自己保留，不让任何人知道。
+       给别人发送的信息使用私钥e加密,只要别人能用公钥d解开就证明信息是由你发送的,构成了签名机制,起验证身份的作用。
+   别人给你发送信息时使用d加密，这样只有拥有e的你能够对其解密,起到数据保密的作用。<br/>
+   整理一下：
+    为实现RSA的加解密
+    最终目标：找三个参数 n,e,d
+    1、n = p<em>q (p,q 是两个质数)
+    2、
+        1)、φ(N)=(p-1)</em>(q-1)
+        2)、取任何一个数e,要求满足e&lt;φ(N)并且e与φ(N)互质
+    3、(d*e) modφ(N)=1
+//================================================================
 加密的明文长度不能超过RSA密钥的长度-11，比如1024位的，明文长度不能超过117。 <br/>
 密文的长度总是密钥的长度的一半，比如1024位的，密文长度是64，如果是1032位，密文长度是65位。</p>
 ]]></content>

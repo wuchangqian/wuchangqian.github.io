@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: , | 每个人的声音都面向世界]]></title>
+  <link href="http://me.94313.net/blog/categories/-/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2017-05-07T18:20:52+08:00</updated>
+  <id>http://me.94313.net/</id>
+  <author>
+    <name><![CDATA[wuchangqian]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Windows 下ffmpeg使用]]></title>
+    <link href="http://me.94313.net/blog/2017/05/07/windows-xia-ffmpegshi-yong/"/>
+    <updated>2017-05-07T18:14:09+08:00</updated>
+    <id>http://me.94313.net/blog/2017/05/07/windows-xia-ffmpegshi-yong</id>
+    <content type="html"><![CDATA[<p>列出设备</p>
+
+<pre><code>1. ffmpeg -list_devices true -f dshow -i dummy  
+</code></pre>
+
+<p>保存文件</p>
+
+<pre><code>1. ffmpeg -f dshow -i video="Integrated Camera" -vcodec libx264 mycamera.mkv  
+</code></pre>
+
+<p>直接播放</p>
+
+<pre><code>1. ffplay -f dshow -i video="Integrated Camera"  
+</code></pre>
+
+<p>推流</p>
+
+<pre><code>1. ffmpeg -f dshow -i video="Integrated Camera" -vcodec libx264 -preset:v ultrafast -tune:v zerolatency -f flv rtmp://192.168.1.5/mytv/test1
+</code></pre>
+
+<p>录制屏幕</p>
+
+<pre><code>1. ffmpeg -f -dshow -s 1600x900 -r 50 -vcodec libx264 –preset:v ultrafast –tune:v zerolatency -crf 18 -f mpegts rtmp://192.168.1.5/mytv/test2      在Windows平台下，使用-dshow取代x11grab
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

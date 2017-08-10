@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Computer | 每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/blog/categories/computer/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2017-08-10T17:34:54+08:00</updated>
+  <updated>2017-08-10T17:37:06+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -129,6 +129,7 @@ make &amp;&amp; make install
     <updated>2012-12-06T09:46:51+08:00</updated>
     <id>http://me.94313.net/blog/2012/12/06/use-of-stack</id>
     <content type="html"><![CDATA[<p><img src="/images/use-of-stack-01.png" alt="示例图片-01" />
+代码如下
 &#8220;`
     &lt;!DOCTYPE html>
     <html>

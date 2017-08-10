@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Shell | 每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2017-08-10T11:32:17+08:00</updated>
+  <updated>2017-08-10T11:46:15+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Shell History 命令扩展]]></title>
+    <link href="http://me.94313.net/blog/2017/08/10/shell-history/"/>
+    <updated>2017-08-10T11:35:36+08:00</updated>
+    <id>http://me.94313.net/blog/2017/08/10/shell-history</id>
+    <content type="html"><![CDATA[<p><img src="/images/shell_history.png" title="shell history 命令扩展" alt="shell history 命令扩展" />
+   !^ 获取上一条命令的第一个参数。
+   !$ 获取上一条命令的最后一个参数。
+   !:n 获取上一条命令的第n个参数，n从1开始。（为0时则挑选出命令名称）
+   !:n-x 获取上一条命令的第n个参数到第x个参数，n和x均从1开始。（为0时则挑选出命令名称）
+   !<em> 获取上一条命令的所有参数。
+   !n</em> n为数字，获取上一条命令的从第n个参数（含第n个参数）后的所有参数。
+   !n- n为数字，获取上一条命令的从第n个参数（含第n个参数）后的除了最后一个参数外的所有参数。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sed-man-page]]></title>
@@ -243,7 +259,7 @@
        regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
 <p>BUGS
-       E-mail  bug  reports  to <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x62;&#117;&#x67;&#x2d;&#115;&#x65;&#100;&#64;&#103;&#x6e;&#117;&#46;&#111;&#x72;&#x67;&#46;">&#x62;&#117;&#x67;&#45;&#x73;&#101;&#x64;&#64;&#103;&#110;&#117;&#46;&#111;&#x72;&#103;&#46;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       E-mail  bug  reports  to <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#98;&#x75;&#103;&#x2d;&#x73;&#x65;&#x64;&#x40;&#103;&#x6e;&#x75;&#46;&#111;&#x72;&#x67;&#x2e;">&#98;&#117;&#103;&#45;&#x73;&#101;&#100;&#x40;&#103;&#110;&#x75;&#x2e;&#111;&#114;&#x67;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
        report if at all possible.</p>
 
 <p>AUTHOR

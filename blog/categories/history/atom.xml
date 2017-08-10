@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: History | 每个人的声音都面向世界]]></title>
+  <link href="http://me.94313.net/blog/categories/history/atom.xml" rel="self"/>
+  <link href="http://me.94313.net/"/>
+  <updated>2017-08-10T11:46:15+08:00</updated>
+  <id>http://me.94313.net/</id>
+  <author>
+    <name><![CDATA[wuchangqian]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Shell History 命令扩展]]></title>
+    <link href="http://me.94313.net/blog/2017/08/10/shell-history/"/>
+    <updated>2017-08-10T11:35:36+08:00</updated>
+    <id>http://me.94313.net/blog/2017/08/10/shell-history</id>
+    <content type="html"><![CDATA[<p><img src="/images/shell_history.png" title="shell history 命令扩展" alt="shell history 命令扩展" />
+   !^ 获取上一条命令的第一个参数。
+   !$ 获取上一条命令的最后一个参数。
+   !:n 获取上一条命令的第n个参数，n从1开始。（为0时则挑选出命令名称）
+   !:n-x 获取上一条命令的第n个参数到第x个参数，n和x均从1开始。（为0时则挑选出命令名称）
+   !<em> 获取上一条命令的所有参数。
+   !n</em> n为数字，获取上一条命令的从第n个参数（含第n个参数）后的所有参数。
+   !n- n为数字，获取上一条命令的从第n个参数（含第n个参数）后的除了最后一个参数外的所有参数。</p>
+]]></content>
+  </entry>
+  
+</feed>

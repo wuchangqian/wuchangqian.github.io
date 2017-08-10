@@ -6,16 +6,16 @@
 <head>
   <meta charset="utf-8">
   <script async="false" src="/javascripts/libs/jquery.min.js"></script>
-  <title>RSA加密算法简单介绍 - 每个人的声音都面向世界</title>
+  <title>Category: Command - 每个人的声音都面向世界</title>
   <meta name="author" content="wuchangqian">
   
-  <meta name="description" content="这种算法1978年就出现了，它是第一个既能用于数据加密也能用于数字签名的算法。它易于理解和操作，也很流行。 算法的名字以发明者的名字命名：Ron Rivest, AdiShamir 和Leonard Adleman。 　　RSA算法是一种非对称密码算法，所谓非对称，就是指该算法需要一对密钥， &hellip;">
+  <meta name="description" content="Category: command">
   
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="canonical" href="http://me.94313.net/blog/2012/05/30/intr-rsa">
+  <link rel="canonical" href="http://me.94313.net/blog/categories/command">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="每个人的声音都面向世界" type="application/atom+xml">
@@ -57,97 +57,35 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">RSA加密算法简单介绍</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2012-05-30T20:40:02+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>8:40 pm</span></time>
-        
-      </p>
+    <h1 class="entry-title">Category: Command</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-<div class="entry-content"><p>这种算法1978年就出现了，它是第一个既能用于数据加密也能用于数字签名的算法。它易于理解和操作，也很流行。
-   算法的名字以发明者的名字命名：Ron Rivest, AdiShamir 和Leonard Adleman。
-   　　RSA算法是一种非对称密码算法，所谓非对称，就是指该算法需要一对密钥，使用其中一个加密，则需要用另一个
-   才能解密。
-   　　RSA的算法涉及三个参数，n、e、d。
-   　　其中，n是两个大质数p、q的积。n的二进制表示时所占用的位数，就是所谓的密钥长度。
-   　　e和d是一对相关的值，e可以任意取，但要求满足e&lt;(p-1)<em>(q-1)并具 e与(p-1)</em>(q-1)互质（就是最大公约数为1）；
-   再选择d，要求(d<em>e)mod((p-1)</em>(q-1))=1。
-   　　(n及e),(n及d)就是密钥对。
-   　　RSA加解密的算法完全相同,设M为明文，c为密文，则：
-       加密：C=M<sup>e</sup> mod n;
-       解密：m=c<sup>d</sup> mod n;
-   　　注：上面两式中的e和d可以互换。<br/>
-       n d两个数构成公钥，可以告诉别人；
-       n e两个数构成私钥，e自己保留，不让任何人知道。
-       给别人发送的信息使用私钥e加密,只要别人能用公钥d解开就证明信息是由你发送的,构成了签名机制,起验证身份的作用。
-   别人给你发送信息时使用d加密，这样只有拥有e的你能够对其解密,起到数据保密的作用。<br/>
-   整理一下：
-    为实现RSA的加解密
-    最终目标：找三个参数 n,e,d
-    1、n = p<em>q (p,q 是两个质数)
-    2、
-        1)、φ(N)=(p-1)</em>(q-1)
-        2)、取任何一个数e,要求满足e&lt;φ(N)并且e与φ(N)互质
-    3、(d*e) modφ(N)=1
-//================================================================
-加密的明文长度不能超过RSA密钥的长度-11，比如1024位的，明文长度不能超过117。 <br/>
-密文的长度总是密钥的长度的一半，比如1024位的，密文长度是64，如果是1032位，密文长度是65位。</p>
+
+  
+  <h2>2017</h2>
+
+<article>
+  
+<h1><a href="/blog/2017/08/10/shell-history/">Shell History 命令扩展</a></h1>
+<time datetime="2017-08-10T11:35:36+08:00" pubdate><span class='month'>Aug</span> <span class='day'>10</span> <span class='year'>2017</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/command/'>command</a>, <a class='category' href='/blog/categories/history/'>history</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/shell/'>shell</a></span>
+</footer>
+
+
+</article>
+
 </div>
 
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
-
-      
-
-
-
-
-<time class='entry-date' datetime='2012-05-30T20:40:02+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>8:40 pm</span></time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/rsa/'>rsa</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/03/23/command-line-skill-of-linux/" title="Previous Post: linux命令行技巧">&laquo; linux命令行技巧</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/10/19/it-gangwei-shuoming/" title="Next Post: IT 岗位说明书（岗位职责）">IT 岗位说明书（岗位职责） &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
 </div>

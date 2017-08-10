@@ -9,7 +9,9 @@
   <title>每个人的声音都面向世界</title>
   <meta name="author" content="wuchangqian">
   
-  <meta name="description" content="增加category_list插件 保存以下代码到plugins/category_list_tag.rb： module Jekyll class CategoryListTag &lt; Liquid::Tag def render(context) html = "" categories &hellip;">
+  <meta name="description" content="php的break关键字可以接受一个可选的数字参数来决定跳出几重循环
+break 结束当前 for，foreach，while，do-while 或者 switch 结构的执行。
+break可以接受一个可选的数字参数来决定跳出几重循环。 &lt;?php $arr = array('one', ' &hellip;">
   
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -58,6 +60,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/31/php-break-keywork/">PHP Break 关键字</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-31T09:26:19+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:26 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>php的break关键字可以接受一个可选的数字参数来决定跳出几重循环
+break 结束当前 for，foreach，while，do-while 或者 switch 结构的执行。
+break可以接受一个可选的数字参数来决定跳出几重循环。</p>
+
+<pre><code>&lt;?php
+    $arr = array('one', 'two', 'three', 'four', 'stop', 'five');
+    while (list (, $val) = each($arr)) {
+        if ($val == 'stop') {
+            break;    /* You could also write 'break 1;' here. */
+        }
+        echo "$val&lt;br /&gt;\n";
+    }
+
+    /* Using the optional argument. */
+
+    $i = 0;
+    while (++$i) {
+        switch ($i) {
+        case 5:
+            echo "At 5&lt;br /&gt;\n";
+            break 1;  /* Exit only the switch. */
+        case 10:
+            echo "At 10; quitting&lt;br /&gt;\n";
+            break2;  /* Exit the switch and the while. */
+        default:
+            break;
+        }
+    }
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1370,6 +1429,10 @@ rpm -ql yum-cron
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/08/10/shell-history/">Shell History 命令扩展</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/05/07/windows-xia-ffmpegshi-yong/">Windows 下ffmpeg使用</a>
       </li>
     
@@ -1385,10 +1448,6 @@ rpm -ql yum-cron
         <a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/10/19/mysql-shell-prompt-metachar/">MySQL 的 Prompt 转义字符</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1396,24 +1455,26 @@ rpm -ql yum-cron
   <ul id="categories">
     <li class='category'><a href='/blog/categories/algorithm/'>algorithm (3)</a></li>
 <li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
+<li class='category'><a href='/blog/categories/command/'>command (1)</a></li>
 <li class='category'><a href='/blog/categories/computer/'>computer (5)</a></li>
 <li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
 <li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
 <li class='category'><a href='/blog/categories/ffmpeg/'>ffmpeg (1)</a></li>
 <li class='category'><a href='/blog/categories/function/'>function (1)</a></li>
+<li class='category'><a href='/blog/categories/history/'>history (1)</a></li>
 <li class='category'><a href='/blog/categories/html/'>html (1)</a></li>
 <li class='category'><a href='/blog/categories/http/'>http (1)</a></li>
 <li class='category'><a href='/blog/categories/it/'>it (1)</a></li>
 <li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
 <li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (6)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (7)</a></li>
 <li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
 <li class='category'><a href='/blog/categories/rsa/'>rsa (1)</a></li>
 <li class='category'><a href='/blog/categories/sed/'>sed (1)</a></li>
-<li class='category'><a href='/blog/categories/shell/'>shell (4)</a></li>
+<li class='category'><a href='/blog/categories/shell/'>shell (5)</a></li>
 <li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
 <li class='category'><a href='/blog/categories/多媒体/'>多媒体 (1)</a></li>
 <li class='category'><a href='/blog/categories/直播/'>直播 (1)</a></li>

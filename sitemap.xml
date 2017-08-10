@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://me.94313.net/blog/2017/08/10/shell-history/</loc>
+<lastmod>2017-08-10T11:35:36+08:00</lastmod>
+</url>
+<url>
 <loc>http://me.94313.net/blog/2017/05/07/windows-xia-ffmpegshi-yong/</loc>
 <lastmod>2017-05-07T18:14:09+08:00</lastmod>
 </url>
@@ -153,5 +157,11 @@
 </url>
 <url>
 <loc>http://me.94313.net/blog/categories/%25E7%259B%25B4%25E6%2592%25AD/</loc>
+</url>
+<url>
+<loc>http://me.94313.net/blog/categories/history/</loc>
+</url>
+<url>
+<loc>http://me.94313.net/blog/categories/command/</loc>
 </url>
 </urlset>

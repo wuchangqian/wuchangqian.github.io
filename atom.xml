@@ -4,7 +4,7 @@
   <title><![CDATA[每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2017-08-10T17:12:53+08:00</updated>
+  <updated>2017-08-10T17:27:32+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -765,7 +765,7 @@ make &amp;&amp; make install
        regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
 <p>BUGS
-       E-mail  bug  reports  to <a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#x62;&#117;&#103;&#x2d;&#115;&#101;&#x64;&#64;&#103;&#110;&#117;&#x2e;&#x6f;&#114;&#x67;&#x2e;">&#98;&#x75;&#x67;&#x2d;&#x73;&#101;&#x64;&#x40;&#x67;&#110;&#117;&#x2e;&#111;&#x72;&#103;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       E-mail  bug  reports  to <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#98;&#x75;&#x67;&#45;&#115;&#x65;&#100;&#x40;&#103;&#x6e;&#117;&#46;&#x6f;&#x72;&#103;&#46;">&#x62;&#117;&#103;&#45;&#115;&#x65;&#x64;&#x40;&#103;&#x6e;&#117;&#46;&#x6f;&#114;&#103;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
        report if at all possible.</p>
 
 <p>AUTHOR
@@ -1238,7 +1238,7 @@ end
     .end{background:red;color:#f00;}
     .route{background:red;}
     </style>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
     </head>
     <body>
         <h1>使用栈来找路径</h1>

@@ -4,7 +4,7 @@
   <title><![CDATA[每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2017-08-10T17:08:08+08:00</updated>
+  <updated>2017-08-10T17:10:32+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -20,13 +20,16 @@
     <id>http://me.94313.net/blog/2017/08/10/shell-history</id>
     <content type="html"><![CDATA[<p><img src="http://me.94313.net/images/shell_history.png" title="shell history 命令扩展" alt="shell history 命令扩展" /></p>
 
-<p>   &ndash; !^ 获取上一条命令的第一个参数。
-   &ndash; !$ 获取上一条命令的最后一个参数。
-   &ndash; !:n 获取上一条命令的第n个参数，n从1开始。（为0时则挑选出命令名称）
-   &ndash; !:n-x 获取上一条命令的第n个参数到第x个参数，n和x均从1开始。（为0时则挑选出命令名称）
-   &ndash; !<em> 获取上一条命令的所有参数。
-   &ndash; !n</em> n为数字，获取上一条命令的从第n个参数（含第n个参数）后的所有参数。
-   &ndash; !n- n为数字，获取上一条命令的从第n个参数（含第n个参数）后的除了最后一个参数外的所有参数。</p>
+<ol>
+<li>!^ 获取上一条命令的第一个参数。</li>
+<li>!$ 获取上一条命令的最后一个参数。</li>
+<li>!:n 获取上一条命令的第n个参数，n从1开始。（为0时则挑选出命令名称）</li>
+<li>!:n-x 获取上一条命令的第n个参数到第x个参数，n和x均从1开始。（为0时则挑选出命令名称）</li>
+<li>!* 获取上一条命令的所有参数。</li>
+<li>!n* n为数字，获取上一条命令的从第n个参数（含第n个参数）后的所有参数。</li>
+<li>!n- n为数字，获取上一条命令的从第n个参数（含第n个参数）后的除了最后一个参数外的所有参数。</li>
+</ol>
+
 ]]></content>
   </entry>
   
@@ -762,7 +765,7 @@ make &amp;&amp; make install
        regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
 <p>BUGS
-       E-mail  bug  reports  to <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x62;&#117;&#103;&#45;&#115;&#x65;&#x64;&#x40;&#103;&#110;&#x75;&#46;&#x6f;&#114;&#103;&#46;">&#x62;&#117;&#x67;&#x2d;&#115;&#101;&#x64;&#x40;&#x67;&#x6e;&#117;&#46;&#x6f;&#114;&#x67;&#46;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       E-mail  bug  reports  to <a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x62;&#x75;&#x67;&#x2d;&#x73;&#101;&#x64;&#x40;&#103;&#110;&#x75;&#x2e;&#111;&#114;&#103;&#46;">&#98;&#117;&#103;&#45;&#x73;&#101;&#100;&#x40;&#x67;&#x6e;&#x75;&#x2e;&#111;&#x72;&#103;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
        report if at all possible.</p>
 
 <p>AUTHOR

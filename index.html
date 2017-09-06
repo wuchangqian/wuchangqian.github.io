@@ -9,12 +9,8 @@
   <title>每个人的声音都面向世界</title>
   <meta name="author" content="wuchangqian">
   
-  <meta name="description" content="!^ 获取上一条命令的第一个参数。
-!$ 获取上一条命令的最后一个参数。
-!:n 获取上一条命令的第n个参数，n从1开始。（为0时则挑选出命令名称）
-!:n-x 获取上一条命令的第n个参数到第x个参数，n和x均从1开始。（为0时则挑选出命令名称）
-!* 获取上一条命令的所有参数。
-!n* &hellip;">
+  <meta name="description" content="adska
+">
   
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -63,6 +59,35 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/09/06/test/">Test</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2017-09-06T18:09:15+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>6:09 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>adska</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -952,7 +977,7 @@ make &amp;&amp; make install
        regular expression matches the newline character, and similarly for \a, \t, and other sequences.</p>
 
 <p>BUGS
-       E-mail  bug  reports  to <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#98;&#x75;&#103;&#x2d;&#x73;&#101;&#100;&#x40;&#103;&#x6e;&#117;&#x2e;&#x6f;&#114;&#103;&#46;">&#98;&#x75;&#x67;&#45;&#x73;&#101;&#100;&#64;&#103;&#110;&#117;&#46;&#x6f;&#114;&#103;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
+       E-mail  bug  reports  to <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#98;&#117;&#103;&#x2d;&#115;&#101;&#x64;&#64;&#x67;&#110;&#117;&#46;&#111;&#114;&#103;&#x2e;">&#98;&#117;&#x67;&#45;&#x73;&#101;&#100;&#64;&#x67;&#x6e;&#x75;&#46;&#111;&#x72;&#103;&#x2e;</a>  Also, please include the output of &ldquo;sed &ndash;version&rdquo; in the body of your
        report if at all possible.</p>
 
 <p>AUTHOR
@@ -1177,50 +1202,6 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/08/31/apache-http-request-process/">Apache处理http请求的生命周期</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-08-31T09:49:40+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>9:49 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Apache请求处理循环的11个阶段都做了哪些事情呢？</p>
-
-<ol>
-<li>Post-Read-Request阶段: 在正常请求处理流程中，这是模块可以插入钩子的第一个阶段。对于那些想很早进入处理请求的模块来说，这个阶段可以被利用。</li>
-<li>URI Translation阶段 :  Apache在本阶段的主要工作：将请求的URL映射到本地文件系统。模块可以在这阶段插入钩子，执行自己的映射逻辑。mod_alias就是利用这个阶段工作的。</li>
-<li>Header Parsing阶段 : Apache在本阶段的主要工作：检查请求的头部。由于模块可以在请求处理流程的任何一个点上执行检查请求头部的任务，因此这个钩子很少被使用。mod_setenvif就是利用这个阶段工作的。</li>
-<li>Access Control阶段 :  Apache在本阶段的主要工作：根据配置文件检查是否允许访问请求的资源。Apache的标准逻辑实现了允许和拒绝指令。mod_authz_host就是利用这个阶段工作的。</li>
-<li>Authentication阶段 :  Apache在本阶段的主要工作：按照配置文件设定的策略对用户进行认证，并设定用户名区域。模块可以在这阶段插入钩子，实现一个认证方法。</li>
-<li>Authorization阶段 :  Apache在本阶段的主要工作：根据配置文件检查是否允许认证过的用户执行请求的操作。模块可以在这阶段插入钩子，实现一个用户权限管理的方法。</li>
-<li>MIME Type Checking阶段 :  Apache在本阶段的主要工作：根据请求资源的MIME类型的相关规则，判定将要使用的内容处理函数。标准模块mod_negotiation和mod_mime实现了这个钩子。</li>
-<li>FixUp阶段 :  这是一个通用的阶段，允许模块在内容生成器之前，运行任何必要的处理流程。和Post_Read_Request类似，这是一个能够捕获任何信息的钩子，也是最常使用的钩子。</li>
-<li>Response阶段 : Apache在本阶段的主要工作：生成返回客户端的内容，负责给客户端发送一个恰当的回复。这个阶段是整个处理流程的核心部分。</li>
-<li>Logging阶段 :  Apache在本阶段的主要工作：在回复已经发送给客户端之后记录事务。模块可能修改或者替换Apache的标准日志记录。</li>
-<li>CleanUp阶段 : Apache在本阶段的主要工作：清理本次请求事务处理完成之后遗留的环境，比如文件、目录的处理或者Socket的关闭等等，这是Apache一次请求处理的最后一个阶段。</li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -1236,6 +1217,10 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/09/06/test/">Test</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/08/10/shell-history/">Shell History 命令扩展</a>
       </li>
     
@@ -1249,10 +1234,6 @@ awk &lsquo;{ x += $2 } END { print x }&rsquo;
     
       <li class="post">
         <a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/19/wangzhan-paizhao/">经营一个网站需要哪些牌照资质</a>
       </li>
     
   </ul>

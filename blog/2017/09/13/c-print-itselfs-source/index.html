@@ -84,6 +84,11 @@ char* recurse="#include &lt;stdio.h&gt;%cchar* recurse=%c%s%c;%cint main(){print
 char* recurse="#include &lt;stdio.h&gt;%cchar* recurse=%c%s%c;%cint main(){printf(recurse,10,34,recurse,34,10,10);}%c";
 int main(){printf(recurse,10,34,recurse,34,10,10);}
 </code></pre>
+
+<p>这里也是（2009年在百度知道里面看到的）</p>
+
+<pre><code>main(a){printf(a,34,a="main(a){printf(a,34,a=%c%s%c,34);34;}",34);}
+</code></pre>
 </div>
 
 

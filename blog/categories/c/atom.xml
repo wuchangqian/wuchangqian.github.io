@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C | 每个人的声音都面向世界]]></title>
   <link href="http://me.94313.net/blog/categories/c/atom.xml" rel="self"/>
   <link href="http://me.94313.net/"/>
-  <updated>2017-09-13T17:08:15+08:00</updated>
+  <updated>2017-11-24T17:29:45+08:00</updated>
   <id>http://me.94313.net/</id>
   <author>
     <name><![CDATA[wuchangqian]]></name>
@@ -23,6 +23,11 @@
 <pre><code>#include &lt;stdio.h&gt;
 char* recurse="#include &lt;stdio.h&gt;%cchar* recurse=%c%s%c;%cint main(){printf(recurse,10,34,recurse,34,10,10);}%c";
 int main(){printf(recurse,10,34,recurse,34,10,10);}
+</code></pre>
+
+<p>这里也是（2009年在百度知道里面看到的）</p>
+
+<pre><code>main(a){printf(a,34,a="main(a){printf(a,34,a=%c%s%c,34);34;}",34);}
 </code></pre>
 ]]></content>
   </entry>

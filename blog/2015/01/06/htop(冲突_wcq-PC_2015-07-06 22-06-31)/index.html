@@ -6,16 +6,16 @@
 <head>
   <meta charset="utf-8">
   <script async="false" src="/javascripts/libs/jquery.min.js"></script>
-  <title>Category: Linux - 每个人的声音都面向世界</title>
+  <title>Htop是个好东西 - 每个人的声音都面向世界</title>
   <meta name="author" content="wuchangqian">
   
-  <meta name="description" content="Category: linux">
+  <meta name="description" content="Htop是一款运行于Linux系统监控与进程管理软件，用于取代Unix下传统的top。与top只提供最消耗资源的进程列表不同，htop提供所有进程的列表，并且使用彩色标识出处理器、swap和内存状态。 用户一般可以在top无法提供详尽系统信息的情况下选择安装并使用htop。比如， &hellip;">
   
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="canonical" href="http://me.94313.net/blog/categories/linux">
+  <link rel="canonical" href="http://me.94313.net/blog/2015/01/06/htop(%E5%86%B2%E7%AA%81_wcq-PC_2015-07-06%2022-06-31)">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="每个人的声音都面向世界" type="application/atom+xml">
@@ -57,128 +57,89 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Linux</h1>
+    
+      <h1 class="entry-title">Htop是个好东西</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-06T13:49:16+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:49 pm</span></time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><pre><code>Htop是一款运行于Linux系统监控与进程管理软件，用于取代Unix下传统的top。与top只提供最消耗资源的进程列表不同，htop提供所有进程的列表，并且使用彩色标识出处理器、swap和内存状态。
+</code></pre>
 
-  
-  <h2>2017</h2>
+<p>用户一般可以在top无法提供详尽系统信息的情况下选择安装并使用htop。比如，在查找应用程序的内存泄漏问题时。与top相比，htop提供更方便、光标控制的界面来杀死进程。
+htop用C语言编写，采用了ncurses库。htop的名称源于其作者的名字。</p>
 
-<article>
-  
-<h1><a href="/blog/2017/08/10/shell-history/">Shell History 命令扩展</a></h1>
-<time datetime="2017-08-10T11:35:36+08:00" pubdate><span class='month'>Aug</span> <span class='day'>10</span> <span class='year'>2017</span></time>
+<h2>安装htop</h2>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/command/'>command</a>, <a class='category' href='/blog/categories/history/'>history</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/shell/'>shell</a></span>
-</footer>
+<pre><code>yum -y install ncurses-devel #htop依赖ncurses
+cd /opt
+wget -c http://ncu.dl.sourceforge.net/project/htop/htop/1.0.2/htop-1.0.2.tar.gz
+tar xzf htop-1.0.2.tar.gz
+cd htop-1.0.2
+./configure
+make &amp;&amp; make install
+</code></pre>
 
+<h2>示例图片</h2>
 
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2017/05/07/windows-xia-ffmpegshi-yong/">Windows 下ffmpeg使用</a></h1>
-<time datetime="2017-05-07T18:14:09+08:00" pubdate><span class='month'>May</span> <span class='day'>07</span> <span class='year'>2017</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/ffmpeg/'>ffmpeg</a>, <a class='category' href='/blog/categories/linux/'>linux</a></span>
-</footer>
-
-
-</article>
-
-
-
-  
-  <h2>2015</h2>
-
-<article>
-  
-<h1><a href="/blog/2015/01/06/htop/">Htop是个好东西</a></h1>
-<time datetime="2015-01-06T13:49:16+08:00" pubdate><span class='month'>Jan</span> <span class='day'>06</span> <span class='year'>2015</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/computer/'>computer</a>, <a class='category' href='/blog/categories/linux/'>linux</a></span>
-</footer>
-
-
-</article>
-
-
-
-  
-  <h2>2014</h2>
-
-<article>
-  
-<h1><a href="/blog/2014/09/01/sed-man-page/">Sed-man-page</a></h1>
-<time datetime="2014-09-01T18:30:03+08:00" pubdate><span class='month'>Sep</span> <span class='day'>01</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/sed/'>sed</a>, <a class='category' href='/blog/categories/shell/'>shell</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/08/31/linux-useful-command/">Linux-有用的命令</a></h1>
-<time datetime="2014-08-31T18:57:18+08:00" pubdate><span class='month'>Aug</span> <span class='day'>31</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/shell/'>shell</a></span>
-</footer>
-
-
-</article>
-
-
-
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/03/23/command-line-skill-of-linux/">Linux命令行技巧</a></h1>
-<time datetime="2012-03-23T13:18:37+08:00" pubdate><span class='month'>Mar</span> <span class='day'>23</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/shell/'>shell</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/03/02/note-of-yum/">Yum配置笔记</a></h1>
-<time datetime="2012-03-02T10:11:18+08:00" pubdate><span class='month'>Mar</span> <span class='day'>02</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/shell/'>shell</a></span>
-</footer>
-
-
-</article>
-
+<p><img src="/images/2015/htop.gif" title="示例图片" alt="示例图片" /></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">wuchangqian</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-01-06T13:49:16+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:49 pm</span></time>
+      
+
+<span class="categories">
+  
+    linuxcomputer
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/01/06/htop/" title="Previous Post: htop是个好东西">&laquo; htop是个好东西</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2017/05/07/windows-xia-ffmpegshi-yong/" title="Next Post: windows 下ffmpeg使用">windows 下ffmpeg使用 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
@@ -202,11 +163,11 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
+        <a href="/blog/2015/01/06/htop(%E5%86%B2%E7%AA%81_wcq-PC_2015-07-06%2022-06-31)/">Htop是个好东西</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/10/19/css-clearfix/">Css-clearfix</a>
+        <a href="/blog/2015/01/06/htop/">Htop是个好东西</a>
       </li>
     
   </ul>
@@ -218,7 +179,7 @@
 <li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
 <li class='category'><a href='/blog/categories/c/'>c (1)</a></li>
 <li class='category'><a href='/blog/categories/command/'>command (1)</a></li>
-<li class='category'><a href='/blog/categories/computer/'>computer (5)</a></li>
+<li class='category'><a href='/blog/categories/computer/'>computer (6)</a></li>
 <li class='category'><a href='/blog/categories/css/'>css (1)</a></li>
 <li class='category'><a href='/blog/categories/doctype/'>doctype (1)</a></li>
 <li class='category'><a href='/blog/categories/ffmpeg/'>ffmpeg (1)</a></li>
@@ -230,7 +191,7 @@
 <li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
 <li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/blog/categories/jquery/'>jquery (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (8)</a></li>
 <li class='category'><a href='/blog/categories/mysql/'>mysql (2)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/php/'>php (1)</a></li>
@@ -278,14 +239,18 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - wuchangqian -
+  Copyright &copy; 2020 - wuchangqian -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <span class="bigger-120">
+    &copy; 2018-2020
+    <a target="_blank" href="http://beian.miit.gov.cn">浙ICP备17052763号-1</a>
+  </span>
 </p>
 <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2b97bd9d37a4d1a5e2c81905d6d6d75b' type='text/javascript'%3E%3C/script%3E"));
+  var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+  document.write(unescape("%3Cscript src='" + _bdhmProtocol +
+    "hm.baidu.com/h.js%3F2b97bd9d37a4d1a5e2c81905d6d6d75b' type='text/javascript'%3E%3C/script%3E"));
 </script>
-
 </footer>
   
 
